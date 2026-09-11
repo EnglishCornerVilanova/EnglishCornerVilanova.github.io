@@ -574,9 +574,10 @@ def _fmt_intervals(intervals: list, lang: str) -> str:
     for opens, closes in intervals:
         if lang == "ca":   # «de 15 a 21.15 h», «d'11 a 13 h»
             a, b = (t[:2].lstrip("0") + ("" if t[3:] == "00" else "." + t[3:]) for t in (opens, closes))
-            parts.append(("d'" if a == "1" or a.startswith(("1.", "11")) else "de ") + f"{a} a {b} h")
+            # espacios de no separación: «a 21.15 h» nunca se parte entre líneas
+            parts.append(("d'" if a == "1" or a.startswith(("1.", "11")) else "de ") + f"{a} a {b} h")
         elif lang == "es":
-            parts.append(f"de {opens} a {closes}")
+            parts.append(f"de {opens} a {closes}")
         else:
             parts.append(f"{opens}–{closes}")
     return HOURS_I18N[lang]["and"].join(parts)
