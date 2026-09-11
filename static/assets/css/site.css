@@ -879,7 +879,7 @@ body.menu-open .drawer-foot{opacity:1;transform:none}
 }
 
 /* Slot for the official Cambridge preparation-centre lockup. */
-.cred-mark{height:46px;width:auto;flex-shrink:0}
+.cred-mark{height:clamp(54px,5vw,68px);width:auto;flex-shrink:0}
 
 /* Typographic stand-in while the licensed mark is not on file. */
 .cred-seal{

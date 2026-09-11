@@ -279,11 +279,16 @@ def cambridge_mark(data: dict) -> tuple[str, bool]:
     supplied it. It is a licensed mark: we never draw a lookalike. Until the
     real file is dropped in, a plain typographic seal stands in."""
     for name in ("cambridge-preparation-centre.svg", "cambridge-preparation-centre.png"):
-        if (STATIC / "assets" / "img" / name).exists():
+        path = STATIC / "assets" / "img" / name
+        if path.exists():
             alt = strip_tags(data["creds"]["markAlt"])
+            w, h = 160, 46
+            if name.endswith(".png"):   # medidas reales, leídas de la cabecera PNG
+                head = path.read_bytes()[:24]
+                w, h = int.from_bytes(head[16:20], "big"), int.from_bytes(head[20:24], "big")
             return (
                 f'<img class="cred-mark" src="/assets/img/{name}" alt="{alt}" '
-                f'width="160" height="46" decoding="async">',
+                f'width="{w}" height="{h}" decoding="async">',
                 True,
             )
     return (
