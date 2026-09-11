@@ -1158,3 +1158,19 @@ a.ig-cell{display:block;text-decoration:none}
 .hero-visual .frame-4{left:64.50%;width:35.50%}
 .hero-visual{aspect-ratio:2.709/1.14}
 /* cromos:fin */
+
+/* Hero: el banner gana tamaño. En escritorio la imagen se extiende hacia el
+   margen derecho de la pantalla (hasta 24 px del borde) y los cromos se
+   escalonan más en vertical, para ocupar más altura sin perder la lectura
+   horizontal. El titular se reduce un poco para seguir en tres líneas. */
+@media (min-width:941px){
+  .hero-visual{aspect-ratio:2.709/1.32;margin-right:min(0px, calc((1180px - 100vw) / 2 + 24px))}
+  .hero-visual .frame-1{transform:rotate(-1.8deg) translateY(22px)}
+  .hero-visual .frame-2{transform:rotate(1.4deg) translateY(-16px)}
+  .hero-visual .frame-3{transform:rotate(-.8deg) translateY(6px)}
+  .hero-visual .frame-4{transform:rotate(1.8deg) translateY(28px)}
+}
+@media (min-width:1280px){
+  .hero-grid{grid-template-columns:minmax(0,1fr) minmax(0,1.6fr);gap:clamp(2rem,4vw,4rem)}
+  .hero h1{font-size:clamp(2.9rem,4.9vw,3.95rem)}
+}
