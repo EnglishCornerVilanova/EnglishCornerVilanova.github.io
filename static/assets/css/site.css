@@ -159,13 +159,13 @@ a{color:inherit}
 .hero::before{
   content:'';position:absolute;
   top:-30%;right:-10%;width:70vw;height:70vw;max-width:900px;max-height:900px;
-  background:radial-gradient(circle at 50% 50%,rgba(232,25,44,.055),transparent 64%);
+  background:none;
   pointer-events:none;
 }
 .hero::after{
   content:'';position:absolute;
   bottom:-30%;left:-15%;width:55vw;height:55vw;max-width:700px;max-height:700px;
-  background:radial-gradient(circle at 50% 50%,rgba(232,25,44,.05),transparent 62%);
+  background:none;
   pointer-events:none;
 }
 .hero-grid{
@@ -1115,3 +1115,8 @@ a.ig-cell{display:block;text-decoration:none}
 .ig-follow-txt b{font-size:.9rem;font-weight:700;letter-spacing:-.01em}
 .ig-follow-txt span{font-size:.82rem;font-weight:700;color:var(--red-ink)}
 .ig-glyph{width:22px;height:22px;margin-left:2px;color:var(--ink-2);stroke:currentColor;stroke-width:1.9;fill:none}
+
+/* Fondo del hero en gris perla liso: fuera las dos manchas rojizas de la época
+   de la crema (se veían como halo abajo a la izquierda y como anillos arriba a
+   la derecha por el escalonado del degradado). */
+.hero::before,.hero::after{display:none}
