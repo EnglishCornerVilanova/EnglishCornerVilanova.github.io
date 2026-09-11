@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html lang="{{ @lang }}">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>{{ meta.title }}</title>
+<meta name="description" content="{{ meta.description }}">
+<link rel="canonical" href="{{ @canonical }}">
+{{ @alternates }}
+
+<meta name="theme-color" content="#FFFFFF">
+<meta name="format-detection" content="telephone=no">
+
+<!-- Open Graph / social -->
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="English Corner">
+<meta property="og:locale" content="{{ @ogLocale }}">
+<meta property="og:title" content="{{ meta.ogTitle }}">
+<meta property="og:description" content="{{ meta.ogDescription }}">
+<meta property="og:url" content="{{ @canonical }}">
+<meta property="og:image" content="{{ @origin }}/assets/img/og-image.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="English Corner: {{ meta.ogTitle }}">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="{{ meta.ogTitle }}">
+<meta name="twitter:description" content="{{ meta.ogDescription }}">
+<meta name="twitter:image" content="{{ @origin }}/assets/img/og-image.jpg">
+
+<!-- Icons -->
+<link rel="icon" href="/favicon.ico" sizes="32x32">
+<link rel="icon" href="/assets/img/icon-192.png" type="image/png" sizes="192x192">
+<link rel="apple-touch-icon" href="/assets/img/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+
+<!-- Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,700;12..96,800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Special+Elite&display=swap" rel="stylesheet">
+
+<!-- Send a returning visitor to the language they chose, before anything paints.
+     Blocking on purpose, and deliberately never guesses from navigator.language:
+     an automatic guess would redirect crawlers too. -->
+<script>{{ @langRedirect }}</script>
+
+<link rel="stylesheet" href="/assets/css/site.css?v={{ @cssV }}">
+<script defer src="/assets/js/site.js?v={{ @jsV }}"></script>
+
+<script type="application/ld+json">{{ @schema }}</script>
+</head>
+<body>
+
+<a class="skip" href="#main">{{ a11y.skip }}</a>
+
+<!-- ══════════ NAV ══════════ -->
+<div class="nav-shell" id="navShell">
+  <nav class="nav" aria-label="{{ a11y.navLabel }}">
+    <a href="{{ @home }}" class="brand" aria-label="English Corner, {{ a11y.home }}">
+      <span class="brand-mark">
+        <picture>
+          <source type="image/webp" srcset="/assets/img/logo-96.webp 96w, /assets/img/logo-192.webp 192w" sizes="40px">
+          <img src="/assets/img/logo-96.png" srcset="/assets/img/logo-96.png 96w, /assets/img/logo-192.png 192w"
+               sizes="40px" width="96" height="96" alt="" decoding="async">
+        </picture>
+      </span>
+      <span class="brand-name">English<br><i>Corner</i></span>
+    </a>
+
+    <ul class="nav-menu">
+      {{# nav.items }}<li><a href="{{ .href }}">{{ .label }}</a></li>
+      {{/ nav.items }}
+    </ul>
+
+    <div class="nav-right">
+      <div class="lang" id="langSwitch">
+        <button class="lang-btn" type="button" aria-expanded="false" aria-haspopup="true" aria-label="{{ a11y.langLabel }}">
+          <svg class="globe" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.6 3.8 5.6 3.8 9S14.5 18.4 12 21c-2.5-2.6-3.8-5.6-3.8-9S9.5 5.6 12 3z"/></svg>
+          {{ @langUpper }}
+          <svg class="caret" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
+        </button>
+        <ul class="lang-menu" role="menu">
+          {{# @langLinks }}<li role="none"><a role="menuitem" href="{{ .href }}" hreflang="{{ .code }}" data-lang="{{ .code }}"{{ .currentAttr }}>
+            <span class="code">{{ .codeUpper }}</span>{{ .name }}
+            <svg class="tick" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 13l4 4L19 7"/></svg>
+          </a></li>
+          {{/ @langLinks }}
+        </ul>
+      </div>
+
+      <a href="#contact" class="btn btn--red btn--sm">
+        {{ nav.cta }}
+        <span class="chip"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+      </a>
+
+      <button class="burger" id="burger" type="button" aria-expanded="false" aria-controls="drawer" aria-label="{{ a11y.menuLabel }}">
+        <span></span>
+      </button>
+    </div>
+  </nav>
+</div>
+
+<!-- ══════════ MOBILE DRAWER ══════════ -->
+<div class="drawer" id="drawer" aria-hidden="true">
+  <ul class="drawer-menu">
+    {{# nav.items }}<li><a href="{{ .href }}"><span class="n">{{ @index2 }}</span>{{ .label }}</a></li>
+    {{/ nav.items }}
+  </ul>
+  <div class="drawer-foot">
+    <a href="#contact" class="btn btn--red">
+      {{ nav.cta }}
+      <span class="chip"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+    </a>
+    <div class="drawer-tel">
+      <span>{{ contact.labels.phone }}</span>
+      <b><a href="tel:{{ shared.phoneHref }}">{{ shared.phone }}</a></b>
+    </div>
+    <div class="drawer-langs">
+      {{# @langLinks }}<a href="{{ .href }}" hreflang="{{ .code }}" data-lang="{{ .code }}"{{ .currentAttr }}>{{ .codeUpper }}</a>
+      {{/ @langLinks }}
+    </div>
+  </div>
+</div>
+
+<main id="main">
+
+<!-- ══════════ HERO ══════════ -->
+<header class="hero">
+  <div class="hero-grid">
+
+    <div class="hero-copy">
+      <div class="hero-brand hero-in hi-1">
+        <picture>
+          <source type="image/webp" srcset="/assets/img/logo-192.webp 192w, /assets/img/logo-384.webp 384w" sizes="(max-width:600px) 86px, 118px">
+          <img src="/assets/img/logo-192.png" srcset="/assets/img/logo-192.png 192w, /assets/img/logo-384.png 384w"
+               sizes="(max-width:600px) 86px, 118px" width="192" height="192"
+               alt="{{ a11y.logoAlt }}" fetchpriority="high" decoding="async">
+        </picture>
+      </div>
+
+      <h1 class="display hero-in hi-2">
+        {{ hero.line1 }}<br>
+        {{ hero.line2 }}<br>
+        <span class="accent">{{ hero.accentPre }}<span class="swash">{{ hero.accent }}</span></span>
+      </h1>
+
+      <p class="hero-lede hero-in hi-3">{{ hero.lede }}</p>
+
+      <div class="hero-cta hero-in hi-4">
+        <a href="#contact" class="btn btn--red">
+          {{ hero.ctaPrimary }}
+          <span class="chip"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+        </a>
+        <a href="#courses" class="btn btn--ghost">{{ hero.ctaSecondary }}</a>
+      </div>
+
+    </div>
+
+    <div class="hero-visual hero-in hi-6">
+      <div class="frame frame-main">
+        <div class="ph ph-a">
+          <div class="ph-inner">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="15" rx="3"/><circle cx="12" cy="12" r="3.5"/><path d="M8 5l1.5-2h5L16 5"/></svg>
+            <span>{{ hero.phClassroom }}</span>
+          </div>
+        </div>
+      </div>
+      <div class="frame frame-sub">
+        <div class="ph ph-b">
+          <div class="ph-inner">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="15" rx="3"/><circle cx="12" cy="12" r="3.5"/><path d="M8 5l1.5-2h5L16 5"/></svg>
+            <span>{{ hero.phStudents }}</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="stamp">
+        <b>{{ hero.chipN }}</b>
+        <span>{{ hero.chipLabel }}</span>
+      </div>
+
+    </div>
+
+  </div>
+</header>
+
+<svg class="wave wave-down" viewBox="0 0 1440 80" preserveAspectRatio="none" aria-hidden="true">
+  <path d="M0 80V34c168-40 300 22 520 30 220 8 372-38 566-30 118 5 250 26 354 14v32z"/>
+</svg>
+
+<!-- ══════════ CREDENTIAL BAND ══════════ -->
+<section class="creds" aria-label="{{ a11y.credentials }}">
+  <div class="creds-in">
+    <div class="cred">
+      {{ @cambridgeMark }}
+      <div class="cred-txt">
+        <b>{{ creds.cambridgeTitle }}</b>
+        <span>{{ creds.cambridgeNote }}</span>
+      </div>
+    </div>
+    <div class="cred">
+      <div class="cred-txt">
+        <b>{{ creds.localTitle }}</b>
+        <span>{{ creds.localNote }}</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════ MARQUEE ══════════ -->
+<div class="marquee" aria-hidden="true">
+  <div class="marquee-track" id="mqTrack">
+    {{# marquee }}<span class="marquee-item"><i></i>{{ . }}</span>
+    {{/ marquee }}
+  </div>
+</div>
+
+<!-- ══════════ COURSES ══════════ -->
+<section class="section courses" id="courses" aria-labelledby="courses-h">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <h2 class="display" id="courses-h">{{ courses.h2 }}</h2>
+      <p>{{ courses.lede }}</p>
+    </div>
+
+    <div class="course-list">
+      {{# courses.items }}<article class="course rv rv-{{ @index1 }}">
+        <div class="course-idx">{{ @index2 }}</div>
+        <div class="course-title">
+          <h3>{{ .title }}</h3>
+          <span class="course-tag {{ .tagClass }}">{{ .tag }}</span>
+        </div>
+        <p class="course-desc">{{ .desc }}</p>
+        <span class="course-go" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M7 17L17 7M8 7h9v9"/></svg></span>
+      </article>
+      {{/ courses.items }}
+    </div>
+  </div>
+</section>
+
+<!-- ══════════ CAMBRIDGE EXAMS ══════════ -->
+<section class="section exams" id="exams" aria-labelledby="exams-h">
+  <div class="wrap">
+    <div class="sec-head center rv">
+      <h2 class="display" id="exams-h">{{ exams.h2 }}</h2>
+      <p>{{ exams.lede }}</p>
+    </div>
+
+    <div class="ladder">
+      {{# exams.rungs }}<article class="rung rung-{{ @index1 }} rv rv-{{ @index1 }}">
+        <div class="rung-lvl">{{ .lvl }}</div>
+        <div class="rung-name">{{ .name }}</div>
+        <p class="rung-desc">{{ .desc }}</p>
+        <span class="rung-age">{{ .age }}</span>
+      </article>
+      {{/ exams.rungs }}
+    </div>
+
+    <div class="yle-note rv rv-5">
+      <strong>{{ exams.yleStrong }}</strong>
+      <div class="yle-tags">
+        {{# exams.yleTags }}<span class="yle-tag">{{ . }}</span>
+        {{/ exams.yleTags }}
+      </div>
+      <span>{{ exams.yleNote }}</span>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════ METHOD ══════════ -->
+<section class="section" id="method" aria-labelledby="method-h">
+  <div class="wrap">
+    <div class="method-grid">
+
+      <div class="method-visual rv">
+        <div class="method-frame">
+          <div class="ph ph-c">
+            <div class="ph-inner">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="15" rx="3"/><circle cx="12" cy="12" r="3.5"/><path d="M8 5l1.5-2h5L16 5"/></svg>
+              <span>{{ method.phTeacher }}</span>
+            </div>
+          </div>
+        </div>
+        <div class="method-frame-2">
+          <div class="ph ph-d">
+            <div class="ph-inner">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="15" rx="3"/><circle cx="12" cy="12" r="3.5"/><path d="M8 5l1.5-2h5L16 5"/></svg>
+              <span>{{ method.phAcademy }}</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="method-copy">
+        <div class="sec-head rv rv-1" style="margin-bottom:0">
+          <h2 class="display" id="method-h">{{ method.h2 }}</h2>
+          <p>{{ method.lede }}</p>
+        </div>
+
+        <div class="pillars">
+          <div class="pillar rv rv-2">
+            <div class="pillar-ico i-red" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="M8 12h8M8 8h8M8 16h5"/><rect x="3" y="3" width="18" height="18" rx="4"/></svg>
+            </div>
+            <div class="pillar-txt">
+              <h3>{{ method.pillars.0.title }}</h3>
+              <p>{{ method.pillars.0.text }}</p>
+            </div>
+          </div>
+
+          <div class="pillar rv rv-3">
+            <div class="pillar-ico i-navy" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><circle cx="9" cy="8" r="3.2"/><path d="M3 20c0-3.3 2.7-6 6-6s6 2.7 6 6"/><path d="M16 5.5a3.2 3.2 0 010 5M18.5 3.5a6 6 0 010 9"/></svg>
+            </div>
+            <div class="pillar-txt">
+              <h3>{{ method.pillars.1.title }}</h3>
+              <p>{{ method.pillars.1.text }}</p>
+            </div>
+          </div>
+
+          <div class="pillar rv rv-4">
+            <div class="pillar-ico i-mint" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="M12 3l2.6 5.4 5.9.8-4.3 4.1 1 5.9-5.2-2.8-5.2 2.8 1-5.9L3.5 9.2l5.9-.8z"/></svg>
+            </div>
+            <div class="pillar-txt">
+              <h3>{{ method.pillars.2.title }}</h3>
+              <p>{{ method.pillars.2.text }}</p>
+            </div>
+          </div>
+
+          <div class="pillar rv rv-5">
+            <div class="pillar-ico i-sun" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="M12 21s-7-4.8-7-10a7 7 0 0114 0c0 5.2-7 10-7 10z"/><circle cx="12" cy="11" r="2.6"/></svg>
+            </div>
+            <div class="pillar-txt">
+              <h3>{{ method.pillars.3.title }}</h3>
+              <p>{{ method.pillars.3.text }}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ══════════ NUMBERS BAND ══════════ -->
+<section class="band" aria-label="{{ a11y.figures }}">
+  <div class="band-grid rv">
+    {{# band }}<div class="band-cell"><div class="band-n {{ .accent }}">{{ .n }}</div><div class="band-l">{{ .label }}</div></div>
+    {{/ band }}
+  </div>
+</section>
+
+<!-- ══════════ TESTIMONIALS ══════════ -->
+<section class="section" id="reviews" aria-labelledby="reviews-h">
+  <div class="wrap">
+    <div class="sec-head center rv">
+      <h2 class="display" id="reviews-h">{{ reviews.h2 }}</h2>
+    </div>
+
+    <div class="testi-grid">
+      {{# reviews.items }}<article class="testi rv rv-{{ @index1 }}">
+        <div class="stars" aria-hidden="true">★★★★★</div>
+        <q>{{ .quote }}</q>
+        <div class="testi-who">
+          <span class="testi-av av-{{ @index1 }}" aria-hidden="true">{{ .initial }}</span>
+          <div><b>{{ .name }}</b><span>{{ .role }}</span></div>
+        </div>
+      </article>
+      {{/ reviews.items }}
+    </div>
+  </div>
+</section>
+
+<svg class="wave wave-up" viewBox="0 0 1440 80" preserveAspectRatio="none" aria-hidden="true">
+  <path d="M0 80V46c150 26 286-22 508-14 222 8 366 40 560 28 116-7 254-30 372-16v36z"/>
+</svg>
+
+<!-- ══════════ INSTAGRAM ══════════ -->
+<section class="section insta" id="instagram" aria-labelledby="insta-h">
+  <div class="wrap">
+    <div class="insta-head rv">
+      <div class="sec-head">
+        <h2 class="display" id="insta-h">{{ insta.h2 }}</h2>
+        <p>{{ insta.lede }}</p>
+      </div>
+      <a href="{{ social.instagramUrl }}" target="_blank" rel="noopener" class="ig-btn">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2.5" y="2.5" width="19" height="19" rx="5.5"/><circle cx="12" cy="12" r="4.2"/><circle cx="17.6" cy="6.4" r="1.1" fill="#fff" stroke="none"/></svg>
+        {{ social.instagramHandle }}
+      </a>
+    </div>
+    <div class="ig-grid rv rv-1" id="igGrid">
+      {{ @igGrid }}
+    </div>
+
+    <p class="ig-note rv rv-2">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 16v-4M12 8h.01"/></svg>
+      {{ insta.note }}
+    </p>
+  </div>
+</section>
+
+<svg class="wave wave-down" viewBox="0 0 1440 80" preserveAspectRatio="none" aria-hidden="true">
+  <path d="M0 80V34c168-40 300 22 520 30 220 8 372-38 566-30 118 5 250 26 354 14v32z"/>
+</svg>
+
+<!-- ══════════ CTA ══════════ -->
+<section class="cta-sec" id="contact" aria-labelledby="contact-h">
+  <div class="cta rv">
+    <div>
+      <h2 class="display" id="contact-h">{{ contact.h2 }}</h2>
+      <p>{{ contact.lede }}</p>
+      <div class="cta-btns">
+        <a href="tel:{{ shared.phoneHref }}" class="btn btn--red">
+          {{ contact.btnCall }}
+          <span class="chip"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+        </a>
+        <a href="mailto:{{ shared.email }}" class="btn btn--ghost">{{ contact.btnEmail }}</a>
+      </div>
+    </div>
+
+    <dl class="cta-card">
+      <div class="cta-row">
+        <span class="cta-ico" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 21s-7-4.8-7-10a7 7 0 0114 0c0 5.2-7 10-7 10z"/><circle cx="12" cy="11" r="2.6"/></svg></span>
+        <div><dt>{{ contact.labels.address }}</dt><dd><p>{{ shared.addressLine1 }}<br>{{ shared.addressLine2 }}</p></dd></div>
+      </div>
+      <div class="cta-row">
+        <span class="cta-ico" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 005 5L15 13l5 2v4a1 1 0 01-1 1A16 16 0 014 5a1 1 0 011-1z"/></svg></span>
+        <div><dt>{{ contact.labels.phone }}</dt><dd><a href="tel:{{ shared.phoneHref }}">{{ shared.phone }}</a></dd></div>
+      </div>
+      <div class="cta-row">
+        <span class="cta-ico" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2.5"/><path d="M3.5 7l8.5 6 8.5-6"/></svg></span>
+        <div><dt>{{ contact.labels.email }}</dt><dd><a href="mailto:{{ shared.email }}">{{ shared.email }}</a></dd></div>
+      </div>
+      <div class="cta-row">
+        <span class="cta-ico" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.5 2"/></svg></span>
+        <div><dt>{{ contact.labels.hours }}</dt><dd><p>{{ shared.hoursWeek }}<br>{{ shared.hoursSat }}</p></dd></div>
+      </div>
+    </dl>
+  </div>
+</section>
+
+<!-- ══════════ MAP ══════════ -->
+<section class="map-sec" aria-label="{{ map.title }}">
+  <div class="map-shell rv" id="mapShell"
+       data-map-src="https://www.google.com/maps?q=Carrer+de+Manresa+23,+08788+Vilanova+del+Cam%C3%AD,+Barcelona&amp;output=embed"
+       data-map-title="{{ map.title }}">
+    <div class="map-consent">
+      <div class="map-consent-in">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7-4.8-7-10a7 7 0 0114 0c0 5.2-7 10-7 10z"/><circle cx="12" cy="11" r="2.6"/></svg>
+        <h2>{{ map.consentTitle }}</h2>
+        <p>{{ map.consentText }}</p>
+        <span class="addr">{{ shared.addressLine1 }} · {{ shared.addressLine2 }}</span>
+        <button class="btn btn--navy" type="button" data-map-load>
+          {{ map.consentButton }}
+          <span class="chip"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+        </button>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ══════════ FOOTER ══════════ -->
+<footer>
+  <div class="foot-grid">
+    <div class="foot-brand">
+      <a href="{{ @home }}" class="brand">
+        <span class="brand-mark">
+          <picture>
+            <source type="image/webp" srcset="/assets/img/logo-96.webp 96w, /assets/img/logo-192.webp 192w" sizes="40px">
+            <img src="/assets/img/logo-96.png" srcset="/assets/img/logo-96.png 96w, /assets/img/logo-192.png 192w"
+                 sizes="40px" width="96" height="96" alt="" loading="lazy" decoding="async">
+          </picture>
+        </span>
+        <span class="brand-name">English<br><i>Corner</i></span>
+      </a>
+      <p>{{ footer.about }}</p>
+      <div class="foot-social">
+        <a href="{{ social.instagramUrl }}" target="_blank" rel="noopener" class="fs" aria-label="Instagram">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2.5" y="2.5" width="19" height="19" rx="5.5"/><circle cx="12" cy="12" r="4.2"/><circle cx="17.6" cy="6.4" r="1.1" fill="currentColor" stroke="none"/></svg>
+        </a>
+        <a href="{{ social.facebookUrl }}" target="_blank" rel="noopener" class="fs" aria-label="Facebook">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 3h-2.5A4.5 4.5 0 008 7.5V10H5.5v4H8v8h4v-8h3l.5-4H12V7.6c0-.9.4-1.6 1.3-1.6H15z"/></svg>
+        </a>
+        <a href="tel:{{ shared.phoneHref }}" class="fs" aria-label="{{ contact.labels.phone }}">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 005 5L15 13l5 2v4a1 1 0 01-1 1A16 16 0 014 5a1 1 0 011-1z"/></svg>
+        </a>
+      </div>
+    </div>
+
+    <div class="foot-cols">
+      {{# footer.cols }}<div class="foot-col">
+        <h2>{{ .title }}</h2>
+        {{ .text }}
+        {{# .links }}<a href="{{ .href }}">{{ .label }}</a>
+        {{/ .links }}
+      </div>
+      {{/ footer.cols }}
+    </div>
+  </div>
+
+  <div class="foot-bar">
+    <span>{{ footer.copyright }}</span>
+    <span>{{ footer.place }}</span>
+  </div>
+</footer>
+</body>
+</html>

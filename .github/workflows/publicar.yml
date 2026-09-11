@@ -1,0 +1,48 @@
+name: Publicar web
+
+on:
+  push:
+    branches: [main]
+  schedule:
+    # Cada día a las 05:17 UTC (7:17 en verano, 6:17 en invierno), para
+    # recoger las publicaciones nuevas de Instagram.
+    - cron: "17 5 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  construir:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: ImageMagick (recorte de las portadas de reel)
+        run: sudo apt-get update -qq && sudo apt-get install -y -qq --no-install-recommends imagemagick
+      - name: Construir la web
+        env:
+          INSTAGRAM_FEED: ${{ secrets.INSTAGRAM_FEED }}
+          IG_REFRESH: "1"
+        run: python build.py
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: dist
+
+  publicar:
+    needs: construir
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.despliegue.outputs.page_url }}
+    steps:
+      - id: despliegue
+        uses: actions/deploy-pages@v4

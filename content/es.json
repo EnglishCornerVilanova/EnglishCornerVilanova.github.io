@@ -1,0 +1,342 @@
+{
+  "meta": {
+    "title": "Academia de inglés en Vilanova del Camí | English Corner",
+    "description": "Academia de inglés en Vilanova del Camí (Anoia). Grupos de máximo 8 alumnos, todas las áreas del idioma y centro preparador oficial de los exámenes de Cambridge English.",
+    "ogTitle": "Academia de inglés en Vilanova del Camí",
+    "ogDescription": "Un método estructurado, todas las áreas del idioma y grupos de ocho alumnos. De los 4 años hasta adultos."
+  },
+  "a11y": {
+    "skip": "Ir al contenido",
+    "navLabel": "Navegación principal",
+    "home": "volver arriba",
+    "langLabel": "Cambiar de idioma",
+    "menuLabel": "Abrir el menú",
+    "logoAlt": "Logotipo de English Corner",
+    "figures": "English Corner en cifras",
+    "credentials": "Acreditaciones y trayectoria"
+  },
+  "shared": {
+    "addressLine1": "C/ Manresa, 23",
+    "addressLine2": "08788 Vilanova del Camí",
+    "hoursWeek": "De lunes a viernes, de 16 a 21 h",
+    "hoursSat": "Sábado, de 9 a 13 h"
+  },
+  "nav": {
+    "cta": "Clase de prueba",
+    "items": [
+      {
+        "label": "Cursos",
+        "href": "#courses"
+      },
+      {
+        "label": "Exámenes",
+        "href": "#exams"
+      },
+      {
+        "label": "Método",
+        "href": "#method"
+      },
+      {
+        "label": "Opiniones",
+        "href": "#reviews"
+      },
+      {
+        "label": "Instagram",
+        "href": "#instagram"
+      },
+      {
+        "label": "Contacto",
+        "href": "#contact"
+      }
+    ]
+  },
+  "hero": {
+    "line1": "Todas las áreas.",
+    "line2": "Todos los niveles.",
+    "accentPre": "",
+    "accent": "Nada a medias.",
+    "lede": "Un método estructurado, todas las áreas del idioma y grupos de ocho alumnos. De los 4 años hasta adultos.",
+    "ctaPrimary": "Pide la prueba de nivel",
+    "ctaSecondary": "Ver los cursos",
+    "phClassroom": "Foto del aula",
+    "phStudents": "Alumnos",
+    "chipN": "8",
+    "chipLabel": "máximo por aula"
+  },
+  "creds": {
+    "markAlt": "Cambridge English, centro preparador autorizado",
+    "cambridgeTitle": "Centro preparador oficial Cambridge English",
+    "cambridgeNote": "Preparamos al alumno y lo presentamos al examen oficial aquí mismo.",
+    "localTitle": "En Vilanova del Camí desde 2009",
+    "localNote": "Más de 500 alumnos preparados, con una valoración media de 4,9."
+  },
+  "marquee": [
+    "Grupos de máximo 8 alumnos",
+    "Reading, writing, listening, speaking",
+    "De los 4 años hasta adultos",
+    "Niveles del A1 al C1",
+    "Prueba de nivel gratuita",
+    "Centro preparador oficial Cambridge",
+    "Más de 15 años en Vilanova del Camí",
+    "Profesorado titulado y estable"
+  ],
+  "courses": {
+    "kicker": "Nuestros cursos",
+    "h2": "Un itinerario estructurado,<br>del A1 al C1.",
+    "lede": "Todos los grupos siguen un temario estructurado y trabajan las cinco áreas en cada unidad. El alumno avanza nivel a nivel y se presenta al examen oficial cuando realmente está preparado.",
+    "items": [
+      {
+        "title": "Infantil y Primaria",
+        "tag": "De 4 a 12 años · Pre A1-A2",
+        "tagClass": "tag-red",
+        "desc": "Estructurado desde el primer día, siguiendo la progresión Starters, Movers y Flyers. Lectura, escritura, comprensión y expresión oral en cada unidad."
+      },
+      {
+        "title": "Adolescentes",
+        "tag": "De 13 a 17 años · A2-B2",
+        "tagClass": "tag-navy",
+        "desc": "Gramática, vocabulario y use of English trabajados de forma sistemática, junto a las cuatro destrezas. Las notas del instituto mejoran como consecuencia, no como objetivo."
+      },
+      {
+        "title": "Exámenes Cambridge",
+        "tag": "A2 Key → C1 Advanced",
+        "tagClass": "tag-sun",
+        "desc": "A2 Key, B1 Preliminary, B2 First y C1 Advanced. Preparación completa paper por paper, con simulacros en condiciones reales, en nuestro propio centro autorizado."
+      },
+      {
+        "title": "Adultos",
+        "tag": "A1-C1",
+        "tagClass": "tag-mint",
+        "desc": "El mismo método estructurado, adaptado al ritmo de un adulto. Bases gramaticales sólidas, vocabulario sistemático y la seguridad que da conocer de verdad el idioma."
+      },
+      {
+        "title": "Inglés para empresas",
+        "tag": "B1+",
+        "tagClass": "tag-navy",
+        "desc": "Redacción profesional, reuniones, llamadas y presentaciones, con el mismo rigor gramatical. Hacemos sesiones en la empresa en toda la comarca de l'Anoia."
+      }
+    ]
+  },
+  "exams": {
+    "kicker": "Exámenes oficiales",
+    "h2": "Los títulos oficiales.",
+    "lede": "Nuestros alumnos no solo estudian inglés: lo certifican. Preparamos cada nivel entero e inscribimos a los candidatos al examen oficial como centro autorizado de Cambridge English.",
+    "rungs": [
+      {
+        "lvl": "A2",
+        "name": "Key (KET)",
+        "desc": "El primer certificado oficial. Acredita un dominio sólido del inglés cotidiano, escrito y hablado.",
+        "age": "Habitualmente de 11 a 14 años"
+      },
+      {
+        "lvl": "B1",
+        "name": "Preliminary (PET)",
+        "desc": "Nivel de usuario independiente. Lo piden muchos institutos y, cada vez más, las universidades.",
+        "age": "Habitualmente de 13 a 16 años"
+      },
+      {
+        "lvl": "B2",
+        "name": "First (FCE)",
+        "desc": "El certificado más solicitado en España. Requisito habitual para los grados universitarios y para buena parte de las ofertas de empleo.",
+        "age": "Habitualmente a partir de los 15 años"
+      },
+      {
+        "lvl": "C1",
+        "name": "Advanced (CAE)",
+        "desc": "Usuario competente. Abre la puerta a másteres, universidades internacionales y puestos de trabajo en el extranjero.",
+        "age": "Adultos y jóvenes de nivel avanzado"
+      }
+    ],
+    "yleStrong": "Los más pequeños empiezan aquí:",
+    "yleTags": [
+      "Pre A1 Starters",
+      "A1 Movers",
+      "A2 Flyers"
+    ],
+    "yleNote": "La serie Young Learners, pensada para que los niños construyan las mismas bases desde los 7 años, sin presión."
+  },
+  "method": {
+    "phTeacher": "Profesora y clase",
+    "phAcademy": "Nuestra academia",
+    "kicker": "Nuestro método",
+    "h2": "Un método contrastado<br>durante más de<br>quince años.",
+    "lede": "Seguimos una progresión estructurada, la misma que emplean los bloques de enseñanza de Cambridge. No nos saltamos nada y no improvisamos nada.",
+    "pillars": [
+      {
+        "title": "Las cinco áreas, en cada unidad",
+        "text": "Reading, writing, listening, speaking y use of English. La gramática y el vocabulario se trabajan como toca, no se dejan al azar."
+      },
+      {
+        "title": "Nunca más de 8 en un aula",
+        "text": "Lo bastante pequeño para que el profesor corrija todos los escritos y escuche a todos los alumnos en cada clase."
+      },
+      {
+        "title": "Se pasa de nivel cuando toca",
+        "text": "Nadie avanza por el simple hecho de haber terminado el curso. Se pasa cuando las cinco áreas están, y eso lo decide el profesor con el trabajo delante."
+      },
+      {
+        "title": "Profesores que se quedan",
+        "text": "Titulados, con experiencia y aquí año tras año. Tu hijo no tendrá un profesor distinto cada trimestre."
+      }
+    ]
+  },
+  "band": [
+    {
+      "n": "15+",
+      "label": "Años enseñando",
+      "accent": "r"
+    },
+    {
+      "n": "500+",
+      "label": "Alumnos formados",
+      "accent": ""
+    },
+    {
+      "n": "8",
+      "label": "Máximo por grupo",
+      "accent": "r"
+    },
+    {
+      "n": "4,9",
+      "label": "Valoración media",
+      "accent": ""
+    }
+  ],
+  "reviews": {
+    "kicker": "Qué dicen las familias",
+    "h2": "No hace falta que nos creas.",
+    "items": [
+      {
+        "initial": "M",
+        "name": "Marta S.",
+        "role": "Familia · Vilanova del Camí",
+        "quote": "Mi hija va desde hace cuatro años. Ha pasado por el Movers y el Flyers y ha aprobado el B1 Preliminary a la primera. La progresión es clara y se ve trimestre a trimestre."
+      },
+      {
+        "initial": "J",
+        "name": "Jordi R.",
+        "role": "Alumno adulto",
+        "quote": "Lo que me convenció fue la estructura. Hay temario, hay deberes y hay corrección. Al cabo de dos años aprobé el B2 First, y entendía perfectamente por qué lo había aprobado."
+      },
+      {
+        "initial": "A",
+        "name": "Anna P.",
+        "role": "Familia · Òdena",
+        "quote": "Lo que más valoro es que conocen a mi hijo. Vieron que le costaba la lectura antes que nosotros y se adaptaron. Eso en una academia grande no lo tienes."
+      }
+    ]
+  },
+  "insta": {
+    "h2": "El día a día de la academia.",
+    "lede": "Fiestas de Halloween, resultados de los exámenes, casales de verano y todo lo que pasa entremedio.",
+    "note": "Aquí publicamos lo que pasa en la academia: resultados de exámenes, actividades y el día a día de las clases.",
+    "posts": [
+      {
+        "tone": "a",
+        "label": "Publicación 1"
+      },
+      {
+        "tone": "b",
+        "label": "Publicación 2"
+      },
+      {
+        "tone": "c",
+        "label": "Publicación 3"
+      },
+      {
+        "tone": "d",
+        "label": "Publicación 4"
+      },
+      {
+        "tone": "a",
+        "label": "Publicación 5"
+      },
+      {
+        "tone": "b",
+        "label": "Publicación 6"
+      }
+    ],
+    "postAlt": "Publicación de Instagram de English Corner"
+  },
+  "contact": {
+    "h2": "Ven a hacer una clase<br>de prueba gratuita.",
+    "lede": "Trae a tu hijo o ven tú mismo. Una clase, sin compromiso y sin presión, solo para que veas cómo trabajamos antes de decidir nada.",
+    "btnCall": "Llama al 93 807 07 70",
+    "btnEmail": "Escríbenos un correo",
+    "labels": {
+      "address": "Dirección",
+      "phone": "Teléfono",
+      "email": "Correo electrónico",
+      "hours": "Horario"
+    }
+  },
+  "map": {
+    "title": "English Corner, C/ Manresa 23, Vilanova del Camí",
+    "consentTitle": "Dónde estamos",
+    "consentText": "El mapa lo sirve Google Maps. Al cargarlo se conectará con los servidores de Google, que pueden instalar sus cookies en tu navegador.",
+    "consentButton": "Cargar el mapa"
+  },
+  "footer": {
+    "about": "Academia de inglés en Vilanova del Camí desde 2009. Grupos de máximo 8 alumnos, todas las áreas del idioma y preparación para los exámenes oficiales.",
+    "cols": [
+      {
+        "title": "Cursos",
+        "links": [
+          {
+            "href": "#courses",
+            "label": "Infantil y Primaria"
+          },
+          {
+            "href": "#courses",
+            "label": "Adolescentes"
+          },
+          {
+            "href": "#exams",
+            "label": "Exámenes Cambridge"
+          },
+          {
+            "href": "#courses",
+            "label": "Adultos"
+          },
+          {
+            "href": "#courses",
+            "label": "Inglés para empresas"
+          }
+        ]
+      },
+      {
+        "title": "La academia",
+        "links": [
+          {
+            "href": "#method",
+            "label": "Nuestro método"
+          },
+          {
+            "href": "#reviews",
+            "label": "Opiniones"
+          },
+          {
+            "href": "#instagram",
+            "label": "Instagram"
+          },
+          {
+            "href": "#contact",
+            "label": "Contacto"
+          }
+        ]
+      },
+      {
+        "title": "Dónde estamos",
+        "text": "<p>C/ Manresa, 23<br>08788 Vilanova del Camí<br>Barcelona</p>",
+        "links": [
+          {
+            "href": "tel:938070770",
+            "label": "93 807 07 70"
+          }
+        ]
+      }
+    ],
+    "copyright": "© 2026 English Corner. Todos los derechos reservados.",
+    "place": "Vilanova del Camí, Anoia, Barcelona"
+  }
+}

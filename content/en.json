@@ -1,0 +1,342 @@
+{
+  "meta": {
+    "title": "English school in Vilanova del Camí | English Corner",
+    "description": "English school in Vilanova del Camí (Anoia). Groups of no more than 8, every area of the language, and an authorised Cambridge English exam preparation centre.",
+    "ogTitle": "English school in Vilanova del Camí",
+    "ogDescription": "A structured method, every area of the language, and groups of eight. From age four through to adults."
+  },
+  "a11y": {
+    "skip": "Skip to content",
+    "navLabel": "Main navigation",
+    "home": "back to top",
+    "langLabel": "Change language",
+    "menuLabel": "Open menu",
+    "logoAlt": "English Corner logo",
+    "figures": "English Corner in numbers",
+    "credentials": "Accreditation and track record"
+  },
+  "shared": {
+    "addressLine1": "C/ Manresa, 23",
+    "addressLine2": "08788 Vilanova del Camí",
+    "hoursWeek": "Mon-Fri 4pm-9pm",
+    "hoursSat": "Saturday 9am-1pm"
+  },
+  "nav": {
+    "cta": "Book a trial",
+    "items": [
+      {
+        "label": "Courses",
+        "href": "#courses"
+      },
+      {
+        "label": "Exams",
+        "href": "#exams"
+      },
+      {
+        "label": "Method",
+        "href": "#method"
+      },
+      {
+        "label": "Reviews",
+        "href": "#reviews"
+      },
+      {
+        "label": "Instagram",
+        "href": "#instagram"
+      },
+      {
+        "label": "Contact",
+        "href": "#contact"
+      }
+    ]
+  },
+  "hero": {
+    "line1": "Every skill.",
+    "line2": "Every level.",
+    "accentPre": "",
+    "accent": "Nothing half-taught.",
+    "lede": "A structured method, every area of the language, and groups of eight. From age four through to adults.",
+    "ctaPrimary": "Book a level test",
+    "ctaSecondary": "See our courses",
+    "phClassroom": "Classroom photo",
+    "phStudents": "Students",
+    "chipN": "8",
+    "chipLabel": "per class, max"
+  },
+  "creds": {
+    "markAlt": "Cambridge English authorised preparation centre",
+    "cambridgeTitle": "Authorised Cambridge English preparation centre",
+    "cambridgeNote": "We prepare students and enter them for the official exam here.",
+    "localTitle": "In Vilanova del Camí since 2009",
+    "localNote": "More than 500 students prepared, rated 4.9 on average."
+  },
+  "marquee": [
+    "Groups of no more than 8",
+    "Reading, writing, listening, speaking",
+    "From age 4 through to adults",
+    "Levels A1 to C1",
+    "Free level test",
+    "Authorised Cambridge preparation centre",
+    "Over 15 years in Vilanova del Camí",
+    "Qualified teachers who stay"
+  ],
+  "courses": {
+    "kicker": "Our courses",
+    "h2": "A structured path,<br>from A1 to C1.",
+    "lede": "Every group follows a structured syllabus, working all five areas in each unit. Students progress level by level, and sit the official exam when they are genuinely ready.",
+    "items": [
+      {
+        "title": "Kids &amp; Juniors",
+        "tag": "Ages 4-12 · Pre A1-A2",
+        "tagClass": "tag-red",
+        "desc": "Structured from the start, following the Starters, Movers and Flyers progression. Reading, writing, listening and speaking in every unit."
+      },
+      {
+        "title": "Teens",
+        "tag": "Ages 13-17 · A2-B2",
+        "tagClass": "tag-navy",
+        "desc": "Grammar, vocabulary and use of English worked systematically, alongside the four skills. School results improve as a consequence, not as the goal."
+      },
+      {
+        "title": "Cambridge Exams",
+        "tag": "A2 Key → C1 Advanced",
+        "tagClass": "tag-sun",
+        "desc": "A2 Key, B1 Preliminary, B2 First and C1 Advanced. Full paper-by-paper preparation with mock exams under real conditions, in our own authorised centre."
+      },
+      {
+        "title": "Adults",
+        "tag": "A1-C1",
+        "tagClass": "tag-mint",
+        "desc": "The same structured method, adapted to adult pace. Solid grammar foundations, systematic vocabulary and the confidence that comes from actually knowing the language."
+      },
+      {
+        "title": "Business English",
+        "tag": "B1+",
+        "tagClass": "tag-navy",
+        "desc": "Professional writing, meetings, calls and presentations, built on the same grammatical rigour. In-company sessions available across the Anoia area."
+      }
+    ]
+  },
+  "exams": {
+    "kicker": "Official examinations",
+    "h2": "The official certificates.",
+    "lede": "Our students don't just study English, they certify it. We prepare each level in full and enter candidates for the official examination as an authorised Cambridge English centre.",
+    "rungs": [
+      {
+        "lvl": "A2",
+        "name": "Key (KET)",
+        "desc": "The first official certificate. Proves a solid grasp of everyday written and spoken English.",
+        "age": "Typically ages 11-14"
+      },
+      {
+        "lvl": "B1",
+        "name": "Preliminary (PET)",
+        "desc": "Independent user level. Required by many secondary schools and increasingly by universities.",
+        "age": "Typically ages 13-16"
+      },
+      {
+        "lvl": "B2",
+        "name": "First (FCE)",
+        "desc": "The most requested certificate in Spain. Standard requirement for degree programmes and most job applications.",
+        "age": "Typically ages 15+"
+      },
+      {
+        "lvl": "C1",
+        "name": "Advanced (CAE)",
+        "desc": "Proficient user. Opens doors to postgraduate study, international universities and professional roles abroad.",
+        "age": "Adults &amp; advanced teens"
+      }
+    ],
+    "yleStrong": "Younger learners start here:",
+    "yleTags": [
+      "Pre A1 Starters",
+      "A1 Movers",
+      "A2 Flyers"
+    ],
+    "yleNote": "The Young Learners series, designed so children build the same foundations from age 7, without pressure."
+  },
+  "method": {
+    "phTeacher": "Teacher &amp; class",
+    "phAcademy": "Our academy",
+    "kicker": "Our method",
+    "h2": "A method that has<br>been proven for<br>fifteen years.",
+    "lede": "We follow a structured progression, the same one the Cambridge teaching blocks use. Nothing is skipped, nothing is improvised.",
+    "pillars": [
+      {
+        "title": "All five areas, every unit",
+        "text": "Reading, writing, listening, speaking and use of English. Grammar and vocabulary worked properly, not left to chance."
+      },
+      {
+        "title": "Never more than 8 in a room",
+        "text": "Small enough for the teacher to correct every piece of written work and hear every student in every class."
+      },
+      {
+        "title": "You move up when you're ready",
+        "text": "Nobody advances just because the course ended. You move up when all five areas are there, and the teacher decides that with the work in front of them."
+      },
+      {
+        "title": "Teachers who stay",
+        "text": "Qualified, experienced and here year after year. Your child will not get a different teacher every term."
+      }
+    ]
+  },
+  "band": [
+    {
+      "n": "15+",
+      "label": "Years teaching",
+      "accent": "r"
+    },
+    {
+      "n": "500+",
+      "label": "Students taught",
+      "accent": ""
+    },
+    {
+      "n": "8",
+      "label": "Max per class",
+      "accent": "r"
+    },
+    {
+      "n": "4.9",
+      "label": "Average rating",
+      "accent": ""
+    }
+  ],
+  "reviews": {
+    "kicker": "What families say",
+    "h2": "Don't take our word for it.",
+    "items": [
+      {
+        "initial": "M",
+        "name": "Marta S.",
+        "role": "Parent · Vilanova del Camí",
+        "quote": "My daughter has been going for four years. She went through Movers and Flyers and passed B1 Preliminary first time. The progression is clear and you can see it term by term."
+      },
+      {
+        "initial": "J",
+        "name": "Jordi R.",
+        "role": "Adult student",
+        "quote": "What convinced me was the structure. There's a syllabus, there's homework, there's correction. After two years I passed B2 First, and I actually understood why I passed."
+      },
+      {
+        "initial": "A",
+        "name": "Anna P.",
+        "role": "Parent · Òdena",
+        "quote": "What I value most is that they know my son. They noticed he was struggling with reading before we did, and they adapted. You don't get that in a big academy."
+      }
+    ]
+  },
+  "insta": {
+    "h2": "Life at the academy.",
+    "lede": "Halloween parties, exam results, summer camps and everything in between.",
+    "note": "We post what happens at the academy here: exam results, activities and day-to-day school life.",
+    "posts": [
+      {
+        "tone": "a",
+        "label": "Post 1"
+      },
+      {
+        "tone": "b",
+        "label": "Post 2"
+      },
+      {
+        "tone": "c",
+        "label": "Post 3"
+      },
+      {
+        "tone": "d",
+        "label": "Post 4"
+      },
+      {
+        "tone": "a",
+        "label": "Post 5"
+      },
+      {
+        "tone": "b",
+        "label": "Post 6"
+      }
+    ],
+    "postAlt": "English Corner Instagram post"
+  },
+  "contact": {
+    "h2": "Come in for a free<br>trial class.",
+    "lede": "Bring your child, or come yourself. One class, no commitment, no pressure, just so you can see how we work before deciding anything.",
+    "btnCall": "Call 93 807 07 70",
+    "btnEmail": "Send an email",
+    "labels": {
+      "address": "Address",
+      "phone": "Phone",
+      "email": "Email",
+      "hours": "Opening hours"
+    }
+  },
+  "map": {
+    "title": "English Corner, C/ Manresa 23, Vilanova del Camí",
+    "consentTitle": "See us on the map",
+    "consentText": "The map is served by Google Maps. Loading it will connect you to Google's servers and may set their cookies.",
+    "consentButton": "Load the map"
+  },
+  "footer": {
+    "about": "An English school in Vilanova del Camí since 2009. Groups of no more than 8, every area of the language, and preparation for the official exams.",
+    "cols": [
+      {
+        "title": "Courses",
+        "links": [
+          {
+            "href": "#courses",
+            "label": "Kids &amp; Juniors"
+          },
+          {
+            "href": "#courses",
+            "label": "Teens"
+          },
+          {
+            "href": "#exams",
+            "label": "Cambridge Exams"
+          },
+          {
+            "href": "#courses",
+            "label": "Adults"
+          },
+          {
+            "href": "#courses",
+            "label": "Business English"
+          }
+        ]
+      },
+      {
+        "title": "School",
+        "links": [
+          {
+            "href": "#method",
+            "label": "Our method"
+          },
+          {
+            "href": "#reviews",
+            "label": "Reviews"
+          },
+          {
+            "href": "#instagram",
+            "label": "Instagram"
+          },
+          {
+            "href": "#contact",
+            "label": "Contact"
+          }
+        ]
+      },
+      {
+        "title": "Visit us",
+        "text": "<p>C/ Manresa, 23<br>08788 Vilanova del Camí<br>Barcelona</p>",
+        "links": [
+          {
+            "href": "tel:938070770",
+            "label": "93 807 07 70"
+          }
+        ]
+      }
+    ],
+    "copyright": "© 2026 English Corner. All rights reserved.",
+    "place": "Vilanova del Camí, Anoia, Barcelona"
+  }
+}

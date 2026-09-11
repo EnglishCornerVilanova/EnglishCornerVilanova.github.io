@@ -1,0 +1,24 @@
+# Build output — regenerate with `python3 build.py`
+/dist/
+
+# macOS
+.DS_Store
+._*
+
+# Editors
+.vscode/
+.idea/
+*.swp
+
+# Python
+__pycache__/
+*.pyc
+
+# Caché del feed de Instagram (se regenera en el build)
+/.cache/
+
+# Secretos locales (dirección del feed de Instagram)
+.env
+
+# Notas privadas del proyecto: solo en local, nunca en el repositorio público
+/docs/

@@ -1,0 +1,70 @@
+{
+  "name": "English Corner",
+  "origin": "https://www.englishcorner.cat",
+  "langs": [
+    "ca",
+    "es",
+    "en"
+  ],
+  "defaultLang": "ca",
+  "langNames": {
+    "ca": "Català",
+    "es": "Castellano",
+    "en": "English"
+  },
+  "ogLocales": {
+    "ca": "ca_ES",
+    "es": "es_ES",
+    "en": "en_GB"
+  },
+  "year": 2026,
+  "foundedYear": 2009,
+  "phoneDisplay": "93 807 07 70",
+  "phoneHref": "938070770",
+  "phoneE164": "+34938070770",
+  "email": "englishcorner@telefonica.net",
+  "address": {
+    "street": "Carrer de Manresa, 23",
+    "postalCode": "08788",
+    "locality": "Vilanova del Camí",
+    "region": "Barcelona"
+  },
+  "geo": {
+    "lat": 41.5744,
+    "lng": 1.6367,
+    "_todo": "verificar coordenadas exactas del portal"
+  },
+  "areaServed": [
+    "Vilanova del Camí",
+    "Igualada",
+    "Òdena",
+    "Santa Margarida de Montbui",
+    "Anoia"
+  ],
+  "openingHours": [
+    {
+      "days": [
+        "Monday",
+        "Tuesday",
+        "Wednesday",
+        "Thursday",
+        "Friday"
+      ],
+      "opens": "16:00",
+      "closes": "21:00"
+    },
+    {
+      "days": [
+        "Saturday"
+      ],
+      "opens": "09:00",
+      "closes": "13:00"
+    }
+  ],
+  "social": {
+    "instagramHandle": "@englishcornervilanova",
+    "instagram": "https://www.instagram.com/englishcornervilanova/",
+    "facebook": "https://www.facebook.com/TODO_USUARIO/"
+  },
+  "instagramFeed": ""
+}
