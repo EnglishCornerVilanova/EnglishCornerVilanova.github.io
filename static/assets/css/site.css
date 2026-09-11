@@ -1120,3 +1120,8 @@ a.ig-cell{display:block;text-decoration:none}
    de la crema (se veían como halo abajo a la izquierda y como anillos arriba a
    la derecha por el escalonado del degradado). */
 .hero::before,.hero::after{display:none}
+
+/* Banda de cifras: tres (se quitó el máximo de 8 alumnos). */
+.band-grid{grid-template-columns:repeat(3,1fr)}
+@media (max-width:940px){ .band-grid{grid-template-columns:repeat(3,1fr)} }
+@media (max-width:600px){ .band-grid{grid-template-columns:1fr} }

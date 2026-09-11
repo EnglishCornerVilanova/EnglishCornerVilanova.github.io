@@ -1,7 +1,7 @@
 {
   "meta": {
     "title": "English Corner | English school in Vilanova del Camí",
-    "description": "English school in Vilanova del Camí (Anoia). Groups of no more than 8, every area of the language, and an authorised Cambridge English exam preparation centre.",
+    "description": "English school in Vilanova del Camí (Anoia). Every area of the language, from age 6 through to adults, and an authorised Cambridge English exam preparation centre.",
     "ogTitle": "English school in Vilanova del Camí",
     "ogDescription": "A structured method covering every area of English. From age 6 through to adult groups. Authorised Cambridge exam preparation centre."
   },
@@ -179,10 +179,6 @@
         "text": "Reading, writing, listening, speaking and use of English. Grammar and vocabulary worked properly, not left to chance."
       },
       {
-        "title": "Never more than 8 in a room",
-        "text": "Small enough for the teacher to correct every piece of written work and hear every student in every class."
-      },
-      {
         "title": "You move up when you're ready",
         "text": "Nobody advances just because the course ended. You move up when all five areas are there, and the teacher decides that with the work in front of them."
       },
@@ -204,14 +200,9 @@
       "accent": ""
     },
     {
-      "n": "8",
-      "label": "Max per class",
-      "accent": "r"
-    },
-    {
       "n": "4.9",
       "label": "Average rating",
-      "accent": ""
+      "accent": "r"
     }
   ],
   "reviews": {
@@ -289,7 +280,7 @@
     "consentButton": "Load the map"
   },
   "footer": {
-    "about": "An English school in Vilanova del Camí since 2005. Groups of no more than 8, every area of the language, and preparation for the official exams.",
+    "about": "An English school in Vilanova del Camí since 2005. Every area of the language, from age 6 through to adults, and preparation for the official exams.",
     "cols": [
       {
         "title": "What we offer",

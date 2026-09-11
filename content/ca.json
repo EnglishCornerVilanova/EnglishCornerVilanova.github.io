@@ -1,7 +1,7 @@
 {
   "meta": {
     "title": "English Corner | Acadèmia d'anglès a Vilanova del Camí",
-    "description": "Acadèmia d'anglès a Vilanova del Camí (Anoia). Grups de màxim 8 alumnes, totes les àrees de l'idioma i centre preparador oficial dels exàmens de Cambridge English.",
+    "description": "Acadèmia d'anglès a Vilanova del Camí (Anoia). Totes les àrees de l'idioma, des dels 6 anys fins als adults, i centre preparador oficial dels exàmens de Cambridge English.",
     "ogTitle": "Acadèmia d'anglès a Vilanova del Camí",
     "ogDescription": "Un mètode estructurat treballant totes les àrees de l'anglès. Des dels 6 anys fins a grups d'adults. Centre preparador oficial d'exàmens Cambridge."
   },
@@ -179,10 +179,6 @@
         "text": "Reading, writing, listening, speaking i use of English. La gramàtica i el vocabulari es treballen com toca, no es deixen a l'atzar."
       },
       {
-        "title": "Mai més de 8 en una aula",
-        "text": "Prou petit perquè el professor corregeixi tots els escrits i escolti tots els alumnes a cada classe."
-      },
-      {
         "title": "Es passa de nivell quan toca",
         "text": "Ningú avança pel simple fet d'haver acabat el curs. Es passa quan les cinc àrees hi són, i això ho decideix el professor amb la feina a la mà."
       },
@@ -204,14 +200,9 @@
       "accent": ""
     },
     {
-      "n": "8",
-      "label": "Màxim per grup",
-      "accent": "r"
-    },
-    {
       "n": "4,9",
       "label": "Valoració mitjana",
-      "accent": ""
+      "accent": "r"
     }
   ],
   "reviews": {
@@ -289,7 +280,7 @@
     "consentButton": "Carregar el mapa"
   },
   "footer": {
-    "about": "Acadèmia d'anglès a Vilanova del Camí des del 2005. Grups de màxim 8 alumnes, totes les àrees de l'idioma i preparació per als exàmens oficials.",
+    "about": "Acadèmia d'anglès a Vilanova del Camí des del 2005. Totes les àrees de l'idioma, des dels 6 anys fins als adults, i preparació per als exàmens oficials.",
     "cols": [
       {
         "title": "Què oferim",

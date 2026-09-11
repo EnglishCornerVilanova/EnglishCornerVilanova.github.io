@@ -1,7 +1,7 @@
 {
   "meta": {
     "title": "English Corner | Academia de inglés en Vilanova del Camí",
-    "description": "Academia de inglés en Vilanova del Camí (Anoia). Grupos de máximo 8 alumnos, todas las áreas del idioma y centro preparador oficial de los exámenes de Cambridge English.",
+    "description": "Academia de inglés en Vilanova del Camí (Anoia). Todas las áreas del idioma, desde los 6 años hasta adultos, y centro preparador oficial de los exámenes de Cambridge English.",
     "ogTitle": "Academia de inglés en Vilanova del Camí",
     "ogDescription": "Un método estructurado trabajando todas las áreas del inglés. Desde los 6 años hasta grupos de adultos. Centro preparador oficial de exámenes Cambridge."
   },
@@ -179,10 +179,6 @@
         "text": "Reading, writing, listening, speaking y use of English. La gramática y el vocabulario se trabajan como toca, no se dejan al azar."
       },
       {
-        "title": "Nunca más de 8 en un aula",
-        "text": "Lo bastante pequeño para que el profesor corrija todos los escritos y escuche a todos los alumnos en cada clase."
-      },
-      {
         "title": "Se pasa de nivel cuando toca",
         "text": "Nadie avanza por el simple hecho de haber terminado el curso. Se pasa cuando las cinco áreas están, y eso lo decide el profesor con el trabajo delante."
       },
@@ -204,14 +200,9 @@
       "accent": ""
     },
     {
-      "n": "8",
-      "label": "Máximo por grupo",
-      "accent": "r"
-    },
-    {
       "n": "4,9",
       "label": "Valoración media",
-      "accent": ""
+      "accent": "r"
     }
   ],
   "reviews": {
@@ -289,7 +280,7 @@
     "consentButton": "Cargar el mapa"
   },
   "footer": {
-    "about": "Academia de inglés en Vilanova del Camí desde 2005. Grupos de máximo 8 alumnos, todas las áreas del idioma y preparación para los exámenes oficiales.",
+    "about": "Academia de inglés en Vilanova del Camí desde 2005. Todas las áreas del idioma, desde los 6 años hasta adultos, y preparación para los exámenes oficiales.",
     "cols": [
       {
         "title": "Qué ofrecemos",
