@@ -1053,17 +1053,19 @@ a.ig-cell{display:block;text-decoration:none}
    CAMBIOS DEL CLIENTE — 11/09/2026
    ═══════════════════════════════════════════════════════════ */
 
-/* Hero: logo mayor y tres recortes del banner montados como fotos */
+/* Hero: logo mayor y el banner cortado en tres, en fila. Las piezas se tocan
+   apenas y se inclinan un poco: se leen como el mismo banner horizontal. */
 .hero-brand{width:clamp(140px,15vw,210px)}
-.hero-visual{aspect-ratio:1/.9}
-.hero-visual .frame{inset:auto;width:44%;padding:9px 9px 26px}
+.hero-visual{aspect-ratio:auto;display:flex;align-items:center}
+.hero-visual .frame{position:relative;inset:auto;flex:1 1 0;min-width:0;width:auto;
+  margin:0 -1.1%;padding:7px 7px 22px}
 .hero-visual .frame picture{display:block}
 .hero-visual .frame img{display:block;width:100%;height:auto;border-radius:2px}
-/* Misma especificidad que la regla de arriba: si no, su inset:auto anula
-   la posición de cada foto y las tres quedan apiladas. */
-.hero-visual .frame-1{left:0;top:9%;transform:rotate(-4deg);z-index:1}
-.hero-visual .frame-2{left:28%;top:0;transform:rotate(1.5deg);z-index:2}
-.hero-visual .frame-3{right:0;top:12%;transform:rotate(3.5deg);z-index:3}
+.hero-visual .frame-1{transform:rotate(-2deg) translateY(6px);z-index:1}
+.hero-visual .frame-2{transform:rotate(1.2deg) translateY(-8px);z-index:2}
+.hero-visual .frame-3{transform:rotate(-1.4deg) translateY(10px);z-index:3}
+/* Más ancho para la imagen en escritorio; en móvil la cuadrícula ya es de una columna. */
+@media (min-width:941px){ .hero-grid{grid-template-columns:minmax(0,1fr) minmax(0,1.2fr)} }
 @media (max-width:600px){ .hero-brand{width:150px} }
 
 /* Què oferim: icono en vez de número, sin flechas ni efecto de enlace */
