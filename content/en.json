@@ -62,7 +62,7 @@
     "markAlt": "Cambridge English authorised preparation centre",
     "cambridgeTitle": "Authorised Cambridge English preparation centre",
     "cambridgeNote": "We prepare students and enter them for the official exam here.",
-    "localTitle": "In Vilanova del Camí since 2009",
+    "localTitle": "In Vilanova del Camí since 2005",
     "localNote": "More than 500 students prepared, rated 4.9 on average."
   },
   "marquee": [
@@ -72,7 +72,7 @@
     "Levels A1 to C1",
     "Free level test",
     "Authorised Cambridge preparation centre",
-    "Over 15 years in Vilanova del Camí",
+    "Over 20 years in Vilanova del Camí",
     "Qualified teachers who stay"
   ],
   "courses": {
@@ -172,7 +172,7 @@
     "phTeacher": "Teacher &amp; class",
     "phAcademy": "Our academy",
     "kicker": "Our method",
-    "h2": "A method that has<br>been proven for<br>fifteen years.",
+    "h2": "A method that has<br>been proven for<br>over twenty years.",
     "lede": "We follow a structured progression, the same one the Cambridge teaching blocks use. Nothing is skipped, nothing is improvised.",
     "pillars": [
       {
@@ -195,7 +195,7 @@
   },
   "band": [
     {
-      "n": "15+",
+      "n": "20+",
       "label": "Years teaching",
       "accent": "r"
     },
@@ -290,7 +290,7 @@
     "consentButton": "Load the map"
   },
   "footer": {
-    "about": "An English school in Vilanova del Camí since 2009. Groups of no more than 8, every area of the language, and preparation for the official exams.",
+    "about": "An English school in Vilanova del Camí since 2005. Groups of no more than 8, every area of the language, and preparation for the official exams.",
     "cols": [
       {
         "title": "What we offer",
