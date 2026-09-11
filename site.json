@@ -19,9 +19,12 @@
   },
   "year": 2026,
   "foundedYear": 2005,
-  "phoneDisplay": "93 807 07 70",
-  "phoneHref": "938070770",
-  "phoneE164": "+34938070770",
+  "phoneDisplay": "606 916 483",
+  "phoneHref": "606916483",
+  "phoneE164": "+34606916483",
+  "landlineDisplay": "93 807 07 70",
+  "landlineHref": "938070770",
+  "whatsapp": "https://wa.me/34606916483",
   "email": "englishcorner@telefonica.net",
   "address": {
     "street": "Carrer de Manresa, 23",
@@ -30,10 +33,11 @@
     "region": "Barcelona"
   },
   "geo": {
-    "lat": 41.5744,
-    "lng": 1.6367,
-    "_todo": "verificar coordenadas exactas del portal"
+    "lat": 41.5690764,
+    "lng": 1.6428262
   },
+  "googleMaps": "https://maps.app.goo.gl/LBP8b4NvWd9jJ4hg7",
+  "googlePlaceQuery": "English Corner, Carrer de Manresa 23, 08788 Vilanova del Camí",
   "areaServed": [
     "Vilanova del Camí",
     "Igualada",
@@ -41,24 +45,32 @@
     "Santa Margarida de Montbui",
     "Anoia"
   ],
+  "_openingHoursNota": "Solo se usa si falta la clave GOOGLE_PLACES_KEY o Google no responde; con la clave, el horario sale de la ficha de Google. Viernes por confirmar.",
   "openingHours": [
     {
       "days": [
         "Monday",
-        "Tuesday",
         "Wednesday",
-        "Thursday",
         "Friday"
       ],
-      "opens": "16:00",
-      "closes": "21:00"
+      "opens": "15:00",
+      "closes": "21:15"
     },
     {
       "days": [
-        "Saturday"
+        "Tuesday",
+        "Thursday"
       ],
-      "opens": "09:00",
-      "closes": "13:00"
+      "opens": "10:00",
+      "closes": "12:00"
+    },
+    {
+      "days": [
+        "Tuesday",
+        "Thursday"
+      ],
+      "opens": "15:00",
+      "closes": "21:15"
     }
   ],
   "social": {
@@ -66,5 +78,9 @@
     "instagram": "https://www.instagram.com/englishcornervilanova/",
     "facebook": "https://www.facebook.com/english.corner.10"
   },
-  "instagramFeed": ""
+  "instagramFeed": "",
+  "legal": {
+    "owner": "TODO nom del titular",
+    "nif": "TODO NIF"
+  }
 }

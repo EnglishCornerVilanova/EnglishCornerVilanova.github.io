@@ -17,9 +17,7 @@
   },
   "shared": {
     "addressLine1": "C/ Manresa, 23",
-    "addressLine2": "08788 Vilanova del Camí",
-    "hoursWeek": "Mon-Fri 4pm-9pm",
-    "hoursSat": "Saturday 9am-1pm"
+    "addressLine2": "08788 Vilanova del Camí"
   },
   "nav": {
     "items": [
@@ -264,14 +262,16 @@
   "contact": {
     "h2": "Come in for a free<br>trial class.",
     "lede": "Bring your child, or come yourself. One class, no commitment, no pressure, just so you can see how we work before deciding anything.",
-    "btnCall": "Call 93 807 07 70",
+    "btnCall": "Call 606 916 483",
     "btnEmail": "Send an email",
     "labels": {
       "address": "Address",
       "phone": "Phone",
       "email": "Email",
       "hours": "Opening hours"
-    }
+    },
+    "btnWhatsapp": "WhatsApp",
+    "mapsLink": "See us on Google Maps"
   },
   "map": {
     "title": "English Corner, C/ Manresa 23, Vilanova del Camí",
@@ -337,8 +337,12 @@
         "text": "<p>C/ Manresa, 23<br>08788 Vilanova del Camí<br>Barcelona</p>",
         "links": [
           {
-            "href": "tel:938070770",
-            "label": "93 807 07 70"
+            "href": "tel:606916483",
+            "label": "606 916 483"
+          },
+          {
+            "href": "https://wa.me/34606916483",
+            "label": "WhatsApp"
           }
         ]
       }

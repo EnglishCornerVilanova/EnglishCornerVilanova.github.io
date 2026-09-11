@@ -1,0 +1,117 @@
+{
+  "navLabel": "Informació legal",
+  "updated": "Última actualització: 11 de setembre de 2026",
+  "pages": [
+    {
+      "key": "avis",
+      "slug": "avis-legal",
+      "short": "Avís legal",
+      "title": "Avís legal",
+      "description": "Dades del titular i condicions d'ús del web d'English Corner, acadèmia d'anglès a Vilanova del Camí.",
+      "sections": [
+        {
+          "h": "Dades identificatives",
+          "html": "<p>En compliment de l'article 10 de la Llei 34/2002, d'11 de juliol, de serveis de la societat de la informació i de comerç electrònic (LSSI-CE), aquestes són les dades del titular d'aquest lloc web:</p><dl><dt>Titular</dt><dd>[[owner]]</dd><dt>NIF</dt><dd>[[nif]]</dd><dt>Nom comercial</dt><dd>English Corner</dd><dt>Adreça</dt><dd>[[address]]</dd><dt>Correu electrònic</dt><dd><a href='mailto:[[email]]'>[[email]]</a></dd><dt>Telèfon</dt><dd>[[phone]]</dd><dt>Lloc web</dt><dd>[[site]]</dd></dl>"
+        },
+        {
+          "h": "Objecte",
+          "html": "<p>Aquest lloc web informa sobre l'activitat d'English Corner, acadèmia d'anglès de Vilanova del Camí: cursos, nivells, preparació d'exàmens i dades de contacte. L'accés és gratuït i no requereix cap registre.</p>"
+        },
+        {
+          "h": "Condicions d'ús",
+          "html": "<p>Accedir al web implica acceptar aquest avís legal. Et comprometes a fer-ne un ús correcte, d'acord amb la llei, la bona fe i l'ordre públic, i a no fer cap acció que el pugui danyar, inutilitzar o sobrecarregar.</p>"
+        },
+        {
+          "h": "Propietat intel·lectual i industrial",
+          "html": "<p>Els textos, fotografies, dissenys, logotips i la resta de continguts del web són d'English Corner o se'n té autorització d'ús. No es poden reproduir, distribuir ni transformar sense permís exprés del titular.</p><p>Les marques i els logotips de Cambridge English són propietat de Cambridge University Press &amp; Assessment i s'hi mostren en qualitat de centre preparador dels seus exàmens. Instagram, Facebook i WhatsApp són marques de Meta Platforms, Inc.</p>"
+        },
+        {
+          "h": "Responsabilitat",
+          "html": "<p>English Corner procura que la informació del web sigui correcta i estigui actualitzada, però no pot garantir que no hi hagi errors puntuals. Els horaris, preus i condicions definitius són els que es confirmen directament a l'acadèmia. No ens fem responsables dels danys derivats d'un ús indegut del web ni de les interrupcions tècniques alienes al nostre control.</p>"
+        },
+        {
+          "h": "Enllaços a altres webs",
+          "html": "<p>El web inclou enllaços a Instagram, Facebook, WhatsApp i Google Maps. Aquests serveis tenen les seves pròpies condicions i polítiques de privacitat, i English Corner no en controla el contingut.</p>"
+        },
+        {
+          "h": "Protecció de dades i galetes",
+          "html": "<p>El tractament de les dades personals es regeix per la <a href='[[href:privacitat]]'>política de privacitat</a>, i l'ús de galetes, per la <a href='[[href:galetes]]'>política de galetes</a>.</p>"
+        },
+        {
+          "h": "Legislació aplicable",
+          "html": "<p>Aquest avís legal es regeix per la legislació espanyola. Per a qualsevol controvèrsia, les parts se sotmeten als jutjats i tribunals que corresponguin segons la llei; si l'usuari és consumidor, als del seu domicili.</p>"
+        }
+      ]
+    },
+    {
+      "key": "privacitat",
+      "slug": "privacitat",
+      "short": "Privacitat",
+      "title": "Política de privacitat",
+      "description": "Com tracta English Corner les dades personals de qui ens contacta o visita el web.",
+      "sections": [
+        {
+          "h": "Responsable del tractament",
+          "html": "<dl><dt>Responsable</dt><dd>[[owner]]</dd><dt>NIF</dt><dd>[[nif]]</dd><dt>Adreça</dt><dd>[[address]]</dd><dt>Correu electrònic</dt><dd><a href='mailto:[[email]]'>[[email]]</a></dd><dt>Telèfon</dt><dd>[[phone]]</dd></dl>"
+        },
+        {
+          "h": "Quines dades tractem",
+          "html": "<p>Aquest web no té formularis, no demana cap registre i no fa servir eines d'analítica ni de publicitat. Només tractem dades personals en aquests casos:</p><ul><li><b>Quan ens contactes</b> per correu electrònic, telèfon o WhatsApp: el teu nom, les teves dades de contacte i la informació que ens facis arribar (per exemple, l'edat o el nivell de l'alumne).</li><li><b>Quan visites el web</b>: el servidor que l'allotja registra automàticament dades tècniques de la connexió, com l'adreça IP, per garantir-ne la seguretat i el funcionament.</li></ul>"
+        },
+        {
+          "h": "Per a què les fem servir i amb quina base legal",
+          "html": "<ul><li>Respondre les teves consultes i informar-te sobre cursos, horaris, preus i classes de prova. Base legal: la teva sol·licitud i l'aplicació de mesures precontractuals (art. 6.1.b del RGPD).</li><li>Mantenir la seguretat i el funcionament del web. Base legal: l'interès legítim (art. 6.1.f del RGPD).</li></ul><p>No prenem decisions automatitzades ni elaborem perfils.</p>"
+        },
+        {
+          "h": "Menors d'edat",
+          "html": "<p>Molts dels nostres alumnes són infants i adolescents. Si tens menys de 14 anys, demana al teu pare, mare o tutor legal que es posi en contacte amb nosaltres: sense el seu consentiment no podem tractar les teves dades (art. 7 de la LOPDGDD).</p>"
+        },
+        {
+          "h": "Quant de temps les conservem",
+          "html": "<p>Les dades de les consultes es conserven el temps necessari per atendre-les i, com a màxim, un any després de l'últim contacte, llevat que et matriculis; en aquest cas es conserven mentre duri la relació i durant els terminis que exigeix la llei. Els registres tècnics del servidor els gestiona el proveïdor d'allotjament, que els elimina periòdicament.</p>"
+        },
+        {
+          "h": "A qui es comuniquen",
+          "html": "<p>No cedim dades a tercers, llevat que ho exigeixi la llei. Perquè funcionin el web i els canals de contacte ens servim d'aquests proveïdors:</p><ul><li><b>GitHub, Inc.</b>: allotjament del web.</li><li><b>Telefónica</b>: servei de correu electrònic.</li><li><b>WhatsApp</b> (Meta), si tries aquest canal per escriure'ns.</li><li><b>Google</b>: les tipografies del web i, només si el carregues, el mapa de Google Maps.</li></ul><p>Alguns d'aquests proveïdors poden tractar dades fora de l'Espai Econòmic Europeu, especialment als Estats Units. En aquests casos, la transferència s'empara en el Marc de privacitat de dades UE-EUA o en les clàusules contractuals tipus aprovades per la Comissió Europea.</p>"
+        },
+        {
+          "h": "Els teus drets",
+          "html": "<p>Pots exercir en qualsevol moment els drets d'accés, rectificació, supressió, oposició, limitació del tractament i portabilitat, i retirar el consentiment que hagis donat. Escriu a <a href='mailto:[[email]]'>[[email]]</a> o adreça't a [[address]], indicant quin dret vols exercir i acreditant la teva identitat.</p><p>Si consideres que no hem atès correctament la teva sol·licitud, pots presentar una reclamació davant l'Agència Espanyola de Protecció de Dades (<a href='https://www.aepd.es' target='_blank' rel='noopener'>www.aepd.es</a>).</p>"
+        },
+        {
+          "h": "Xarxes socials",
+          "html": "<p>English Corner té perfil a Instagram i a Facebook. Si interactues amb nosaltres en aquestes xarxes, també s'hi apliquen les condicions i la política de privacitat de Meta. Les publicacions d'Instagram que veus en aquest web s'hi mostren com a imatges pròpies: veure-les no connecta el teu navegador amb Instagram.</p>"
+        }
+      ]
+    },
+    {
+      "key": "galetes",
+      "slug": "galetes",
+      "short": "Galetes",
+      "title": "Política de galetes",
+      "description": "Quines galetes i dades desa al navegador el web d'English Corner.",
+      "sections": [
+        {
+          "h": "Què són les galetes",
+          "html": "<p>Les galetes (cookies) són petits fitxers que un web desa al navegador. Altres tecnologies semblants, com l'emmagatzematge local (localStorage), serveixen per recordar informació entre visites.</p>"
+        },
+        {
+          "h": "Galetes que utilitza aquest web",
+          "html": "<p>English Corner no utilitza galetes d'analítica, de publicitat ni de seguiment. Per això no et mostrem cap avís de galetes. L'única informació que el web desa al teu navegador és aquesta:</p><div class='table-wrap'><table><thead><tr><th>Nom</th><th>Tipus</th><th>Finalitat</th><th>Durada</th></tr></thead><tbody><tr><td><code>ec-lang</code></td><td>Emmagatzematge local, propi</td><td>Recordar l'idioma que has triat al selector</td><td>Fins que l'esborris</td></tr></tbody></table></div><p>És una preferència que demanes tu mateix en triar l'idioma i, per tant, està exempta de consentiment (article 22.2 de la LSSI-CE).</p>"
+        },
+        {
+          "h": "Continguts de tercers",
+          "html": "<p><b>Google Maps.</b> El mapa de la secció de contacte no es carrega fins que prems «[[mapButton]]». A partir d'aquell moment, Google pot instal·lar les seves galetes al teu navegador, d'acord amb la seva <a href='https://policies.google.com/technologies/cookies' target='_blank' rel='noopener'>política de galetes</a>. Si no el carregues, no s'estableix cap connexió amb Google Maps.</p><p><b>Tipografies.</b> Les lletres del web es descarreguen de Google Fonts. Aquest servei no instal·la galetes, però Google rep l'adreça IP del teu navegador per poder-les servir.</p><p><b>Enllaços externs.</b> Els enllaços a Instagram, Facebook i WhatsApp només et porten a aquests serveis; no s'hi connecta res fins que hi fas clic.</p>"
+        },
+        {
+          "h": "Com gestionar-les o eliminar-les",
+          "html": "<p>Pots esborrar la informació desada i bloquejar les galetes des de la configuració del navegador. Consulta l'ajuda de <a href='https://support.google.com/chrome/answer/95647' target='_blank' rel='noopener'>Chrome</a>, <a href='https://support.mozilla.org/kb/clear-cookies-and-site-data-firefox' target='_blank' rel='noopener'>Firefox</a>, <a href='https://support.apple.com/guide/safari/sfri11471/mac' target='_blank' rel='noopener'>Safari</a> o <a href='https://support.microsoft.com/microsoft-edge/delete-cookies-in-microsoft-edge-63947406-40ac-c3b8-57b9-2a946a29ae09' target='_blank' rel='noopener'>Edge</a>.</p>"
+        },
+        {
+          "h": "Canvis en aquesta política",
+          "html": "<p>Si el web incorpora noves galetes o serveis, actualitzarem aquesta pàgina i, quan calgui, et demanarem el consentiment abans d'utilitzar-los.</p>"
+        }
+      ]
+    }
+  ]
+}

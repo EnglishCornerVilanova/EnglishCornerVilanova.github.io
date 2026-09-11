@@ -1,0 +1,117 @@
+{
+  "navLabel": "Legal information",
+  "updated": "Last updated: 11 September 2026",
+  "pages": [
+    {
+      "key": "avis",
+      "slug": "legal-notice",
+      "short": "Legal notice",
+      "title": "Legal notice",
+      "description": "Owner details and terms of use of the English Corner website, an English academy in Vilanova del Camí.",
+      "sections": [
+        {
+          "h": "Identification details",
+          "html": "<p>In accordance with article 10 of Spanish Law 34/2002 of 11 July on information society services and electronic commerce (LSSI-CE), these are the details of the owner of this website:</p><dl><dt>Owner</dt><dd>[[owner]]</dd><dt>Tax ID (NIF)</dt><dd>[[nif]]</dd><dt>Trade name</dt><dd>English Corner</dd><dt>Address</dt><dd>[[address]]</dd><dt>Email</dt><dd><a href='mailto:[[email]]'>[[email]]</a></dd><dt>Phone</dt><dd>[[phone]]</dd><dt>Website</dt><dd>[[site]]</dd></dl>"
+        },
+        {
+          "h": "Purpose",
+          "html": "<p>This website provides information about English Corner, an English academy in Vilanova del Camí: courses, levels, exam preparation and contact details. Access is free and requires no registration.</p>"
+        },
+        {
+          "h": "Terms of use",
+          "html": "<p>By using this website you accept this legal notice. You agree to use it lawfully and in good faith, and not to do anything that could damage it, disable it or overload it.</p>"
+        },
+        {
+          "h": "Intellectual and industrial property",
+          "html": "<p>The texts, photographs, designs, logos and other content on this website belong to English Corner or are used with permission. They may not be reproduced, distributed or altered without the owner's express consent.</p><p>Cambridge English trademarks and logos are the property of Cambridge University Press &amp; Assessment and appear here in our capacity as a preparation centre for its exams. Instagram, Facebook and WhatsApp are trademarks of Meta Platforms, Inc.</p>"
+        },
+        {
+          "h": "Liability",
+          "html": "<p>English Corner makes every effort to keep the information on this website accurate and up to date, but cannot guarantee that it is free of occasional errors. Final timetables, prices and conditions are those confirmed directly at the academy. We are not liable for damage caused by misuse of the website or by technical interruptions beyond our control.</p>"
+        },
+        {
+          "h": "Links to other websites",
+          "html": "<p>This website links to Instagram, Facebook, WhatsApp and Google Maps. These services have their own terms and privacy policies, and English Corner has no control over their content.</p>"
+        },
+        {
+          "h": "Data protection and cookies",
+          "html": "<p>Personal data is handled as described in the <a href='[[href:privacitat]]'>privacy policy</a>, and cookies as described in the <a href='[[href:galetes]]'>cookie policy</a>.</p>"
+        },
+        {
+          "h": "Governing law",
+          "html": "<p>This legal notice is governed by Spanish law. Any dispute will be submitted to the courts that have jurisdiction under the law; where the user is a consumer, those of the user's place of residence.</p>"
+        }
+      ]
+    },
+    {
+      "key": "privacitat",
+      "slug": "privacy",
+      "short": "Privacy",
+      "title": "Privacy policy",
+      "description": "How English Corner handles the personal data of people who contact us or visit the website.",
+      "sections": [
+        {
+          "h": "Data controller",
+          "html": "<dl><dt>Controller</dt><dd>[[owner]]</dd><dt>Tax ID (NIF)</dt><dd>[[nif]]</dd><dt>Address</dt><dd>[[address]]</dd><dt>Email</dt><dd><a href='mailto:[[email]]'>[[email]]</a></dd><dt>Phone</dt><dd>[[phone]]</dd></dl>"
+        },
+        {
+          "h": "What data we process",
+          "html": "<p>This website has no forms, requires no registration and uses no analytics or advertising tools. We only process personal data in these cases:</p><ul><li><b>When you contact us</b> by email, phone or WhatsApp: your name, your contact details and any information you choose to share (for example, the student's age or level).</li><li><b>When you visit the website</b>: the hosting server automatically logs technical connection data, such as your IP address, to keep the site secure and working.</li></ul>"
+        },
+        {
+          "h": "Why we use it and on what legal basis",
+          "html": "<ul><li>To answer your enquiries and tell you about courses, timetables, prices and trial classes. Legal basis: your request and steps taken before entering into a contract (Art. 6(1)(b) GDPR).</li><li>To keep the website secure and working. Legal basis: legitimate interest (Art. 6(1)(f) GDPR).</li></ul><p>We do not make automated decisions or build profiles.</p>"
+        },
+        {
+          "h": "Minors",
+          "html": "<p>Many of our students are children and teenagers. If you are under 14, please ask a parent or legal guardian to contact us: we cannot process your data without their consent (Art. 7 of Spanish Organic Law 3/2018, LOPDGDD).</p>"
+        },
+        {
+          "h": "How long we keep it",
+          "html": "<p>Enquiry data is kept for as long as needed to deal with it and, at most, one year after our last contact, unless you enrol; in that case it is kept for as long as the relationship lasts and for the periods required by law. Server logs are managed by the hosting provider, which deletes them periodically.</p>"
+        },
+        {
+          "h": "Who we share it with",
+          "html": "<p>We do not share data with third parties unless required by law. To run the website and our contact channels we rely on these providers:</p><ul><li><b>GitHub, Inc.</b>: website hosting.</li><li><b>Telefónica</b>: email service.</li><li><b>WhatsApp</b> (Meta), if you choose to message us there.</li><li><b>Google</b>: the website's fonts and, only if you load it, the Google Maps map.</li></ul><p>Some of these providers may process data outside the European Economic Area, particularly in the United States. In those cases the transfer is covered by the EU-US Data Privacy Framework or by standard contractual clauses approved by the European Commission.</p>"
+        },
+        {
+          "h": "Your rights",
+          "html": "<p>You can exercise your rights of access, rectification, erasure, objection, restriction of processing and portability at any time, and withdraw any consent you have given. Write to <a href='mailto:[[email]]'>[[email]]</a> or to [[address]], stating which right you wish to exercise and proving your identity.</p><p>If you believe we have not handled your request properly, you can lodge a complaint with the Spanish Data Protection Agency (<a href='https://www.aepd.es' target='_blank' rel='noopener'>www.aepd.es</a>).</p>"
+        },
+        {
+          "h": "Social media",
+          "html": "<p>English Corner has profiles on Instagram and Facebook. If you interact with us there, Meta's terms and privacy policy also apply. The Instagram posts shown on this website are served as our own images: viewing them does not connect your browser to Instagram.</p>"
+        }
+      ]
+    },
+    {
+      "key": "galetes",
+      "slug": "cookies",
+      "short": "Cookies",
+      "title": "Cookie policy",
+      "description": "Which cookies and data the English Corner website stores in your browser.",
+      "sections": [
+        {
+          "h": "What cookies are",
+          "html": "<p>Cookies are small files that a website stores in your browser. Similar technologies, such as local storage (localStorage), are used to remember information between visits.</p>"
+        },
+        {
+          "h": "Cookies used on this website",
+          "html": "<p>English Corner does not use analytics, advertising or tracking cookies, which is why you will not see a cookie banner. The only information the website stores in your browser is this:</p><div class='table-wrap'><table><thead><tr><th>Name</th><th>Type</th><th>Purpose</th><th>Duration</th></tr></thead><tbody><tr><td><code>ec-lang</code></td><td>Local storage, first-party</td><td>Remembers the language you picked in the language menu</td><td>Until you delete it</td></tr></tbody></table></div><p>It is a preference you request yourself by choosing a language, so it is exempt from consent (article 22.2 of the LSSI-CE).</p>"
+        },
+        {
+          "h": "Third-party content",
+          "html": "<p><b>Google Maps.</b> The map in the contact section does not load until you press “[[mapButton]]”. From then on, Google may set its own cookies in your browser, as described in its <a href='https://policies.google.com/technologies/cookies' target='_blank' rel='noopener'>cookie policy</a>. If you do not load it, no connection to Google Maps is made.</p><p><b>Fonts.</b> The website's typefaces are downloaded from Google Fonts. This service does not set cookies, but Google receives your browser's IP address in order to serve them.</p><p><b>External links.</b> The links to Instagram, Facebook and WhatsApp simply take you to those services; nothing connects until you click.</p>"
+        },
+        {
+          "h": "How to manage or delete them",
+          "html": "<p>You can delete stored information and block cookies in your browser settings. See the help pages for <a href='https://support.google.com/chrome/answer/95647' target='_blank' rel='noopener'>Chrome</a>, <a href='https://support.mozilla.org/kb/clear-cookies-and-site-data-firefox' target='_blank' rel='noopener'>Firefox</a>, <a href='https://support.apple.com/guide/safari/sfri11471/mac' target='_blank' rel='noopener'>Safari</a> or <a href='https://support.microsoft.com/microsoft-edge/delete-cookies-in-microsoft-edge-63947406-40ac-c3b8-57b9-2a946a29ae09' target='_blank' rel='noopener'>Edge</a>.</p>"
+        },
+        {
+          "h": "Changes to this policy",
+          "html": "<p>If the website adds new cookies or services, we will update this page and, where required, ask for your consent before using them.</p>"
+        }
+      ]
+    }
+  ]
+}

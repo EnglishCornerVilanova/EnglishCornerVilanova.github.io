@@ -31,6 +31,8 @@ jobs:
       - name: Construir la web
         env:
           INSTAGRAM_FEED: ${{ secrets.INSTAGRAM_FEED }}
+          # Horario de la ficha de Google. Sin este secreto se usa el de site.json.
+          GOOGLE_PLACES_KEY: ${{ secrets.GOOGLE_PLACES_KEY }}
           IG_REFRESH: "1"
         run: python build.py
       - uses: actions/upload-pages-artifact@v3

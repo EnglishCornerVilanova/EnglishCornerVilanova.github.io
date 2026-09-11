@@ -1,0 +1,117 @@
+{
+  "navLabel": "Información legal",
+  "updated": "Última actualización: 11 de septiembre de 2026",
+  "pages": [
+    {
+      "key": "avis",
+      "slug": "aviso-legal",
+      "short": "Aviso legal",
+      "title": "Aviso legal",
+      "description": "Datos del titular y condiciones de uso del sitio web de English Corner, academia de inglés en Vilanova del Camí.",
+      "sections": [
+        {
+          "h": "Datos identificativos",
+          "html": "<p>En cumplimiento del artículo 10 de la Ley 34/2002, de 11 de julio, de servicios de la sociedad de la información y de comercio electrónico (LSSI-CE), estos son los datos del titular de este sitio web:</p><dl><dt>Titular</dt><dd>[[owner]]</dd><dt>NIF</dt><dd>[[nif]]</dd><dt>Nombre comercial</dt><dd>English Corner</dd><dt>Dirección</dt><dd>[[address]]</dd><dt>Correo electrónico</dt><dd><a href='mailto:[[email]]'>[[email]]</a></dd><dt>Teléfono</dt><dd>[[phone]]</dd><dt>Sitio web</dt><dd>[[site]]</dd></dl>"
+        },
+        {
+          "h": "Objeto",
+          "html": "<p>Este sitio web informa sobre la actividad de English Corner, academia de inglés de Vilanova del Camí: cursos, niveles, preparación de exámenes y datos de contacto. El acceso es gratuito y no requiere registro.</p>"
+        },
+        {
+          "h": "Condiciones de uso",
+          "html": "<p>Acceder al sitio implica aceptar este aviso legal. Te comprometes a hacer un uso correcto de él, conforme a la ley, la buena fe y el orden público, y a no realizar ninguna acción que pueda dañarlo, inutilizarlo o sobrecargarlo.</p>"
+        },
+        {
+          "h": "Propiedad intelectual e industrial",
+          "html": "<p>Los textos, fotografías, diseños, logotipos y demás contenidos del sitio pertenecen a English Corner o se dispone de autorización para usarlos. No pueden reproducirse, distribuirse ni transformarse sin permiso expreso del titular.</p><p>Las marcas y logotipos de Cambridge English son propiedad de Cambridge University Press &amp; Assessment y se muestran en calidad de centro preparador de sus exámenes. Instagram, Facebook y WhatsApp son marcas de Meta Platforms, Inc.</p>"
+        },
+        {
+          "h": "Responsabilidad",
+          "html": "<p>English Corner procura que la información del sitio sea correcta y esté actualizada, pero no puede garantizar la ausencia de errores puntuales. Los horarios, precios y condiciones definitivos son los que se confirman directamente en la academia. No nos hacemos responsables de los daños derivados de un uso indebido del sitio ni de interrupciones técnicas ajenas a nuestro control.</p>"
+        },
+        {
+          "h": "Enlaces a otros sitios",
+          "html": "<p>El sitio incluye enlaces a Instagram, Facebook, WhatsApp y Google Maps. Estos servicios tienen sus propias condiciones y políticas de privacidad, y English Corner no controla su contenido.</p>"
+        },
+        {
+          "h": "Protección de datos y cookies",
+          "html": "<p>El tratamiento de los datos personales se rige por la <a href='[[href:privacitat]]'>política de privacidad</a>, y el uso de cookies, por la <a href='[[href:galetes]]'>política de cookies</a>.</p>"
+        },
+        {
+          "h": "Legislación aplicable",
+          "html": "<p>Este aviso legal se rige por la legislación española. Para cualquier controversia, las partes se someten a los juzgados y tribunales que correspondan según la ley; si el usuario es consumidor, a los de su domicilio.</p>"
+        }
+      ]
+    },
+    {
+      "key": "privacitat",
+      "slug": "privacidad",
+      "short": "Privacidad",
+      "title": "Política de privacidad",
+      "description": "Cómo trata English Corner los datos personales de quien nos contacta o visita el sitio.",
+      "sections": [
+        {
+          "h": "Responsable del tratamiento",
+          "html": "<dl><dt>Responsable</dt><dd>[[owner]]</dd><dt>NIF</dt><dd>[[nif]]</dd><dt>Dirección</dt><dd>[[address]]</dd><dt>Correo electrónico</dt><dd><a href='mailto:[[email]]'>[[email]]</a></dd><dt>Teléfono</dt><dd>[[phone]]</dd></dl>"
+        },
+        {
+          "h": "Qué datos tratamos",
+          "html": "<p>Este sitio web no tiene formularios, no pide registro y no utiliza herramientas de analítica ni de publicidad. Solo tratamos datos personales en estos casos:</p><ul><li><b>Cuando nos contactas</b> por correo electrónico, teléfono o WhatsApp: tu nombre, tus datos de contacto y la información que nos facilites (por ejemplo, la edad o el nivel del alumno).</li><li><b>Cuando visitas el sitio</b>: el servidor que lo aloja registra automáticamente datos técnicos de la conexión, como la dirección IP, para garantizar su seguridad y funcionamiento.</li></ul>"
+        },
+        {
+          "h": "Para qué los usamos y con qué base legal",
+          "html": "<ul><li>Responder a tus consultas e informarte sobre cursos, horarios, precios y clases de prueba. Base legal: tu solicitud y la aplicación de medidas precontractuales (art. 6.1.b del RGPD).</li><li>Mantener la seguridad y el funcionamiento del sitio. Base legal: el interés legítimo (art. 6.1.f del RGPD).</li></ul><p>No tomamos decisiones automatizadas ni elaboramos perfiles.</p>"
+        },
+        {
+          "h": "Menores de edad",
+          "html": "<p>Muchos de nuestros alumnos son niños y adolescentes. Si tienes menos de 14 años, pide a tu padre, madre o tutor legal que se ponga en contacto con nosotros: sin su consentimiento no podemos tratar tus datos (art. 7 de la LOPDGDD).</p>"
+        },
+        {
+          "h": "Cuánto tiempo los conservamos",
+          "html": "<p>Los datos de las consultas se conservan el tiempo necesario para atenderlas y, como máximo, un año después del último contacto, salvo que te matricules; en ese caso se conservan mientras dure la relación y durante los plazos que exige la ley. Los registros técnicos del servidor los gestiona el proveedor de alojamiento, que los elimina periódicamente.</p>"
+        },
+        {
+          "h": "A quién se comunican",
+          "html": "<p>No cedemos datos a terceros, salvo por obligación legal. Para que funcionen el sitio y los canales de contacto nos servimos de estos proveedores:</p><ul><li><b>GitHub, Inc.</b>: alojamiento del sitio.</li><li><b>Telefónica</b>: servicio de correo electrónico.</li><li><b>WhatsApp</b> (Meta), si eliges este canal para escribirnos.</li><li><b>Google</b>: las tipografías del sitio y, solo si lo cargas, el mapa de Google Maps.</li></ul><p>Algunos de estos proveedores pueden tratar datos fuera del Espacio Económico Europeo, en especial en Estados Unidos. En esos casos, la transferencia se ampara en el Marco de Privacidad de Datos UE-EE. UU. o en las cláusulas contractuales tipo aprobadas por la Comisión Europea.</p>"
+        },
+        {
+          "h": "Tus derechos",
+          "html": "<p>Puedes ejercer en cualquier momento los derechos de acceso, rectificación, supresión, oposición, limitación del tratamiento y portabilidad, y retirar el consentimiento que hayas dado. Escribe a <a href='mailto:[[email]]'>[[email]]</a> o dirígete a [[address]], indicando qué derecho quieres ejercer y acreditando tu identidad.</p><p>Si consideras que no hemos atendido correctamente tu solicitud, puedes presentar una reclamación ante la Agencia Española de Protección de Datos (<a href='https://www.aepd.es' target='_blank' rel='noopener'>www.aepd.es</a>).</p>"
+        },
+        {
+          "h": "Redes sociales",
+          "html": "<p>English Corner tiene perfil en Instagram y en Facebook. Si interactúas con nosotros en estas redes, se aplican también las condiciones y la política de privacidad de Meta. Las publicaciones de Instagram que ves en este sitio se muestran como imágenes propias: verlas no conecta tu navegador con Instagram.</p>"
+        }
+      ]
+    },
+    {
+      "key": "galetes",
+      "slug": "cookies",
+      "short": "Cookies",
+      "title": "Política de cookies",
+      "description": "Qué cookies y datos guarda en el navegador el sitio web de English Corner.",
+      "sections": [
+        {
+          "h": "Qué son las cookies",
+          "html": "<p>Las cookies son pequeños archivos que un sitio web guarda en el navegador. Otras tecnologías similares, como el almacenamiento local (localStorage), sirven para recordar información entre visitas.</p>"
+        },
+        {
+          "h": "Cookies que utiliza este sitio",
+          "html": "<p>English Corner no utiliza cookies de analítica, de publicidad ni de seguimiento. Por eso no te mostramos ningún aviso de cookies. La única información que el sitio guarda en tu navegador es esta:</p><div class='table-wrap'><table><thead><tr><th>Nombre</th><th>Tipo</th><th>Finalidad</th><th>Duración</th></tr></thead><tbody><tr><td><code>ec-lang</code></td><td>Almacenamiento local, propio</td><td>Recordar el idioma que has elegido en el selector</td><td>Hasta que la borres</td></tr></tbody></table></div><p>Es una preferencia que solicitas tú al elegir el idioma y, por tanto, está exenta de consentimiento (artículo 22.2 de la LSSI-CE).</p>"
+        },
+        {
+          "h": "Contenidos de terceros",
+          "html": "<p><b>Google Maps.</b> El mapa de la sección de contacto no se carga hasta que pulsas «[[mapButton]]». A partir de ese momento, Google puede instalar sus cookies en tu navegador, de acuerdo con su <a href='https://policies.google.com/technologies/cookies' target='_blank' rel='noopener'>política de cookies</a>. Si no lo cargas, no se establece ninguna conexión con Google Maps.</p><p><b>Tipografías.</b> Las letras del sitio se descargan de Google Fonts. Este servicio no instala cookies, pero Google recibe la dirección IP de tu navegador para poder servirlas.</p><p><b>Enlaces externos.</b> Los enlaces a Instagram, Facebook y WhatsApp solo te llevan a esos servicios; no se conecta nada hasta que haces clic.</p>"
+        },
+        {
+          "h": "Cómo gestionarlas o eliminarlas",
+          "html": "<p>Puedes borrar la información guardada y bloquear las cookies desde la configuración del navegador. Consulta la ayuda de <a href='https://support.google.com/chrome/answer/95647' target='_blank' rel='noopener'>Chrome</a>, <a href='https://support.mozilla.org/kb/clear-cookies-and-site-data-firefox' target='_blank' rel='noopener'>Firefox</a>, <a href='https://support.apple.com/guide/safari/sfri11471/mac' target='_blank' rel='noopener'>Safari</a> o <a href='https://support.microsoft.com/microsoft-edge/delete-cookies-in-microsoft-edge-63947406-40ac-c3b8-57b9-2a946a29ae09' target='_blank' rel='noopener'>Edge</a>.</p>"
+        },
+        {
+          "h": "Cambios en esta política",
+          "html": "<p>Si el sitio incorpora nuevas cookies o servicios, actualizaremos esta página y, cuando sea necesario, te pediremos el consentimiento antes de utilizarlos.</p>"
+        }
+      ]
+    }
+  ]
+}

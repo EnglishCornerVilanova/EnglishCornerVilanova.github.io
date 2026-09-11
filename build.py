@@ -11,6 +11,7 @@ Writes : dist/  (index.html = default language, /es/, /en/, assets, sitemap…)
 
 from __future__ import annotations
 
+import datetime
 import hashlib
 import html
 import json
@@ -42,6 +43,24 @@ IG_TTL = 6 * 3600
 IG_POSTS: list[dict] | None = None
 UA = {"User-Agent": "EnglishCornerBuild/1.0"}
 IG_AVATAR = "/assets/img/logo-192.png"   # foto de perfil; el logo si no hay feed
+
+# Horario — se lee de la ficha de Google (Places API) al construir, igual que
+# Instagram: la clave solo vive en el servidor de construcción y los visitantes
+# nunca contactan con Google. Sin clave, o si Google no responde, se usa el
+# horario de site.json. Así, lo que se cambie en la ficha (meses, vacaciones,
+# festivos) llega a la web con la publicación diaria.
+PLACES_CACHE = ROOT / ".cache" / "google" / "horario.json"
+HOURS: dict | None = None
+DAYS_EN = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"]
+HOURS_I18N = {
+    "ca": {"days": ["dilluns", "dimarts", "dimecres", "dijous", "divendres", "dissabte", "diumenge"],
+           "and": " i ", "range": "de {a} a {b}", "closed": "tancat"},
+    "es": {"days": ["lunes", "martes", "miércoles", "jueves", "viernes", "sábado", "domingo"],
+           "and": " y ", "range": "de {a} a {b}", "closed": "cerrado"},
+    "en": {"days": DAYS_EN, "and": " and ", "range": "{a} to {b}", "closed": "closed"},
+}
+
+LEGAL_DIR = CONTENT / "legal"
 
 ICONS = {
     "primaria": '<svg viewBox="0 0 24 24"><path d="M8.5 7V5.5A2.5 2.5 0 0 1 11 3h2a2.5 2.5 0 0 1 2.5 2.5V7"/><rect x="5" y="7" width="14" height="14" rx="4"/><path d="M9 21v-4a1.5 1.5 0 0 1 1.5-1.5h3A1.5 1.5 0 0 1 15 17v4"/><path d="M9 11h6"/></svg>',
@@ -192,12 +211,13 @@ def home_href(site: dict, lang: str) -> str:
     return "/" if lang == site["defaultLang"] else f"/{lang}/"
 
 
-def build_alternates(site: dict) -> str:
+def build_alternates(site: dict, paths: dict) -> str:
+    """hreflang for one page; `paths` maps each language to that page's path."""
     rows = [
-        f'<link rel="alternate" hreflang="{l}" href="{page_url(site, l)}">'
+        f'<link rel="alternate" hreflang="{l}" href="{site["origin"] + paths[l]}">'
         for l in site["langs"]
     ]
-    rows.append(f'<link rel="alternate" hreflang="x-default" href="{page_url(site, site["defaultLang"])}">')
+    rows.append(f'<link rel="alternate" hreflang="x-default" href="{site["origin"] + paths[site["defaultLang"]]}">')
     return "\n".join(rows)
 
 
@@ -234,11 +254,11 @@ def build_schema(site: dict, data: dict, lang: str) -> str:
         "openingHoursSpecification": [
             {
                 "@type": "OpeningHoursSpecification",
-                "dayOfWeek": h["days"],
-                "opens": h["opens"],
-                "closes": h["closes"],
+                "dayOfWeek": [DAYS_EN[d] for d in days],
+                "opens": opens,
+                "closes": closes,
             }
-            for h in site["openingHours"]
+            for (opens, closes), days in hours_by_interval().items()
         ],
         "sameAs": [u for u in (site["social"]["instagram"], site["social"]["facebook"])
                    if u and "TODO" not in u],
@@ -264,6 +284,9 @@ def shared_from_site(site: dict) -> dict:
         "shared": {
             "phone": site["phoneDisplay"],
             "phoneHref": site["phoneHref"],
+            "landline": site["landlineDisplay"],
+            "landlineHref": site["landlineHref"],
+            "whatsapp": site["whatsapp"],
             "email": site["email"],
         },
         "social": {
@@ -447,21 +470,192 @@ def asset_version(rel: str) -> str:
     return hashlib.sha1((STATIC / rel).read_bytes()).hexdigest()[:10]
 
 
-def lang_redirect(site: dict) -> str:
-    """Blocking <head> snippet: honour a previously chosen language."""
-    langs = json.dumps(site["langs"])
-    default = site["defaultLang"]
+def lang_redirect(site: dict, paths: dict) -> str:
+    """Blocking <head> snippet: honour a previously chosen language, landing on
+    this same page in that language (`paths` maps language → path)."""
     return (
         "(function(){try{"
         "var s=localStorage.getItem('ec-lang'),"
-        "c=(document.documentElement.lang||'').slice(0,2);"
-        f"if(s&&s!==c&&{langs}.indexOf(s)>-1&&!location.hash)"
-        f"location.replace((s==='{default}'?'/':'/'+s+'/')+location.search);"
+        "c=(document.documentElement.lang||'').slice(0,2),"
+        f"m={json.dumps(paths)};"
+        "if(s&&s!==c&&m[s]&&!location.hash)"
+        "location.replace(m[s]+location.search);"
         "}catch(e){}})();"
     )
 
 
-def build_lang(site: dict, lang: str, template: str) -> str:
+# ── Horario ─────────────────────────────────────────────────────────
+
+def _hhmm(t: dict) -> str:
+    return f"{int(t.get('hour', 0)):02d}:{int(t.get('minute', 0)):02d}"
+
+
+def _week_from_periods(periods: list) -> list[list[list[str]]]:
+    """Periodos de Google (día 0 = domingo) → semana que empieza en lunes."""
+    week: list[list[list[str]]] = [[] for _ in range(7)]
+    for p in periods:
+        o, c = p.get("open") or {}, p.get("close")
+        day = (int(o.get("day", 0)) - 1) % 7
+        week[day].append([_hhmm(o), _hhmm(c)] if c else ["00:00", "24:00"])
+    return [sorted(d) for d in week]
+
+
+def _special_days(current: dict) -> list[dict]:
+    """Festivos y vacaciones marcados en la ficha (Google da los próximos 7 días)."""
+    out = []
+    for s in current.get("specialDays", []):
+        d = s.get("date") or {}
+        try:
+            day = datetime.date(int(d["year"]), int(d["month"]), int(d["day"]))
+        except (KeyError, TypeError, ValueError):
+            continue
+        intervals = sorted([_hhmm(p["open"]), _hhmm(p["close"])]
+                           for p in current.get("periods", [])
+                           if (p.get("open") or {}).get("date") == d and p.get("close"))
+        out.append({"date": day.isoformat(), "intervals": intervals})
+    return out
+
+
+def site_hours(site: dict) -> dict:
+    week: list[list[list[str]]] = [[] for _ in range(7)]
+    for h in site["openingHours"]:
+        for day in h["days"]:
+            week[DAYS_EN.index(day)].append([h["opens"], h["closes"]])
+    return {"week": [sorted(d) for d in week], "special": [], "source": "site.json"}
+
+
+def google_hours(site: dict) -> dict | None:
+    """Horario de la ficha de Google, con la misma caché de 6 h que Instagram.
+    None si no hay clave o si Google no ha respondido nunca."""
+    key = os.environ.get("GOOGLE_PLACES_KEY", "").strip()
+    query = (site.get("googlePlaceQuery") or "").strip()
+    if not key or not query:
+        return None
+    cached = json.loads(PLACES_CACHE.read_text(encoding="utf-8")) if PLACES_CACHE.exists() else None
+    if (cached and time.time() - PLACES_CACHE.stat().st_mtime < IG_TTL
+            and os.environ.get("IG_REFRESH") != "1"):
+        return cached
+    try:
+        req = urllib.request.Request(
+            "https://places.googleapis.com/v1/places:searchText",
+            data=json.dumps({"textQuery": query}).encode(),
+            headers={**UA, "Content-Type": "application/json", "X-Goog-Api-Key": key,
+                     "X-Goog-FieldMask": "places.displayName,places.regularOpeningHours,"
+                                         "places.currentOpeningHours"},
+        )
+        with urllib.request.urlopen(req, timeout=15) as r:
+            found = json.load(r).get("places", [])
+        place = next((p for p in found
+                      if "english corner" in ((p.get("displayName") or {}).get("text") or "").lower()), None)
+        if not place or not (place.get("regularOpeningHours") or {}).get("periods"):
+            raise ValueError("la ficha no aparece o no tiene horario")
+        hours = {"week": _week_from_periods(place["regularOpeningHours"]["periods"]),
+                 "special": _special_days(place.get("currentOpeningHours") or {}),
+                 "source": "ficha de Google"}
+        PLACES_CACHE.parent.mkdir(parents=True, exist_ok=True)
+        PLACES_CACHE.write_text(json.dumps(hours), encoding="utf-8")
+        return hours
+    except Exception as exc:   # nunca se imprime la clave: solo el tipo de error
+        print(f"  ⚠ horario: Google no responde ({type(exc).__name__}: {exc}); "
+              + ("uso la última copia" if cached else "uso el de site.json"))
+        return cached
+
+
+def hours_by_interval() -> dict[tuple, list[int]]:
+    out: dict[tuple, list[int]] = {}
+    for day, intervals in enumerate(HOURS["week"]):
+        for opens, closes in intervals:
+            out.setdefault((opens, closes), []).append(day)
+    return out
+
+
+def _fmt_intervals(intervals: list, lang: str) -> str:
+    parts = []
+    for opens, closes in intervals:
+        if lang == "ca":   # «de 15 a 21.15 h», «d'11 a 13 h»
+            a, b = (t[:2].lstrip("0") + ("" if t[3:] == "00" else "." + t[3:]) for t in (opens, closes))
+            parts.append(("d'" if a == "1" or a.startswith(("1.", "11")) else "de ") + f"{a} a {b} h")
+        elif lang == "es":
+            parts.append(f"de {opens} a {closes}")
+        else:
+            parts.append(f"{opens}–{closes}")
+    return HOURS_I18N[lang]["and"].join(parts)
+
+
+def _fmt_days(days: list[int], lang: str) -> str:
+    t = HOURS_I18N[lang]
+    names = [t["days"][d] for d in days]
+    if len(days) >= 3 and days == list(range(days[0], days[-1] + 1)):
+        return t["range"].format(a=names[0], b=names[-1])
+    return names[0] if len(names) == 1 else ", ".join(names[:-1]) + t["and"] + names[-1]
+
+
+def hours_html(lang: str) -> str:
+    """Una línea por grupo de días con el mismo horario, más los festivos
+    y vacaciones de los próximos días que se hayan marcado en Google."""
+    week = HOURS["week"]
+    groups: dict[tuple, list[int]] = {}
+    for day, intervals in enumerate(week):
+        if intervals:
+            groups.setdefault(tuple(map(tuple, intervals)), []).append(day)
+    lines = []
+    for intervals, days in sorted(groups.items(), key=lambda g: g[1][0]):
+        text = f"{_fmt_days(days, lang)}: {_fmt_intervals(intervals, lang)}"
+        lines.append(html.escape(text[0].upper() + text[1:]))
+    today = datetime.date.today()
+    for s in HOURS.get("special", []):
+        day = datetime.date.fromisoformat(s["date"])
+        if day < today or s["intervals"] == week[day.weekday()]:
+            continue
+        what = _fmt_intervals(s["intervals"], lang) if s["intervals"] else HOURS_I18N[lang]["closed"]
+        name = HOURS_I18N[lang]["days"][day.weekday()]
+        lines.append(f'<span class="hours-note">{html.escape(name[0].upper() + name[1:])} '
+                     f'{day.day}/{day.month}: {html.escape(what)}</span>')
+    return "<br>".join(lines)
+
+
+# ── Páginas legales ─────────────────────────────────────────────────
+
+def legal_pages(lang: str) -> dict:
+    return load_json(LEGAL_DIR / f"{lang}.json")
+
+
+def legal_href(site: dict, lang: str, key: str) -> str:
+    page = next(p for p in legal_pages(lang)["pages"] if p["key"] == key)
+    return home_href(site, lang) + page["slug"] + "/"
+
+
+def legal_main(site: dict, lang: str, data: dict, page: dict) -> str:
+    """Cuerpo de una página legal. Los textos viven en content/legal/<lang>.json;
+    los datos del titular, en site.json, para escribirlos una sola vez."""
+    a = site["address"]
+    tokens = {
+        "owner": site["legal"]["owner"],
+        "nif": site["legal"]["nif"],
+        "address": f'{a["street"]}, {a["postalCode"]} {a["locality"]} ({a["region"]})',
+        "email": site["email"],
+        "phone": site["phoneDisplay"],
+        "site": site["origin"].split("://", 1)[-1],
+        "mapButton": data["map"]["consentButton"],
+    }
+    legal = legal_pages(lang)
+    body = "\n".join(f'  <h2>{html.escape(s["h"])}</h2>\n  {s["html"]}' for s in page["sections"])
+    for key, value in tokens.items():
+        body = body.replace(f"[[{key}]]", html.escape(value))
+    for p in legal["pages"]:
+        body = body.replace(f"[[href:{p['key']}]]", legal_href(site, lang, p["key"]))
+    return (
+        '<main id="main" class="legal-main">\n<article class="legal">\n'
+        f'  <p class="legal-kicker"><a href="{home_href(site, lang)}">English Corner</a></p>\n'
+        f'  <h1 class="display">{html.escape(page["title"])}</h1>\n'
+        f'  <p class="legal-updated">{html.escape(legal["updated"])}</p>\n'
+        f"{body}\n</article>\n</main>"
+    )
+
+
+def build_lang(site: dict, lang: str, template: str, legal_key: str | None = None) -> str:
+    """The home page, or with `legal_key` one of the legal pages: same head,
+    nav and footer, with <main> swapped for the legal text."""
     data = deep_merge(shared_from_site(site), load_json(CONTENT / f"{lang}.json"))
     for item in data.get("courses", {}).get("items", []):
         item["iconSvg"] = ICONS.get(item.get("icon", ""), "")
@@ -470,34 +664,63 @@ def build_lang(site: dict, lang: str, template: str) -> str:
     if not mark_is_official:
         MISSING_MARK.add(lang)
 
-    lang_links = []
-    for l in site["langs"]:
-        lang_links.append(
-            {
-                "code": l,
-                "codeUpper": l.upper(),
-                "name": site["langNames"][l],
-                "href": home_href(site, l),
-                "currentAttr": ' aria-current="true"' if l == lang else "",
-            }
-        )
+    legal = legal_pages(lang)
+    home = home_href(site, lang)
+    if legal_key:
+        page = next(p for p in legal["pages"] if p["key"] == legal_key)
+        paths = {l: legal_href(site, l, legal_key) for l in site["langs"]}
+        # Las anclas del menú y del pie llevan de vuelta a la portada.
+        for link in data["nav"]["items"] + [k for col in data["footer"]["cols"] for k in col.get("links", [])]:
+            if link["href"].startswith("#"):
+                link["href"] = home + link["href"]
+        data["meta"].update(title=f'{page["title"]} | English Corner', description=page["description"],
+                            ogTitle=page["title"], ogDescription=page["description"])
+        main = legal_main(site, lang, data, page)
+        template = re.sub(r'<main id="main">.*?</main>', lambda _: main, template, count=1, flags=re.S)
+        template = template.replace('<script type="application/ld+json">{{ @schema }}</script>', "")
+    else:
+        paths = {l: home_href(site, l) for l in site["langs"]}
+
+    lang_links = [
+        {
+            "code": l,
+            "codeUpper": l.upper(),
+            "name": site["langNames"][l],
+            "href": paths[l],
+            "currentAttr": ' aria-current="true"' if l == lang else "",
+        }
+        for l in site["langs"]
+    ]
+    legal_links = [
+        {
+            "href": legal_href(site, lang, p["key"]),
+            "label": p["short"],
+            "currentAttr": ' aria-current="page"' if p["key"] == legal_key else "",
+        }
+        for p in legal["pages"]
+    ]
 
     globals_ = {
         "lang": lang,
         "langUpper": lang.upper(),
         "langLinks": lang_links,
-        "home": home_href(site, lang),
-        "canonical": page_url(site, lang),
+        "legalLinks": legal_links,
+        "legalNavLabel": legal["navLabel"],
+        "home": home,
+        "canonical": site["origin"] + paths[lang],
+        "robots": '<meta name="robots" content="noindex, follow">' if legal_key else "",
         "origin": site["origin"],
         "ogLocale": site["ogLocales"][lang],
-        "alternates": build_alternates(site),
-        "langRedirect": lang_redirect(site),
+        "alternates": build_alternates(site, paths),
+        "langRedirect": lang_redirect(site, paths),
+        "hoursHtml": hours_html(lang),
+        "mapsUrl": site["googleMaps"],
         "cambridgeMark": mark_html,
         "igGrid": ig_grid(data),
         "igAvatar": IG_AVATAR,
         "cssV": asset_version("assets/css/site.css"),
         "jsV": asset_version("assets/js/site.js"),
-        "schema": build_schema(site, data, lang),
+        "schema": "" if legal_key else build_schema(site, data, lang),
         "year": site["year"],
     }
 
@@ -564,13 +787,18 @@ def build() -> None:
         shutil.rmtree(DIST)
     shutil.copytree(STATIC, DIST)
 
-    global IG_POSTS
+    global IG_POSTS, HOURS
     IG_POSTS = instagram_posts(site)
+    HOURS = google_hours(site) or site_hours(site)
+    print(f"  · horario: {HOURS['source']}")
 
     for lang in site["langs"]:
-        target = DIST / "index.html" if lang == site["defaultLang"] else DIST / lang / "index.html"
-        write(target, build_lang(site, lang, template))
-        print(f"  · {target.relative_to(ROOT)}")
+        base = DIST if lang == site["defaultLang"] else DIST / lang
+        write(base / "index.html", build_lang(site, lang, template))
+        pages = legal_pages(lang)["pages"]
+        for p in pages:
+            write(base / p["slug"] / "index.html", build_lang(site, lang, template, p["key"]))
+        print(f"  · {(base / 'index.html').relative_to(ROOT)} + {len(pages)} páginas legales")
 
     write(DIST / "sitemap.xml", build_sitemap(site))
     write(DIST / "site.webmanifest", build_manifest(site))

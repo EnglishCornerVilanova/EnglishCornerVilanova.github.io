@@ -6,6 +6,7 @@
 <title>{{ meta.title }}</title>
 <meta name="description" content="{{ meta.description }}">
 <link rel="canonical" href="{{ @canonical }}">
+{{ @robots }}
 {{ @alternates }}
 
 <meta name="theme-color" content="#FFFFFF">
@@ -376,6 +377,7 @@
           {{ contact.btnCall }}
           <span class="chip"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
         </a>
+        <a href="{{ shared.whatsapp }}" class="btn btn--ghost" target="_blank" rel="noopener">{{ contact.btnWhatsapp }}</a>
         <a href="mailto:{{ shared.email }}" class="btn btn--ghost">{{ contact.btnEmail }}</a>
       </div>
     </div>
@@ -387,7 +389,7 @@
       </div>
       <div class="cta-row">
         <span class="cta-ico" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 005 5L15 13l5 2v4a1 1 0 01-1 1A16 16 0 014 5a1 1 0 011-1z"/></svg></span>
-        <div><dt>{{ contact.labels.phone }}</dt><dd><a href="tel:{{ shared.phoneHref }}">{{ shared.phone }}</a></dd></div>
+        <div><dt>{{ contact.labels.phone }}</dt><dd><a href="tel:{{ shared.phoneHref }}">{{ shared.phone }}</a> · <a href="{{ shared.whatsapp }}" target="_blank" rel="noopener">WhatsApp</a><br><a href="tel:{{ shared.landlineHref }}">{{ shared.landline }}</a></dd></div>
       </div>
       <div class="cta-row">
         <span class="cta-ico" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2.5"/><path d="M3.5 7l8.5 6 8.5-6"/></svg></span>
@@ -395,7 +397,7 @@
       </div>
       <div class="cta-row">
         <span class="cta-ico" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.5 2"/></svg></span>
-        <div><dt>{{ contact.labels.hours }}</dt><dd><p>{{ shared.hoursWeek }}<br>{{ shared.hoursSat }}</p></dd></div>
+        <div><dt>{{ contact.labels.hours }}</dt><dd><p>{{ @hoursHtml }}</p><a class="cta-more" href="{{ @mapsUrl }}" target="_blank" rel="noopener">{{ contact.mapsLink }}</a></dd></div>
       </div>
     </dl>
   </div>
@@ -404,7 +406,7 @@
 <!-- ══════════ MAP ══════════ -->
 <section class="map-sec" aria-label="{{ map.title }}">
   <div class="map-shell rv" id="mapShell"
-       data-map-src="https://www.google.com/maps?q=Carrer+de+Manresa+23,+08788+Vilanova+del+Cam%C3%AD,+Barcelona&amp;output=embed"
+       data-map-src="https://www.google.com/maps?q=English+Corner,+Carrer+de+Manresa+23,+08788+Vilanova+del+Cam%C3%AD,+Barcelona&amp;output=embed"
        data-map-title="{{ map.title }}">
     <div class="map-consent">
       <div class="map-consent-in">
@@ -445,6 +447,9 @@
         <a href="{{ social.facebookUrl }}" target="_blank" rel="noopener" class="fs" aria-label="Facebook">
           <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 3h-2.5A4.5 4.5 0 008 7.5V10H5.5v4H8v8h4v-8h3l.5-4H12V7.6c0-.9.4-1.6 1.3-1.6H15z"/></svg>
         </a>
+        <a href="{{ shared.whatsapp }}" target="_blank" rel="noopener" class="fs" aria-label="WhatsApp">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3.6 20.4l1.3-4.1a8.4 8.4 0 1 1 3.2 3z"/><path d="M9.2 8.4c.3-.4.7-.4 1-.3l.9 2.1-.6.8a5.3 5.3 0 0 0 2.5 2.5l.8-.6 2.1.9c.1.3.1.7-.3 1-1.9 1.4-7.8-4.5-6.4-6.4z"/></svg>
+        </a>
         <a href="tel:{{ shared.phoneHref }}" class="fs" aria-label="{{ contact.labels.phone }}">
           <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 005 5L15 13l5 2v4a1 1 0 01-1 1A16 16 0 014 5a1 1 0 011-1z"/></svg>
         </a>
@@ -464,6 +469,10 @@
 
   <div class="foot-bar">
     <span>{{ footer.copyright }}</span>
+    <nav class="foot-legal" aria-label="{{ @legalNavLabel }}">
+      {{# @legalLinks }}<a href="{{ .href }}"{{ .currentAttr }}>{{ .label }}</a>
+      {{/ @legalLinks }}
+    </nav>
     <span>{{ footer.place }}</span>
   </div>
 </footer>
