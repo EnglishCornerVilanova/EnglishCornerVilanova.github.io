@@ -1,9 +1,9 @@
 {
   "meta": {
-    "title": "English school in Vilanova del Camí | English Corner",
+    "title": "English Corner | English school in Vilanova del Camí",
     "description": "English school in Vilanova del Camí (Anoia). Groups of no more than 8, every area of the language, and an authorised Cambridge English exam preparation centre.",
     "ogTitle": "English school in Vilanova del Camí",
-    "ogDescription": "A structured method, every area of the language, and groups of eight. From age four through to adults."
+    "ogDescription": "A structured method covering every area of English. From age 6 through to adult groups. Authorised Cambridge exam preparation centre."
   },
   "a11y": {
     "skip": "Skip to content",
@@ -22,27 +22,26 @@
     "hoursSat": "Saturday 9am-1pm"
   },
   "nav": {
-    "cta": "Book a trial",
     "items": [
       {
-        "label": "Courses",
-        "href": "#courses"
+        "label": "Home",
+        "href": "#inici"
       },
       {
-        "label": "Exams",
-        "href": "#exams"
-      },
-      {
-        "label": "Method",
-        "href": "#method"
-      },
-      {
-        "label": "Reviews",
-        "href": "#reviews"
+        "label": "About us",
+        "href": "#about"
       },
       {
         "label": "Instagram",
         "href": "#instagram"
+      },
+      {
+        "label": "What we offer",
+        "href": "#courses"
+      },
+      {
+        "label": "Levels",
+        "href": "#exams"
       },
       {
         "label": "Contact",
@@ -55,13 +54,9 @@
     "line2": "Every level.",
     "accentPre": "",
     "accent": "Nothing half-taught.",
-    "lede": "A structured method, every area of the language, and groups of eight. From age four through to adults.",
+    "lede": "A structured method covering every area of English. From age 6 through to adult groups. Authorised Cambridge exam preparation centre.",
     "ctaPrimary": "Book a level test",
-    "ctaSecondary": "See our courses",
-    "phClassroom": "Classroom photo",
-    "phStudents": "Students",
-    "chipN": "8",
-    "chipLabel": "per class, max"
+    "bannerAlt": "English Corner banner with students and London landmarks"
   },
   "creds": {
     "markAlt": "Cambridge English authorised preparation centre",
@@ -73,7 +68,7 @@
   "marquee": [
     "Groups of no more than 8",
     "Reading, writing, listening, speaking",
-    "From age 4 through to adults",
+    "From age 6 through to adults",
     "Levels A1 to C1",
     "Free level test",
     "Authorised Cambridge preparation centre",
@@ -82,38 +77,56 @@
   ],
   "courses": {
     "kicker": "Our courses",
-    "h2": "A structured path,<br>from A1 to C1.",
-    "lede": "Every group follows a structured syllabus, working all five areas in each unit. Students progress level by level, and sit the official exam when they are genuinely ready.",
+    "h2": "With us, everyone has a place.",
+    "lede": "We teach English to all ages, from 6 upwards.",
     "items": [
       {
-        "title": "Kids &amp; Juniors",
-        "tag": "Ages 4-12 · Pre A1-A2",
+        "title": "Primary",
+        "tag": "Ages 6 to 12",
         "tagClass": "tag-red",
-        "desc": "Structured from the start, following the Starters, Movers and Flyers progression. Reading, writing, listening and speaking in every unit."
+        "icon": "primaria",
+        "tone": "red",
+        "desc": "We guide younger learners from the very first stage, introducing reading and writing gradually and helping them see English as a real, useful tool."
       },
       {
         "title": "Teens",
-        "tag": "Ages 13-17 · A2-B2",
+        "tag": "Ages 13 to 18",
         "tagClass": "tag-navy",
-        "desc": "Grammar, vocabulary and use of English worked systematically, alongside the four skills. School results improve as a consequence, not as the goal."
-      },
-      {
-        "title": "Cambridge Exams",
-        "tag": "A2 Key → C1 Advanced",
-        "tagClass": "tag-sun",
-        "desc": "A2 Key, B1 Preliminary, B2 First and C1 Advanced. Full paper-by-paper preparation with mock exams under real conditions, in our own authorised centre."
+        "icon": "adolescents",
+        "tone": "navy",
+        "desc": "Grammar, vocabulary and Use of English worked systematically, driving progress in all four language skills (reading, writing, listening, speaking)."
       },
       {
         "title": "Adults",
-        "tag": "A1-C1",
+        "tag": "18+",
         "tagClass": "tag-mint",
-        "desc": "The same structured method, adapted to adult pace. Solid grammar foundations, systematic vocabulary and the confidence that comes from actually knowing the language."
+        "icon": "adults",
+        "tone": "mint",
+        "desc": "The same structured method, adapted to an adult's pace and needs. Solid grammar and vocabulary foundations, always encouraging learners to lose their fear of holding conversations in English."
       },
       {
-        "title": "Business English",
-        "tag": "B1+",
-        "tagClass": "tag-navy",
-        "desc": "Professional writing, meetings, calls and presentations, built on the same grammatical rigour. In-company sessions available across the Anoia area."
+        "title": "Cambridge Exams",
+        "tag": "Young Learners → C1 Advanced",
+        "tagClass": "tag-sun",
+        "icon": "examens",
+        "tone": "sun",
+        "desc": "<p><b>AUTHORISED CAMBRIDGE EXAM PREPARATION CENTRE SINCE 2005.</b></p><p>Every student is placed in a group according to their overall ability level on the Common European Framework of Reference.</p><p>Those who wish to can certify their level of English, with full preparation using authentic materials.</p><p>We prepare Young Learners (Starters, Movers, Flyers), A2 (Key English Test), B1 (Preliminary English Test), B2 (First Certificate) and C1 (Advanced).</p>"
+      },
+      {
+        "title": "Summer courses",
+        "tag": "",
+        "tagClass": "",
+        "icon": "estiu",
+        "tone": "sky",
+        "desc": "Intensive official exam preparation courses. Maintenance courses. Conversation classes. Tailored private lessons."
+      },
+      {
+        "title": "Private lessons",
+        "tag": "",
+        "tagClass": "",
+        "icon": "particulars",
+        "tone": "rose",
+        "desc": ""
       }
     ]
   },
@@ -228,8 +241,7 @@
   },
   "insta": {
     "h2": "Life at the academy.",
-    "lede": "Halloween parties, exam results, summer camps and everything in between.",
-    "note": "We post what happens at the academy here: exam results, activities and day-to-day school life.",
+    "lede": "News, announcements and things we want to share.",
     "posts": [
       {
         "tone": "a",
@@ -256,7 +268,8 @@
         "label": "Post 6"
       }
     ],
-    "postAlt": "English Corner Instagram post"
+    "postAlt": "English Corner Instagram post",
+    "follow": "Follow us!"
   },
   "contact": {
     "h2": "Come in for a free<br>trial class.",
@@ -280,19 +293,15 @@
     "about": "An English school in Vilanova del Camí since 2009. Groups of no more than 8, every area of the language, and preparation for the official exams.",
     "cols": [
       {
-        "title": "Courses",
+        "title": "What we offer",
         "links": [
           {
             "href": "#courses",
-            "label": "Kids &amp; Juniors"
+            "label": "Primary"
           },
           {
             "href": "#courses",
             "label": "Teens"
-          },
-          {
-            "href": "#exams",
-            "label": "Cambridge Exams"
           },
           {
             "href": "#courses",
@@ -300,24 +309,32 @@
           },
           {
             "href": "#courses",
-            "label": "Business English"
+            "label": "Cambridge Exams"
+          },
+          {
+            "href": "#courses",
+            "label": "Summer courses"
+          },
+          {
+            "href": "#courses",
+            "label": "Private lessons"
           }
         ]
       },
       {
-        "title": "School",
+        "title": "The school",
         "links": [
           {
-            "href": "#method",
-            "label": "Our method"
-          },
-          {
-            "href": "#reviews",
-            "label": "Reviews"
+            "href": "#about",
+            "label": "About us"
           },
           {
             "href": "#instagram",
             "label": "Instagram"
+          },
+          {
+            "href": "#exams",
+            "label": "Levels"
           },
           {
             "href": "#contact",

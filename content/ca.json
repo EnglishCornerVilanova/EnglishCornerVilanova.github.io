@@ -1,9 +1,9 @@
 {
   "meta": {
-    "title": "Acadèmia d'anglès a Vilanova del Camí | English Corner",
+    "title": "English Corner | Acadèmia d'anglès a Vilanova del Camí",
     "description": "Acadèmia d'anglès a Vilanova del Camí (Anoia). Grups de màxim 8 alumnes, totes les àrees de l'idioma i centre preparador oficial dels exàmens de Cambridge English.",
     "ogTitle": "Acadèmia d'anglès a Vilanova del Camí",
-    "ogDescription": "Un mètode estructurat, totes les àrees de l'idioma i grups de vuit alumnes. Dels 4 anys fins als adults."
+    "ogDescription": "Un mètode estructurat treballant totes les àrees de l'anglès. Des dels 6 anys fins a grups d'adults. Centre preparador oficial d'exàmens Cambridge."
   },
   "a11y": {
     "skip": "Vés al contingut",
@@ -22,27 +22,26 @@
     "hoursSat": "Dissabte, de 9 a 13 h"
   },
   "nav": {
-    "cta": "Classe de prova",
     "items": [
       {
-        "label": "Cursos",
-        "href": "#courses"
+        "label": "Inici",
+        "href": "#inici"
       },
       {
-        "label": "Exàmens",
-        "href": "#exams"
-      },
-      {
-        "label": "Mètode",
-        "href": "#method"
-      },
-      {
-        "label": "Opinions",
-        "href": "#reviews"
+        "label": "Sobre nosaltres",
+        "href": "#about"
       },
       {
         "label": "Instagram",
         "href": "#instagram"
+      },
+      {
+        "label": "Què oferim",
+        "href": "#courses"
+      },
+      {
+        "label": "Nivells",
+        "href": "#exams"
       },
       {
         "label": "Contacte",
@@ -55,13 +54,9 @@
     "line2": "Tots els nivells.",
     "accentPre": "",
     "accent": "Res a mitges.",
-    "lede": "Un mètode estructurat, totes les àrees de l'idioma i grups de vuit alumnes. Dels 4 anys fins als adults.",
+    "lede": "Un mètode estructurat treballant totes les àrees de l'anglès. Des dels 6 anys fins a grups d'adults. Centre preparador oficial d'exàmens Cambridge.",
     "ctaPrimary": "Demana la prova de nivell",
-    "ctaSecondary": "Mira els cursos",
-    "phClassroom": "Foto de l'aula",
-    "phStudents": "Alumnes",
-    "chipN": "8",
-    "chipLabel": "màxim per aula"
+    "bannerAlt": "Banner d'English Corner amb estudiants i monuments de Londres"
   },
   "creds": {
     "markAlt": "Cambridge English, centre preparador autoritzat",
@@ -73,7 +68,7 @@
   "marquee": [
     "Grups de màxim 8 alumnes",
     "Reading, writing, listening, speaking",
-    "Dels 4 anys fins als adults",
+    "Des dels 6 anys fins als adults",
     "Nivells de l'A1 al C1",
     "Prova de nivell gratuïta",
     "Centre preparador oficial Cambridge",
@@ -82,38 +77,56 @@
   ],
   "courses": {
     "kicker": "Els nostres cursos",
-    "h2": "Un itinerari estructurat,<br>de l'A1 al C1.",
-    "lede": "Tots els grups segueixen un temari estructurat i treballen les cinc àrees a cada unitat. L'alumne avança nivell a nivell i es presenta a l'examen oficial quan realment està preparat.",
+    "h2": "Amb nosaltres, tothom té el seu lloc.",
+    "lede": "Ensenyem anglès per a totes les edats a partir dels 6 anys.",
     "items": [
       {
-        "title": "Infantil i Primària",
-        "tag": "De 4 a 12 anys · Pre A1-A2",
+        "title": "Primària",
+        "tag": "De 6 a 12 anys",
         "tagClass": "tag-red",
-        "desc": "Estructurat des del primer dia, seguint la progressió Starters, Movers i Flyers. Lectura, escriptura, comprensió oral i expressió oral a cada unitat."
+        "icon": "primaria",
+        "tone": "red",
+        "desc": "Acompanyem els més joves des d'una etapa inicial, incorporant la lectoescriptura de forma gradual i fent-los veure l'anglès com una eina real."
       },
       {
         "title": "Adolescents",
-        "tag": "De 13 a 17 anys · A2-B2",
+        "tag": "De 13 a 18 anys",
         "tagClass": "tag-navy",
-        "desc": "Gramàtica, vocabulari i use of English treballats de manera sistemàtica, al costat de les quatre destreses. Les notes de l'institut milloren com a conseqüència, no com a objectiu."
-      },
-      {
-        "title": "Exàmens Cambridge",
-        "tag": "A2 Key → C1 Advanced",
-        "tagClass": "tag-sun",
-        "desc": "A2 Key, B1 Preliminary, B2 First i C1 Advanced. Preparació completa paper per paper, amb simulacres en condicions reals, al nostre propi centre autoritzat."
+        "icon": "adolescents",
+        "tone": "navy",
+        "desc": "Gramàtica, vocabulari i Use of English treballats de manera sistemàtica, impulsant el progrés en les quatre destreses de la llengua (reading, writing, listening, speaking)."
       },
       {
         "title": "Adults",
-        "tag": "A1-C1",
+        "tag": "+18 anys",
         "tagClass": "tag-mint",
-        "desc": "El mateix mètode estructurat, adaptat al ritme d'un adult. Bases gramaticals sòlides, vocabulari sistemàtic i la seguretat que dona conèixer de debò l'idioma."
+        "icon": "adults",
+        "tone": "mint",
+        "desc": "El mateix mètode estructurat, adaptat al ritme i necessitats d'un adult. Bases gramaticals i de vocabulari sòlides, sempre encoratjant l'alumne a perdre la por a mantenir converses en anglès."
       },
       {
-        "title": "Anglès per a empreses",
-        "tag": "B1+",
-        "tagClass": "tag-navy",
-        "desc": "Redacció professional, reunions, trucades i presentacions, amb el mateix rigor gramatical. Fem sessions a l'empresa arreu de l'Anoia."
+        "title": "Exàmens Cambridge",
+        "tag": "Young Learners → C1 Advanced",
+        "tagClass": "tag-sun",
+        "icon": "examens",
+        "tone": "sun",
+        "desc": "<p><b>CENTRE PREPARADOR OFICIAL D'EXÀMENS CAMBRIDGE DES DE 2005.</b></p><p>Tots els nostres alumnes s'ubiquen a un grup determinat en funció del seu nivell d'habilitat global segons el Marc de Referència Europeu.</p><p>Aquells que així ho volen poden optar a certificar el seu nivell d'anglès, rebent preparació completa i amb materials autèntics.</p><p>Preparem els nivells Young Learners (Starters, Movers, Flyers), A2 (Key English Test), B1 (Preliminary English Test), B2 (First Certificate) i C1 (Advanced).</p>"
+      },
+      {
+        "title": "Cursets d'estiu",
+        "tag": "",
+        "tagClass": "",
+        "icon": "estiu",
+        "tone": "sky",
+        "desc": "Cursets intensius de preparació d'exàmens oficials. Cursets de manteniment. Classes de conversa. Classes particulars a mida."
+      },
+      {
+        "title": "Classes particulars",
+        "tag": "",
+        "tagClass": "",
+        "icon": "particulars",
+        "tone": "rose",
+        "desc": ""
       }
     ]
   },
@@ -228,8 +241,7 @@
   },
   "insta": {
     "h2": "El dia a dia de l'acadèmia.",
-    "lede": "Festes de Halloween, resultats dels exàmens, casals d'estiu i tot el que passa entremig.",
-    "note": "Aquí publiquem el que passa a l'acadèmia: resultats d'exàmens, activitats i el dia a dia de les classes.",
+    "lede": "Comunicats, novetats i coses que volem compartir.",
     "posts": [
       {
         "tone": "a",
@@ -256,7 +268,8 @@
         "label": "Publicació 6"
       }
     ],
-    "postAlt": "Publicació d'Instagram d'English Corner"
+    "postAlt": "Publicació d'Instagram d'English Corner",
+    "follow": "Segueix-nos!"
   },
   "contact": {
     "h2": "Vine a fer una classe<br>de prova gratuïta.",
@@ -280,19 +293,15 @@
     "about": "Acadèmia d'anglès a Vilanova del Camí des del 2009. Grups de màxim 8 alumnes, totes les àrees de l'idioma i preparació per als exàmens oficials.",
     "cols": [
       {
-        "title": "Cursos",
+        "title": "Què oferim",
         "links": [
           {
             "href": "#courses",
-            "label": "Infantil i Primària"
+            "label": "Primària"
           },
           {
             "href": "#courses",
             "label": "Adolescents"
-          },
-          {
-            "href": "#exams",
-            "label": "Exàmens Cambridge"
           },
           {
             "href": "#courses",
@@ -300,7 +309,15 @@
           },
           {
             "href": "#courses",
-            "label": "Anglès per a empreses"
+            "label": "Exàmens Cambridge"
+          },
+          {
+            "href": "#courses",
+            "label": "Cursets d'estiu"
+          },
+          {
+            "href": "#courses",
+            "label": "Classes particulars"
           }
         ]
       },
@@ -308,16 +325,16 @@
         "title": "L'acadèmia",
         "links": [
           {
-            "href": "#method",
-            "label": "El nostre mètode"
-          },
-          {
-            "href": "#reviews",
-            "label": "Opinions"
+            "href": "#about",
+            "label": "Sobre nosaltres"
           },
           {
             "href": "#instagram",
             "label": "Instagram"
+          },
+          {
+            "href": "#exams",
+            "label": "Nivells"
           },
           {
             "href": "#contact",

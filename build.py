@@ -41,6 +41,16 @@ IG_CACHE = ROOT / ".cache" / "instagram"
 IG_TTL = 6 * 3600
 IG_POSTS: list[dict] | None = None
 UA = {"User-Agent": "EnglishCornerBuild/1.0"}
+IG_AVATAR = "/assets/img/logo-192.png"   # foto de perfil; el logo si no hay feed
+
+ICONS = {
+    "primaria": '<svg viewBox="0 0 24 24"><path d="M8.5 7V5.5A2.5 2.5 0 0 1 11 3h2a2.5 2.5 0 0 1 2.5 2.5V7"/><rect x="5" y="7" width="14" height="14" rx="4"/><path d="M9 21v-4a1.5 1.5 0 0 1 1.5-1.5h3A1.5 1.5 0 0 1 15 17v4"/><path d="M9 11h6"/></svg>',
+    "adolescents": '<svg viewBox="0 0 24 24"><path d="M4 15v-3a8 8 0 0 1 16 0v3"/><rect x="3" y="14" width="4.5" height="7" rx="2"/><rect x="16.5" y="14" width="4.5" height="7" rx="2"/></svg>',
+    "adults": '<svg viewBox="0 0 24 24"><path d="M4 9h13v6a5 5 0 0 1-5 5H9a5 5 0 0 1-5-5V9z"/><path d="M17 11h1.5a2.5 2.5 0 0 1 0 5H17"/><path d="M8 3.5c0 1.2 1 1.3 1 2.5M12 3.5c0 1.2 1 1.3 1 2.5"/></svg>',
+    "examens": '<svg viewBox="0 0 24 24"><path d="M2.5 9.5 12 5l9.5 4.5L12 14 2.5 9.5z"/><path d="M6.5 11.6V16c0 1.4 2.5 3 5.5 3s5.5-1.6 5.5-3v-4.4"/><path d="M21.5 9.5V15"/></svg>',
+    "estiu": '<svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2.5v2M12 19.5v2M4.6 4.6 6 6M18 18l1.4 1.4M2.5 12h2M19.5 12h2M4.6 19.4 6 18M18 6l1.4-1.4"/></svg>',
+    "particulars": '<svg viewBox="0 0 24 24"><circle cx="12" cy="7.5" r="3.5"/><path d="M5 20.5c.8-3.6 3.6-6 7-6s6.2 2.4 7 6"/></svg>',
+}
 
 GENERATED_BANNER = (
     "<!-- ─────────────────────────────────────────────────────────────\n"
@@ -357,6 +367,16 @@ def instagram_posts(site: dict) -> list[dict] | None:
             with _get(url) as r:
                 feed = json.load(r)
             IG_CACHE.mkdir(parents=True, exist_ok=True)
+            profile = None
+            if feed.get("profilePictureUrl"):
+                try:
+                    with _get(feed["profilePictureUrl"]) as r:
+                        kind = r.headers.get("Content-Type", "")
+                        body = r.read()
+                    profile = "perfil." + ("webp" if "webp" in kind else "png" if "png" in kind else "jpg")
+                    (IG_CACHE / profile).write_bytes(body)
+                except Exception:
+                    profile = None
             posts = []
             for p in feed.get("posts", [])[:6]:
                 sizes = p.get("sizes") or {}
@@ -378,9 +398,9 @@ def instagram_posts(site: dict) -> list[dict] | None:
                               "alt": re.sub(r"\s+", " ", alt)[:140],
                               # real proportions, so the grid never crops a post
                               "w": w, "h": h})
-            meta.write_text(json.dumps({"feed": url, "posts": posts}, ensure_ascii=False),
+            meta.write_text(json.dumps({"feed": url, "posts": posts, "profile": profile}, ensure_ascii=False),
                             encoding="utf-8")
-            cached = {"feed": url, "posts": posts}
+            cached = {"feed": url, "posts": posts, "profile": profile}
             print(f"  · instagram: {len(posts)} publicaciones leídas del feed")
         except Exception as exc:
             if cached and cached.get("feed") == url:
@@ -392,6 +412,10 @@ def instagram_posts(site: dict) -> list[dict] | None:
     out.mkdir(parents=True, exist_ok=True)
     for p in cached["posts"]:
         shutil.copy2(IG_CACHE / p["file"], out / p["file"])
+    global IG_AVATAR
+    if cached.get("profile") and (IG_CACHE / cached["profile"]).exists():
+        shutil.copy2(IG_CACHE / cached["profile"], out / cached["profile"])
+        IG_AVATAR = f"/assets/ig/{cached['profile']}"
     return cached["posts"] or None
 
 
@@ -434,6 +458,8 @@ def lang_redirect(site: dict) -> str:
 
 def build_lang(site: dict, lang: str, template: str) -> str:
     data = deep_merge(shared_from_site(site), load_json(CONTENT / f"{lang}.json"))
+    for item in data.get("courses", {}).get("items", []):
+        item["iconSvg"] = ICONS.get(item.get("icon", ""), "")
 
     mark_html, mark_is_official = cambridge_mark(data)
     if not mark_is_official:
@@ -463,6 +489,7 @@ def build_lang(site: dict, lang: str, template: str) -> str:
         "langRedirect": lang_redirect(site),
         "cambridgeMark": mark_html,
         "igGrid": ig_grid(data),
+        "igAvatar": IG_AVATAR,
         "cssV": asset_version("assets/css/site.css"),
         "jsV": asset_version("assets/js/site.js"),
         "schema": build_schema(site, data, lang),

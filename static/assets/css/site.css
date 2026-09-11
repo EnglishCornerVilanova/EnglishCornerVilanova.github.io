@@ -14,8 +14,8 @@
   --ink-3:#6E7684;
   --line:#E8E4DE;
   --paper:#FFFFFF;
-  --paper-2:#F8F2E7;   /* warm cream */
-  --paper-3:#EFE7D9;
+  --paper-2:#F2F2F0;   /* gris perla muy claro */
+  --paper-3:#E6E6E2;
 
   /* Accents */
   --sky:#EAF2FF;
@@ -917,11 +917,11 @@ body.menu-open .drawer-foot{opacity:1;transform:none}
    ═══════════════════════════════════════════════════════════ */
 ::selection{background:rgba(232,25,44,.15);color:var(--ink)}
 ::-moz-selection{background:rgba(232,25,44,.15);color:var(--ink)}
-html{caret-color:var(--red);scrollbar-width:thin;scrollbar-color:#D9D3CA transparent}
+html{caret-color:var(--red);scrollbar-width:thin;scrollbar-color:#D3D3CF transparent}
 ::-webkit-scrollbar{width:12px;height:12px}
 ::-webkit-scrollbar-track{background:transparent}
 ::-webkit-scrollbar-thumb{
-  background:#D9D3CA;border-radius:100px;
+  background:#D3D3CF;border-radius:100px;
   border:3.5px solid var(--paper);background-clip:padding-box;
 }
 ::-webkit-scrollbar-thumb:hover{background:var(--ink-3)}
@@ -1016,28 +1016,6 @@ a:not([class]),.cred-txt a,.drawer-tel a{
 .method-frame{transform:rotate(-2deg)}
 .method-frame-2{transform:rotate(3deg)}
 
-/* ── Sello cosido a mano ───────────────────────────────── */
-.stamp{
-  position:absolute;top:-4%;right:-2%;z-index:5;
-  width:clamp(88px,10.5vw,116px);aspect-ratio:1;border-radius:100px;
-  background:var(--navy);color:#fff;
-  display:flex;flex-direction:column;align-items:center;justify-content:center;
-  gap:3px;padding:0 9px;text-align:center;line-height:1;
-  box-shadow:0 3px 8px rgba(1,33,105,.22),0 20px 36px -14px rgba(1,33,105,.62);
-  transform:rotate(-9deg);
-  animation:stamp 7.5s .6s var(--smooth) infinite;
-}
-.stamp b{
-  font-family:'Bricolage Grotesque',sans-serif;font-weight:800;
-  font-size:clamp(1.6rem,2.6vw,2.1rem);letter-spacing:-.045em;
-  font-variant-numeric:tabular-nums;
-}
-.stamp span{font-size:.7rem;font-weight:700;letter-spacing:.02em;opacity:.86;line-height:1.2}
-@keyframes stamp{
-  0%,100%{transform:translateY(0) rotate(-9deg)}
-  50%{transform:translateY(-9px) rotate(-9deg)}
-}
-
 /* ── La rejilla de Instagram, montada igual ────────────── */
 .insta{background:var(--paper-2)}
 .ig-cell{
@@ -1055,14 +1033,6 @@ a:not([class]),.cred-txt a,.drawer-tel a{
 @media (hover:hover) and (pointer:fine){
   .frame:hover,.ig-cell:hover{transform:rotate(0) scale(1.03)}
 }
-@media (prefers-reduced-motion:reduce){
-  .stamp{animation:none}
-}
-@media (max-width:600px){
-  .stamp{width:76px;top:-5%;right:0}
-  .stamp b{font-size:1.35rem}
-  .stamp span{font-size:.62rem}
-}
 
 /* Publicaciones reales de Instagram, montadas como las fotos del resto */
 a.ig-cell{display:block;text-decoration:none}
@@ -1077,3 +1047,69 @@ a.ig-cell{display:block;text-decoration:none}
 /* Las publicaciones no miden todas lo mismo (4:5 las fotos, 9:16 los reels).
    Centradas en vertical, las distintas alturas se leen como fotos clavadas. */
 .ig-grid{align-items:center}
+
+
+/* ═══════════════════════════════════════════════════════════
+   CAMBIOS DEL CLIENTE — 11/09/2026
+   ═══════════════════════════════════════════════════════════ */
+
+/* Hero: logo mayor y tres recortes del banner montados como fotos */
+.hero-brand{width:clamp(140px,15vw,210px)}
+.hero-visual{aspect-ratio:1/.9}
+.hero-visual .frame{inset:auto;width:44%;padding:9px 9px 26px}
+.hero-visual .frame picture{display:block}
+.hero-visual .frame img{display:block;width:100%;height:auto;border-radius:2px}
+/* Misma especificidad que la regla de arriba: si no, su inset:auto anula
+   la posición de cada foto y las tres quedan apiladas. */
+.hero-visual .frame-1{left:0;top:9%;transform:rotate(-4deg);z-index:1}
+.hero-visual .frame-2{left:28%;top:0;transform:rotate(1.5deg);z-index:2}
+.hero-visual .frame-3{right:0;top:12%;transform:rotate(3.5deg);z-index:3}
+@media (max-width:600px){ .hero-brand{width:150px} }
+
+/* Què oferim: icono en vez de número, sin flechas ni efecto de enlace */
+.courses{background:var(--paper)}
+.course{grid-template-columns:56px minmax(0,1fr) minmax(0,1.35fr);align-items:start;transition:none;cursor:default}
+.course:hover{transform:none}
+.course:hover::before{opacity:0}
+.course-go{display:none}
+.course-ico{width:52px;height:52px;border-radius:16px;display:grid;place-items:center}
+.course-ico svg{width:26px;height:26px;stroke:currentColor;stroke-width:1.8;fill:none;stroke-linecap:round;stroke-linejoin:round}
+.ico-red{background:#FFEAEC;color:#B8121F}
+.ico-navy{background:#E7EEFF;color:#012169}
+.ico-mint{background:#E6F6EC;color:#1E7A4C}
+.ico-sun{background:#FFF3D9;color:#8A5B00}
+.ico-sky{background:#E3F4FB;color:#0B5C7A}
+.ico-rose{background:#FCE8F1;color:#9B1F55}
+.course-title{padding-top:.3rem}
+.course-tag:empty,.course-desc:empty{display:none}
+.course-desc{padding-top:.35rem}
+.course-desc p + p{margin-top:.6em}
+.course-desc b{color:var(--ink);font-weight:800;font-size:.84rem;letter-spacing:.02em}
+@media (max-width:940px){
+  .course{grid-template-columns:48px minmax(0,1fr)}
+  .course-desc{grid-column:2/3}
+  .course-ico{width:44px;height:44px;border-radius:14px}
+}
+
+/* Nivells: la onda ya separa, sobra la línea */
+.exams{border-top:none}
+
+/* Instagram: foto de perfil + @usuario + "Segueix-nos!" */
+.ig-follow{
+  display:inline-flex;align-items:center;gap:13px;flex-shrink:0;
+  padding:7px 20px 7px 7px;border-radius:100px;
+  background:#fff;border:1px solid var(--line);color:var(--ink);text-decoration:none;
+  box-shadow:0 1px 2px rgba(18,21,28,.04),0 10px 26px -14px rgba(18,21,28,.28);
+  transition:transform .3s var(--spring),box-shadow .3s var(--out);
+}
+.ig-follow:active{transform:scale(.96)}
+@media (hover:hover) and (pointer:fine){
+  .ig-follow:hover{transform:translateY(-2px);box-shadow:0 2px 4px rgba(18,21,28,.05),0 16px 34px -14px rgba(18,21,28,.34)}
+}
+.ig-avatar{width:50px;height:50px;border-radius:100px;padding:2.5px;flex-shrink:0;
+  background:linear-gradient(45deg,#F58529,#DD2A7B 45%,#8134AF 75%,#515BD4)}
+.ig-avatar img{display:block;width:100%;height:100%;object-fit:cover;border-radius:100px;border:2.5px solid #fff;background:#fff}
+.ig-follow-txt{display:flex;flex-direction:column;line-height:1.25}
+.ig-follow-txt b{font-size:.9rem;font-weight:700;letter-spacing:-.01em}
+.ig-follow-txt span{font-size:.82rem;font-weight:700;color:var(--red-ink)}
+.ig-glyph{width:22px;height:22px;margin-left:2px;color:var(--ink-2);stroke:currentColor;stroke-width:1.9;fill:none}
