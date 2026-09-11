@@ -46,3 +46,28 @@ jobs:
     steps:
       - id: despliegue
         uses: actions/deploy-pages@v4
+
+  mantener-activo:
+    # GitHub desactiva las tareas programadas de un repositorio público tras
+    # 60 días sin actividad. Si pasan 50 días sin cambios, se deja un cambio
+    # vacío para que la publicación diaria de Instagram no se detenga nunca.
+    if: github.event_name != 'push'
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+      - name: Comprobar la actividad del repositorio
+        run: |
+          ultimo=$(git log -1 --format=%ct)
+          dias=$(( ( $(date +%s) - ultimo ) / 86400 ))
+          echo "Último cambio hace $dias días."
+          if [ "$dias" -ge 50 ]; then
+            git config user.name "github-actions[bot]"
+            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+            git commit --allow-empty -m "Mantenimiento: mantener activa la publicación diaria"
+            git push
+            echo "Cambio vacío añadido."
+          else
+            echo "No hace falta: la tarea diaria sigue activa."
+          fi

@@ -136,12 +136,14 @@ privacidad y política de cookies. Ver `docs/PENDIENTE.md`.
 
 ## Publicar
 
-`dist/` es un sitio estático plano: vale cualquier hosting (Netlify, Vercel,
-Cloudflare Pages, GitHub Pages o un FTP de toda la vida).
+La web vive en GitHub Pages (repositorio `EnglishCornerVilanova/EnglishCornerVilanova.github.io`)
+y se sirve en **https://www.englishcorner.cat**. Dinahosting solo guarda el dominio.
 
-1. Ajusta `origin` en `site.json` al dominio real — de ahí salen la URL
-   canónica, los `hreflang`, el sitemap y las etiquetas de Open Graph.
-2. `python3 build.py`
-3. Sube el contenido de `dist/` a la raíz del dominio.
+```bash
+git pull --rebase      # primero: el mantenimiento automático puede haber subido cambios
+git push               # publica: GitHub construye y actualiza la web en 1-2 minutos
+```
 
-Si el hosting lo permite, sirve `/assets/` con caché larga; el HTML, corta.
+Además se reconstruye sola cada día a las 05:17 UTC para recoger Instagram, y
+un paso de mantenimiento evita que GitHub desactive esa tarea por inactividad.
+Si GitHub envía un correo de "Run failed", hay que revisar la pestaña Actions.
