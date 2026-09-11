@@ -45,13 +45,12 @@
     "Santa Margarida de Montbui",
     "Anoia"
   ],
-  "_openingHoursNota": "Solo se usa si falta la clave GOOGLE_PLACES_KEY o Google no responde; con la clave, el horario sale de la ficha de Google. Viernes por confirmar.",
+  "_openingHoursNota": "Solo se usa si falta la clave GOOGLE_PLACES_KEY o Google no responde; con la clave, el horario sale de la ficha de Google.",
   "openingHours": [
     {
       "days": [
         "Monday",
-        "Wednesday",
-        "Friday"
+        "Wednesday"
       ],
       "opens": "15:00",
       "closes": "21:15"
@@ -71,6 +70,13 @@
       ],
       "opens": "15:00",
       "closes": "21:15"
+    },
+    {
+      "days": [
+        "Friday"
+      ],
+      "opens": "15:00",
+      "closes": "20:00"
     }
   ],
   "social": {
