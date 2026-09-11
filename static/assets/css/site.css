@@ -1125,3 +1125,12 @@ a.ig-cell{display:block;text-decoration:none}
 .band-grid{grid-template-columns:repeat(3,1fr)}
 @media (max-width:940px){ .band-grid{grid-template-columns:repeat(3,1fr)} }
 @media (max-width:600px){ .band-grid{grid-template-columns:1fr} }
+
+/* Firma de la barra y del pie: solo la bandera (sin el texto de debajo, que ya
+   va escrito al lado), sin recuadro, a la altura de las dos líneas del nombre. */
+.brand{gap:9px;align-items:center}
+.brand-mark{width:auto;height:30px;border-radius:0;overflow:visible;outline:none;background:none;flex-shrink:0}
+.brand-mark picture{display:block;height:100%}
+.brand-mark img{display:block;height:100%;width:auto;object-fit:contain;transform:none}
+/* Sin el botón "Classe de prova" hay sitio: el nombre se ve también en móvil. */
+@media (max-width:600px){ .brand-name{display:block} }
