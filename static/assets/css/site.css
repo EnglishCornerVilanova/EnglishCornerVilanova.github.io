@@ -1134,3 +1134,27 @@ a.ig-cell{display:block;text-decoration:none}
 .brand-mark img{display:block;height:100%;width:auto;object-fit:contain;transform:none}
 /* Sin el botón "Classe de prova" hay sitio: el nombre se ve también en móvil. */
 @media (max-width:600px){ .brand-name{display:block} }
+
+/* Cromos del banner definitivo: cuatro recortes que se solapan en contenido.
+   Cada uno contiene sus elementos enteros y se coloca en su posición real del
+   banner; donde se superponen la imagen continúa. Orden de apilado elegido para
+   que ningún borde corte algo importante: el 3 (título) va encima de todos, el
+   2 (bandera) encima del 1. Anchos y posiciones: bloque generado más abajo. */
+.hero-visual{display:block;position:relative}
+.hero-visual .frame{position:absolute;top:3%;flex:none;margin:0;padding:6px 6px 20px}
+.hero-visual .frame-1{transform:rotate(-1.6deg) translateY(4px);z-index:1}
+.hero-visual .frame-2{transform:rotate(1.3deg) translateY(-5px);z-index:2}
+.hero-visual .frame-4{transform:rotate(1.7deg) translateY(6px);z-index:3}
+.hero-visual .frame-3{transform:rotate(-.8deg) translateY(1px);z-index:4}
+@media (min-width:1280px){
+  .hero-grid{grid-template-columns:minmax(0,1fr) minmax(0,1.35fr)}
+  .hero h1{font-size:clamp(2.9rem,5.4vw,4.3rem)}
+}
+
+/* cromos:inicio (generado por design/brand/cromos-banner.py) */
+.hero-visual .frame-1{left:0.00%;width:27.20%}
+.hero-visual .frame-2{left:25.20%;width:25.60%}
+.hero-visual .frame-3{left:42.60%;width:29.90%}
+.hero-visual .frame-4{left:64.50%;width:35.50%}
+.hero-visual{aspect-ratio:2.709/1.14}
+/* cromos:fin */
