@@ -654,7 +654,8 @@ def legal_main(site: dict, lang: str, data: dict, page: dict) -> str:
     )
 
 
-def build_lang(site: dict, lang: str, template: str, legal_key: str | None = None) -> str:
+def build_lang(site: dict, lang: str, template: str, legal_key: str | None = None,
+               not_found: bool = False) -> str:
     """The home page, or with `legal_key` one of the legal pages: same head,
     nav and footer, with <main> swapped for the legal text."""
     data = deep_merge(shared_from_site(site), load_json(CONTENT / f"{lang}.json"))
@@ -677,6 +678,21 @@ def build_lang(site: dict, lang: str, template: str, legal_key: str | None = Non
         data["meta"].update(title=f'{page["title"]} | English Corner', description=page["description"],
                             ogTitle=page["title"], ogDescription=page["description"])
         main = legal_main(site, lang, data, page)
+        template = re.sub(r'<main id="main">.*?</main>', lambda _: main, template, count=1, flags=re.S)
+        template = template.replace('<script type="application/ld+json">{{ @schema }}</script>', "")
+    elif not_found:
+        paths = {l: home_href(site, l) for l in site["langs"]}
+        nf = data["notFound"]
+        data["meta"].update(title=f'{nf["title"]} | English Corner', description=nf["lede"],
+                            ogTitle=nf["title"], ogDescription=nf["lede"])
+        main = (
+            '<main id="main" class="legal-main">\n<article class="legal legal-404">\n'
+            f'  <p class="legal-kicker"><a href="{home}">English Corner</a></p>\n'
+            f'  <h1 class="display">{html.escape(nf["title"])}</h1>\n'
+            f'  <p class="hero-lede">{html.escape(nf["lede"])}</p>\n'
+            f'  <p><a class="btn btn--red" href="{home}">{html.escape(nf["cta"])}</a></p>\n'
+            '</article>\n</main>'
+        )
         template = re.sub(r'<main id="main">.*?</main>', lambda _: main, template, count=1, flags=re.S)
         template = template.replace('<script type="application/ld+json">{{ @schema }}</script>', "")
     else:
@@ -709,7 +725,7 @@ def build_lang(site: dict, lang: str, template: str, legal_key: str | None = Non
         "legalNavLabel": legal["navLabel"],
         "home": home,
         "canonical": site["origin"] + paths[lang],
-        "robots": '<meta name="robots" content="noindex, follow">' if legal_key else "",
+        "robots": '<meta name="robots" content="noindex, follow">' if (legal_key or not_found) else "",
         "origin": site["origin"],
         "ogLocale": site["ogLocales"][lang],
         "alternates": build_alternates(site, paths),
@@ -721,7 +737,7 @@ def build_lang(site: dict, lang: str, template: str, legal_key: str | None = Non
         "igAvatar": IG_AVATAR,
         "cssV": asset_version("assets/css/site.css"),
         "jsV": asset_version("assets/js/site.js"),
-        "schema": "" if legal_key else build_schema(site, data, lang),
+        "schema": "" if (legal_key or not_found) else build_schema(site, data, lang),
         "year": site["year"],
     }
 
@@ -800,6 +816,9 @@ def build() -> None:
         for p in pages:
             write(base / p["slug"] / "index.html", build_lang(site, lang, template, p["key"]))
         print(f"  · {(base / 'index.html').relative_to(ROOT)} + {len(pages)} páginas legales")
+
+    write(DIST / "404.html", build_lang(site, site["defaultLang"], template, not_found=True))
+    print("  · dist/404.html")
 
     write(DIST / "sitemap.xml", build_sitemap(site))
     write(DIST / "site.webmanifest", build_manifest(site))

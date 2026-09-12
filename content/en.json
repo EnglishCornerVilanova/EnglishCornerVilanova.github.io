@@ -1,7 +1,7 @@
 {
   "meta": {
     "title": "English Corner | English school in Vilanova del Camí",
-    "description": "English school in Vilanova del Camí (Anoia). Every area of the language, from age 6 through to adults, and an authorised Cambridge English exam preparation centre.",
+    "description": "English academy in Vilanova del Camí since 2005. Every area of the language, from age 6 to adults, and official Cambridge exams.",
     "ogTitle": "English school in Vilanova del Camí",
     "ogDescription": "A structured method covering every area of English. From age 6 through to adult groups. Authorised Cambridge exam preparation centre."
   },
@@ -350,5 +350,10 @@
     ],
     "copyright": "© 2026 English Corner. All rights reserved.",
     "place": "Vilanova del Camí, Anoia, Barcelona"
+  },
+  "notFound": {
+    "title": "This page doesn't exist.",
+    "lede": "The link may be old, or the address may have a typo. Head back to the homepage for courses, levels and how to reach us.",
+    "cta": "Back to the homepage"
   }
 }

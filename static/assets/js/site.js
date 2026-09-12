@@ -118,9 +118,8 @@
   /* Solo con ratón, en pantalla ancha y si no se ha pedido menos animación.
      El desplazamiento se escribe en dos variables CSS y lo reparte cada cromo
      según su profundidad, de modo que el collage gana relieve al moverse. */
-  var heroSec = document.querySelector('.hero');
   var heroArt = document.querySelector('.hero-visual');
-  if (heroSec && heroArt &&
+  if (heroArt &&
       matchMedia('(hover:hover)').matches &&
       matchMedia('(min-width:941px)').matches &&
       !matchMedia('(prefers-reduced-motion: reduce)').matches) {
@@ -131,13 +130,13 @@
       heroArt.style.setProperty('--py', dy.toFixed(1) + 'px');
     };
     var seguir = function (e) {
-      var r = heroSec.getBoundingClientRect();
+      var r = heroArt.getBoundingClientRect();
       dx = ((e.clientX - r.left) / r.width - 0.5) * 20;
       dy = ((e.clientY - r.top) / r.height - 0.5) * 12;
       if (!pend) pend = requestAnimationFrame(pintar);
     };
-    heroSec.addEventListener('pointermove', seguir);
-    heroSec.addEventListener('pointerleave', function () {
+    heroArt.addEventListener('pointermove', seguir, { passive: true });
+    heroArt.addEventListener('pointerleave', function () {
       dx = dy = 0;
       if (!pend) pend = requestAnimationFrame(pintar);
     });

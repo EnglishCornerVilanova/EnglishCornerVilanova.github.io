@@ -1,7 +1,7 @@
 {
   "meta": {
     "title": "English Corner | Acadèmia d'anglès a Vilanova del Camí",
-    "description": "Acadèmia d'anglès a Vilanova del Camí (Anoia). Totes les àrees de l'idioma, des dels 6 anys fins als adults, i centre preparador oficial dels exàmens de Cambridge English.",
+    "description": "Acadèmia d'anglès a Vilanova del Camí des del 2005. Totes les àrees de l'idioma, dels 6 anys als adults, i exàmens oficials de Cambridge.",
     "ogTitle": "Acadèmia d'anglès a Vilanova del Camí",
     "ogDescription": "Un mètode estructurat treballant totes les àrees de l'anglès. Des dels 6 anys fins a grups d'adults. Centre preparador oficial d'exàmens Cambridge."
   },
@@ -350,5 +350,10 @@
     ],
     "copyright": "© 2026 English Corner. Tots els drets reservats.",
     "place": "Vilanova del Camí, Anoia, Barcelona"
+  },
+  "notFound": {
+    "title": "Aquesta pàgina no existeix.",
+    "lede": "Potser l'enllaç és antic o hi ha una errada a l'adreça. Torna a l'inici i ho trobaràs tot: cursos, nivells i com contactar amb nosaltres.",
+    "cta": "Tornar a l'inici"
   }
 }
