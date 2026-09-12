@@ -187,7 +187,7 @@ a{color:inherit}
 }
 .hero-brand img{width:100%;height:auto}
 
-.hero h1{
+.hero-claim{
   font-size:clamp(2.9rem,6vw,4.7rem);
   margin-bottom:1.4rem;
 }
@@ -643,7 +643,7 @@ footer{
 }
 @media (max-width:600px){
   .brand-name{display:none}
-  .hero h1{font-size:clamp(2.4rem,10vw,3.2rem)}
+  .hero-claim{font-size:clamp(2.4rem,10vw,3.2rem)}
   .band-grid{grid-template-columns:1fr;border-radius:18px}
   .ig-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
   .cta{border-radius:26px}
@@ -980,9 +980,9 @@ a:not([class]),.cred-txt a,.drawer-tel a{
 .wave-up{background:var(--paper);fill:var(--paper-2)}
 
 /* ── Rotulador tras la línea que remata el titular ─────── */
-.hero h1 .accent{color:var(--red-ink)}
-.hero h1 .swash{position:relative;display:inline-block;z-index:0}
-.hero h1 .swash::before{
+.hero-claim .accent{color:var(--red-ink)}
+.hero-claim .swash{position:relative;display:inline-block;z-index:0}
+.hero-claim .swash::before{
   content:'';position:absolute;z-index:-1;
   left:-.11em;right:-.11em;top:-.02em;bottom:.05em;
   background:#FFCBD1;
@@ -993,7 +993,7 @@ a:not([class]),.cred-txt a,.drawer-tel a{
 }
 @keyframes swash{to{transform:rotate(-1.2deg) scaleX(1)}}
 @media (prefers-reduced-motion:reduce){
-  .hero h1 .swash::before{transform:rotate(-1.2deg);animation:none}
+  .hero-claim .swash::before{transform:rotate(-1.2deg);animation:none}
 }
 
 /* ── Fotos montadas sobre cartón, ligeramente giradas ──── */
@@ -1148,7 +1148,7 @@ a.ig-cell{display:block;text-decoration:none}
 .hero-visual .frame-3{transform:rotate(-.8deg) translateY(1px);z-index:4}
 @media (min-width:1280px){
   .hero-grid{grid-template-columns:minmax(0,1fr) minmax(0,1.35fr)}
-  .hero h1{font-size:clamp(2.9rem,5.4vw,4.3rem)}
+  .hero-claim{font-size:clamp(2.9rem,5.4vw,4.3rem)}
 }
 
 /* cromos:inicio (generado por design/brand/cromos-banner.py) */
@@ -1158,22 +1158,6 @@ a.ig-cell{display:block;text-decoration:none}
 .hero-visual .frame-4{left:64.50%;width:35.50%}
 .hero-visual{aspect-ratio:2.709/1.14}
 /* cromos:fin */
-
-/* Hero: el banner gana tamaño. En escritorio la imagen se extiende hacia el
-   margen derecho de la pantalla (hasta 24 px del borde) y los cromos se
-   escalonan más en vertical, para ocupar más altura sin perder la lectura
-   horizontal. El titular se reduce un poco para seguir en tres líneas. */
-@media (min-width:941px){
-  .hero-visual{aspect-ratio:2.709/1.32;margin-right:min(0px, calc((1180px - 100vw) / 2 + 24px))}
-  .hero-visual .frame-1{transform:rotate(-1.8deg) translateY(22px)}
-  .hero-visual .frame-2{transform:rotate(1.4deg) translateY(-16px)}
-  .hero-visual .frame-3{transform:rotate(-.8deg) translateY(6px)}
-  .hero-visual .frame-4{transform:rotate(1.8deg) translateY(28px)}
-}
-@media (min-width:1280px){
-  .hero-grid{grid-template-columns:minmax(0,1fr) minmax(0,1.6fr);gap:clamp(2rem,4vw,4rem)}
-  .hero h1{font-size:clamp(2.9rem,4.9vw,3.95rem)}
-}
 
 /* Horario: festivos marcados en Google y enlace a la ficha */
 .hours-note{color:var(--red);font-weight:600}
@@ -1211,3 +1195,84 @@ a.ig-cell{display:block;text-decoration:none}
   .legal dl{grid-template-columns:minmax(0,1fr);gap:.15rem}
   .legal dd+dt{margin-top:.6rem}
 }
+
+/* ═══════════ HERO · franja de marca y cromos en diagonal (12/09/2026) ═══════════
+   La franja repite la caja de la barra de menú, y su contenido se mide en
+   porcentaje de esa caja (unidades cqw), así que el logotipo y la frase encajan
+   igual a cualquier ancho y a cualquier zoom. El conjunto va centrado: el hueco
+   sobrante se reparte a los dos lados. */
+.hero{padding-top:clamp(6.5rem,12vh,8rem)}
+.hero-band{
+  position:relative;z-index:2;max-width:1180px;
+  margin:0 auto clamp(1.6rem,3.2vh,2.6rem);
+  display:flex;align-items:center;justify-content:center;gap:2.2cqw;
+  padding-bottom:1.4rem;border-bottom:1px solid var(--line);
+  container-type:inline-size;
+}
+/* respaldo para navegadores sin consultas de contenedor */
+.hero-brand{width:clamp(120px,12vw,190px);margin:0;flex:none}
+.hero-tag{font-size:clamp(1.3rem,3vw,2.8rem)}
+.hero-brand{width:16.2cqw}
+.hero-tag{
+  font-family:'Bricolage Grotesque',sans-serif;font-weight:800;
+  font-size:3.78cqw;line-height:1.1;letter-spacing:-.03em;margin:0;
+}
+.hero-tag i{font-style:normal;color:var(--red-ink)}
+@container (max-width:600px){
+  .hero-band{justify-content:flex-start;gap:3.6cqw;padding-bottom:1.1rem}
+  .hero-brand{width:27cqw}
+  .hero-tag{font-size:5.5cqw;line-height:1.16}
+}
+.hero-claim{font-size:clamp(2.05rem,3.4vw,2.9rem);position:relative;z-index:2}
+.hero-lede{font-size:1.05rem;max-width:40ch;position:relative;z-index:2}
+.hero-cta{position:relative;z-index:2}
+@media (max-width:600px){ .hero-claim{font-size:clamp(1.95rem,8.6vw,2.6rem)} }
+
+/* Los cromos: rotación, escalón y profundidad propios, compuestos en una sola
+   transformación para que la entrada, el puntero y el hover no se pisen. */
+.hero-visual .frame{
+  transform:
+    rotate(calc(var(--rot,0deg) * var(--straight,1)))
+    translateY(calc(var(--ty,0px) + var(--lift,0px)))
+    translate3d(calc(var(--px,0px) * var(--depth,1)), calc(var(--py,0px) * var(--depth,1)), 0)
+    scale(var(--sc,1));
+  transition:transform .4s var(--out),filter .4s var(--out);
+}
+@media (min-width:941px){
+  .hero-grid{grid-template-columns:minmax(0,1fr) minmax(0,1.14fr);gap:clamp(1.5rem,3vw,2.5rem);align-items:center}
+  .hero-visual{margin-right:0;aspect-ratio:2.709/1.46;z-index:1}
+  .hero-visual .frame-1{--rot:-3.4deg;--depth:1.35;top:28%;z-index:1}
+  .hero-visual .frame-2{--rot:2.2deg;--depth:.75;top:15%;z-index:2}
+  .hero-visual .frame-3{--rot:-1.4deg;--depth:1.1;top:5%;z-index:4}
+  .hero-visual .frame-4{--rot:3.2deg;--depth:.6;top:0;z-index:3}
+  /* entrada escalonada; `backwards` deja el estilo base al terminar, así el
+     puntero y el hover siguen mandando después */
+  .hero-visual .frame{animation:cromoIn .85s var(--out) backwards}
+  .hero-visual .frame-1{animation-delay:.30s}
+  .hero-visual .frame-2{animation-delay:.40s}
+  .hero-visual .frame-3{animation-delay:.50s}
+  .hero-visual .frame-4{animation-delay:.60s}
+}
+@keyframes cromoIn{
+  from{opacity:0;transform:rotate(calc(var(--rot,0deg) * 2)) translateY(32px) scale(.94)}
+}
+@media (min-width:1400px){ .hero-visual{margin-left:-3rem} }
+@media (hover:hover) and (min-width:941px){
+  .hero-visual .frame:hover{--lift:-16px;--straight:.25;--sc:1.035;z-index:9;
+    filter:drop-shadow(0 26px 34px rgba(20,20,18,.22))}
+}
+@media (max-width:940px){
+  .hero-visual{max-width:520px;width:100%;margin:.6rem auto 0;aspect-ratio:2.709/1.14}
+  .hero-visual .frame-1{--rot:-1.6deg;--ty:4px;top:3%;z-index:1}
+  .hero-visual .frame-2{--rot:1.3deg;--ty:-5px;top:3%;z-index:2}
+  .hero-visual .frame-3{--rot:-.8deg;--ty:1px;top:3%;z-index:4}
+  .hero-visual .frame-4{--rot:1.7deg;--ty:6px;top:3%;z-index:3}
+}
+
+/* La barra superior arranca solo con la bandera; el nombre aparece al bajar,
+   cuando la franja de marca del hero ya no se ve. */
+.nav .brand-name{
+  opacity:0;transform:translateX(-6px);
+  transition:opacity .45s var(--out),transform .45s var(--smooth);
+}
+.nav-shell.scrolled .brand-name{opacity:1;transform:none}

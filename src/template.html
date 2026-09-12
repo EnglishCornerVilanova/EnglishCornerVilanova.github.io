@@ -117,23 +117,27 @@
 
 <!-- ══════════ HERO ══════════ -->
 <header class="hero" id="inici">
+  <div class="hero-band hero-in hi-1">
+    <div class="hero-brand">
+        <picture>
+          <source type="image/webp" srcset="/assets/img/logo-384.webp 384w, /assets/img/logo-768.webp 768w" sizes="(max-width:600px) 110px, 200px">
+          <img src="/assets/img/logo-384.png" srcset="/assets/img/logo-384.png 384w, /assets/img/logo-768.png 768w"
+               sizes="(max-width:600px) 110px, 200px" width="384" height="384"
+               alt="{{ a11y.logoAlt }}" fetchpriority="high" decoding="async">
+        </picture>
+    </div>
+    <h1 class="hero-tag">{{ hero.tagline }}</h1>
+  </div>
+
   <div class="hero-grid">
 
     <div class="hero-copy">
-      <div class="hero-brand hero-in hi-1">
-        <picture>
-          <source type="image/webp" srcset="/assets/img/logo-384.webp 384w, /assets/img/logo-768.webp 768w" sizes="(max-width:600px) 150px, 210px">
-          <img src="/assets/img/logo-384.png" srcset="/assets/img/logo-384.png 384w, /assets/img/logo-768.png 768w"
-               sizes="(max-width:600px) 150px, 210px" width="384" height="384"
-               alt="{{ a11y.logoAlt }}" fetchpriority="high" decoding="async">
-        </picture>
-      </div>
 
-      <h1 class="display hero-in hi-2">
+      <p class="hero-claim display hero-in hi-2">
         {{ hero.line1 }}<br>
         {{ hero.line2 }}<br>
         <span class="accent">{{ hero.accentPre }}<span class="swash">{{ hero.accent }}</span></span>
-      </h1>
+      </p>
 
       <p class="hero-lede hero-in hi-3">{{ hero.lede }}</p>
 
@@ -146,7 +150,7 @@
 
     </div>
 
-    <div class="hero-visual hero-in hi-6">
+    <div class="hero-visual">
       <figure class="frame frame-1">
         <picture>
           <source type="image/webp" srcset="/assets/photos/hero-1.webp">

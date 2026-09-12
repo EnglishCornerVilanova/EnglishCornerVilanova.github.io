@@ -1,0 +1,17 @@
+{
+  "detector": {
+    "ignoreRules": [],
+    "ignoreFiles": [],
+    "ignoreValues": [
+      {
+        "rule": "flat-type-hierarchy",
+        "value": "*",
+        "files": [
+          "src/template.html"
+        ],
+        "createdAt": "2026-09-11T19:39:48.509Z",
+        "reason": "Claude: false positive, the detector reads the template without site.css (every role = 16px); built pages dist/index.html and dist/privacitat/index.html show no flat-type-hierarchy finding (h1 ~4rem vs body ~1rem)"
+      }
+    ]
+  }
+}
