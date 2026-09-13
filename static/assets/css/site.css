@@ -1376,3 +1376,8 @@ a.ig-cell{display:block;text-decoration:none}
 .method-frame-2{right:0;bottom:-3%;width:43%;height:auto}
 .method-frame > picture,.method-frame-2 > picture{display:block;border-radius:2px;overflow:hidden;background:var(--paper-3)}
 .method-frame img,.method-frame-2 img{display:block;width:100%;height:auto}
+
+/* El archivo del logotipo lleva un margen transparente (4,9 % a los lados y
+   9,8 % arriba y abajo). Se compensa para que el dibujo quede alineado con el
+   texto del pie y no deje un hueco de más debajo. */
+.foot-brand .brand--pie{margin-left:-6.5px;margin-bottom:.3rem}
