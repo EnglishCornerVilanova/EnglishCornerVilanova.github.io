@@ -1,6 +1,6 @@
 {
   "navLabel": "Legal information",
-  "updated": "Last updated: 11 September 2026",
+  "updated": "Last updated: 13 September 2026",
   "pages": [
     {
       "key": "avis",
@@ -72,7 +72,7 @@
         },
         {
           "h": "Who we share it with",
-          "html": "<p>We do not share data with third parties unless required by law. To run the website and our contact channels we rely on these providers:</p><ul><li><b>GitHub, Inc.</b>: website hosting.</li><li><b>Telefónica</b>: email service.</li><li><b>WhatsApp</b> (Meta), if you choose to message us there.</li><li><b>Google</b>: the website's fonts and, only if you load it, the Google Maps map.</li></ul><p>Some of these providers may process data outside the European Economic Area, particularly in the United States. In those cases the transfer is covered by the EU-US Data Privacy Framework or by standard contractual clauses approved by the European Commission.</p>"
+          "html": "<p>We do not share data with third parties unless required by law. To run the website and our contact channels we rely on these providers:</p><ul><li><b>GitHub, Inc.</b>: website hosting.</li><li><b>Telefónica</b>: email service.</li><li><b>WhatsApp</b> (Meta), if you choose to message us there.</li><li><b>Google</b>: only if you load the Google Maps map.</li></ul><p>Some of these providers may process data outside the European Economic Area, particularly in the United States. In those cases the transfer is covered by the EU-US Data Privacy Framework or by standard contractual clauses approved by the European Commission.</p>"
         },
         {
           "h": "Your rights",
@@ -101,7 +101,7 @@
         },
         {
           "h": "Third-party content",
-          "html": "<p><b>Google Maps.</b> The map in the contact section does not load until you press “[[mapButton]]”. From then on, Google may set its own cookies in your browser, as described in its <a href='https://policies.google.com/technologies/cookies' target='_blank' rel='noopener'>cookie policy</a>. If you do not load it, no connection to Google Maps is made.</p><p><b>Fonts.</b> The website's typefaces are downloaded from Google Fonts. This service does not set cookies, but Google receives your browser's IP address in order to serve them.</p><p><b>External links.</b> The links to Instagram, Facebook and WhatsApp simply take you to those services; nothing connects until you click.</p>"
+          "html": "<p><b>Google Maps.</b> The map in the contact section does not load until you press “[[mapButton]]”. From then on, Google may set its own cookies in your browser, as described in its <a href='https://policies.google.com/technologies/cookies' target='_blank' rel='noopener'>cookie policy</a>. If you do not load it, no connection to Google Maps is made.</p><p><b>Fonts.</b> The typefaces are served from this website itself: nothing is requested from any external server to display them.</p><p><b>External links.</b> The links to Instagram, Facebook and WhatsApp simply take you to those services; nothing connects until you click.</p>"
         },
         {
           "h": "How to manage or delete them",

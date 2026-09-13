@@ -1,6 +1,6 @@
 {
   "navLabel": "Informació legal",
-  "updated": "Última actualització: 11 de setembre de 2026",
+  "updated": "Última actualització: 13 de setembre de 2026",
   "pages": [
     {
       "key": "avis",
@@ -72,7 +72,7 @@
         },
         {
           "h": "A qui es comuniquen",
-          "html": "<p>No cedim dades a tercers, llevat que ho exigeixi la llei. Perquè funcionin el web i els canals de contacte ens servim d'aquests proveïdors:</p><ul><li><b>GitHub, Inc.</b>: allotjament del web.</li><li><b>Telefónica</b>: servei de correu electrònic.</li><li><b>WhatsApp</b> (Meta), si tries aquest canal per escriure'ns.</li><li><b>Google</b>: les tipografies del web i, només si el carregues, el mapa de Google Maps.</li></ul><p>Alguns d'aquests proveïdors poden tractar dades fora de l'Espai Econòmic Europeu, especialment als Estats Units. En aquests casos, la transferència s'empara en el Marc de privacitat de dades UE-EUA o en les clàusules contractuals tipus aprovades per la Comissió Europea.</p>"
+          "html": "<p>No cedim dades a tercers, llevat que ho exigeixi la llei. Perquè funcionin el web i els canals de contacte ens servim d'aquests proveïdors:</p><ul><li><b>GitHub, Inc.</b>: allotjament del web.</li><li><b>Telefónica</b>: servei de correu electrònic.</li><li><b>WhatsApp</b> (Meta), si tries aquest canal per escriure'ns.</li><li><b>Google</b>: només si carregues el mapa de Google Maps.</li></ul><p>Alguns d'aquests proveïdors poden tractar dades fora de l'Espai Econòmic Europeu, especialment als Estats Units. En aquests casos, la transferència s'empara en el Marc de privacitat de dades UE-EUA o en les clàusules contractuals tipus aprovades per la Comissió Europea.</p>"
         },
         {
           "h": "Els teus drets",
@@ -101,7 +101,7 @@
         },
         {
           "h": "Continguts de tercers",
-          "html": "<p><b>Google Maps.</b> El mapa de la secció de contacte no es carrega fins que prems «[[mapButton]]». A partir d'aquell moment, Google pot instal·lar les seves galetes al teu navegador, d'acord amb la seva <a href='https://policies.google.com/technologies/cookies' target='_blank' rel='noopener'>política de galetes</a>. Si no el carregues, no s'estableix cap connexió amb Google Maps.</p><p><b>Tipografies.</b> Les lletres del web es descarreguen de Google Fonts. Aquest servei no instal·la galetes, però Google rep l'adreça IP del teu navegador per poder-les servir.</p><p><b>Enllaços externs.</b> Els enllaços a Instagram, Facebook i WhatsApp només et porten a aquests serveis; no s'hi connecta res fins que hi fas clic.</p>"
+          "html": "<p><b>Google Maps.</b> El mapa de la secció de contacte no es carrega fins que prems «[[mapButton]]». A partir d'aquell moment, Google pot instal·lar les seves galetes al teu navegador, d'acord amb la seva <a href='https://policies.google.com/technologies/cookies' target='_blank' rel='noopener'>política de galetes</a>. Si no el carregues, no s'estableix cap connexió amb Google Maps.</p><p><b>Tipografies.</b> Les lletres es serveixen des d'aquest mateix web: no es demana res a cap servidor extern per mostrar-les.</p><p><b>Enllaços externs.</b> Els enllaços a Instagram, Facebook i WhatsApp només et porten a aquests serveis; no s'hi connecta res fins que hi fas clic.</p>"
         },
         {
           "h": "Com gestionar-les o eliminar-les",

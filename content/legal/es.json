@@ -1,6 +1,6 @@
 {
   "navLabel": "Información legal",
-  "updated": "Última actualización: 11 de septiembre de 2026",
+  "updated": "Última actualización: 13 de septiembre de 2026",
   "pages": [
     {
       "key": "avis",
@@ -72,7 +72,7 @@
         },
         {
           "h": "A quién se comunican",
-          "html": "<p>No cedemos datos a terceros, salvo por obligación legal. Para que funcionen el sitio y los canales de contacto nos servimos de estos proveedores:</p><ul><li><b>GitHub, Inc.</b>: alojamiento del sitio.</li><li><b>Telefónica</b>: servicio de correo electrónico.</li><li><b>WhatsApp</b> (Meta), si eliges este canal para escribirnos.</li><li><b>Google</b>: las tipografías del sitio y, solo si lo cargas, el mapa de Google Maps.</li></ul><p>Algunos de estos proveedores pueden tratar datos fuera del Espacio Económico Europeo, en especial en Estados Unidos. En esos casos, la transferencia se ampara en el Marco de Privacidad de Datos UE-EE. UU. o en las cláusulas contractuales tipo aprobadas por la Comisión Europea.</p>"
+          "html": "<p>No cedemos datos a terceros, salvo por obligación legal. Para que funcionen el sitio y los canales de contacto nos servimos de estos proveedores:</p><ul><li><b>GitHub, Inc.</b>: alojamiento del sitio.</li><li><b>Telefónica</b>: servicio de correo electrónico.</li><li><b>WhatsApp</b> (Meta), si eliges este canal para escribirnos.</li><li><b>Google</b>: solo si cargas el mapa de Google Maps.</li></ul><p>Algunos de estos proveedores pueden tratar datos fuera del Espacio Económico Europeo, en especial en Estados Unidos. En esos casos, la transferencia se ampara en el Marco de Privacidad de Datos UE-EE. UU. o en las cláusulas contractuales tipo aprobadas por la Comisión Europea.</p>"
         },
         {
           "h": "Tus derechos",
@@ -101,7 +101,7 @@
         },
         {
           "h": "Contenidos de terceros",
-          "html": "<p><b>Google Maps.</b> El mapa de la sección de contacto no se carga hasta que pulsas «[[mapButton]]». A partir de ese momento, Google puede instalar sus cookies en tu navegador, de acuerdo con su <a href='https://policies.google.com/technologies/cookies' target='_blank' rel='noopener'>política de cookies</a>. Si no lo cargas, no se establece ninguna conexión con Google Maps.</p><p><b>Tipografías.</b> Las letras del sitio se descargan de Google Fonts. Este servicio no instala cookies, pero Google recibe la dirección IP de tu navegador para poder servirlas.</p><p><b>Enlaces externos.</b> Los enlaces a Instagram, Facebook y WhatsApp solo te llevan a esos servicios; no se conecta nada hasta que haces clic.</p>"
+          "html": "<p><b>Google Maps.</b> El mapa de la sección de contacto no se carga hasta que pulsas «[[mapButton]]». A partir de ese momento, Google puede instalar sus cookies en tu navegador, de acuerdo con su <a href='https://policies.google.com/technologies/cookies' target='_blank' rel='noopener'>política de cookies</a>. Si no lo cargas, no se establece ninguna conexión con Google Maps.</p><p><b>Tipografías.</b> Las letras se sirven desde este mismo sitio: no se pide nada a ningún servidor externo para mostrarlas.</p><p><b>Enlaces externos.</b> Los enlaces a Instagram, Facebook y WhatsApp solo te llevan a esos servicios; no se conecta nada hasta que haces clic.</p>"
         },
         {
           "h": "Cómo gestionarlas o eliminarlas",
