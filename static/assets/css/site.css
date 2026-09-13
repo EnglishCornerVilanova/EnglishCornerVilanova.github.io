@@ -1291,3 +1291,12 @@ a.ig-cell{display:block;text-decoration:none}
    redonda de la barra. */
 .brand--pie{display:block;width:132px}
 .brand--pie picture,.brand--pie img{display:block;width:100%;height:auto}
+
+/* Fotos del local en «Sobre nosaltres». Van ENTERAS: cada marco toma la altura
+   que le pide su foto, así que no se recorta nada. Solo cambia el tamaño: la
+   entrada, con el rótulo y la bandera, manda; el aparador acompaña. */
+.method-visual{aspect-ratio:1/.97}
+.method-frame{inset:auto;left:0;top:0;width:82%;height:auto}
+.method-frame-2{right:0;bottom:-3%;width:43%;height:auto}
+.method-frame > picture,.method-frame-2 > picture{display:block;border-radius:2px;overflow:hidden;background:var(--paper-3)}
+.method-frame img,.method-frame-2 img{display:block;width:100%;height:auto}

@@ -228,20 +228,24 @@
 
       <div class="method-visual rv">
         <div class="method-frame">
-          <div class="ph ph-c">
-            <div class="ph-inner">
-              <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="15" rx="3"/><circle cx="12" cy="12" r="3.5"/><path d="M8 5l1.5-2h5L16 5"/></svg>
-              <span>{{ method.phTeacher }}</span>
-            </div>
-          </div>
+          <picture>
+            <source type="image/webp" srcset="/assets/photos/local-entrada-640.webp 640w, /assets/photos/local-entrada-960.webp 960w"
+                    sizes="(max-width:940px) 80vw, 420px">
+            <img src="/assets/photos/local-entrada-640.jpg"
+                 srcset="/assets/photos/local-entrada-640.jpg 640w, /assets/photos/local-entrada-960.jpg 960w"
+                 sizes="(max-width:940px) 80vw, 420px" width="2178" height="2300"
+                 alt="{{ method.altEntrada }}" loading="lazy" decoding="async">
+          </picture>
         </div>
         <div class="method-frame-2">
-          <div class="ph ph-d">
-            <div class="ph-inner">
-              <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="15" rx="3"/><circle cx="12" cy="12" r="3.5"/><path d="M8 5l1.5-2h5L16 5"/></svg>
-              <span>{{ method.phAcademy }}</span>
-            </div>
-          </div>
+          <picture>
+            <source type="image/webp" srcset="/assets/photos/local-aparador-420.webp 420w, /assets/photos/local-aparador-640.webp 640w"
+                    sizes="(max-width:940px) 42vw, 230px">
+            <img src="/assets/photos/local-aparador-420.jpg"
+                 srcset="/assets/photos/local-aparador-420.jpg 420w, /assets/photos/local-aparador-640.jpg 640w"
+                 sizes="(max-width:940px) 42vw, 230px" width="2848" height="3675"
+                 alt="{{ method.altAparador }}" loading="lazy" decoding="async">
+          </picture>
         </div>
       </div>
 
