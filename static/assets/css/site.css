@@ -762,11 +762,6 @@ body.menu-open .drawer-foot{opacity:1;transform:none}
 }
 .drawer-langs a:active{transform:scale(.96)}
 .drawer-langs a[aria-current="true"]{border-color:var(--ink);background:var(--ink);color:#fff}
-.drawer-tel{
-  display:flex;flex-direction:column;gap:2px;
-  font-size:.8rem;color:var(--ink-3);
-}
-.drawer-tel b{font-size:1rem;color:var(--ink);letter-spacing:-.01em}
 
 /* ── Map consent gate ──────────────────────────────────── */
 /* The shell used to take its height from the iframe. With the iframe
@@ -1243,3 +1238,56 @@ a.ig-cell{display:block;text-decoration:none}
 /* dentro de .legal, los enlaces son azul marino; el botón conserva su color */
 .legal .btn{color:var(--fg)}
 .legal .btn:hover{color:var(--fg)}
+
+
+/* ═══════════ BARRA Y DESPLEGABLE EN MÓVIL (13/09/2026) ═══════════
+   La barra pasa a ser de servicio: acceso directo a WhatsApp y menú. Arriba
+   del todo, en móvil, se aparta —el logotipo grande ya está justo debajo— y
+   la cápsula con la marca vuelve en cuanto se baja. */
+.nav-ico{
+  width:40px;height:40px;border-radius:50%;display:grid;place-items:center;flex:none;
+  border:1px solid var(--line);background:#fff;
+  transition:transform .3s var(--spring),border-color .3s var(--out),background .3s var(--out);
+}
+.nav-ico svg{width:18px;height:18px;fill:none;stroke:var(--ink);stroke-width:1.9;stroke-linecap:round;stroke-linejoin:round}
+.nav-ico:hover{border-color:var(--ink);transform:translateY(-2px)}
+.nav-ico:active{transform:scale(.94)}
+
+@media (max-width:940px){
+  .nav{background:transparent;border-color:transparent;box-shadow:none;
+       backdrop-filter:none;-webkit-backdrop-filter:none;padding:9px 0 9px 4px}
+  .nav .brand-mark{opacity:0;visibility:hidden;transform:scale(.92);
+    transition:opacity .4s var(--out),transform .4s var(--out),visibility .4s}
+  .nav-ico{background:rgba(255,255,255,.86);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px)}
+  .nav-shell.scrolled .nav{
+    background:rgba(255,255,255,.72);border-color:rgba(18,21,28,.07);padding:9px 9px 9px 14px;
+    box-shadow:0 1px 2px rgba(18,21,28,.04),0 8px 28px -12px rgba(18,21,28,.14);
+    backdrop-filter:blur(24px) saturate(180%);-webkit-backdrop-filter:blur(24px) saturate(180%);
+  }
+  .nav-shell.scrolled .brand-mark{opacity:1;visibility:visible;transform:none}
+  .nav-shell.scrolled .nav-ico{background:#fff}
+}
+
+/* Seis enlaces no necesitan 30 px ni numeración: caben arriba y dejan sitio
+   a lo que la gente busca de verdad en el móvil, que es contactar. */
+.drawer{justify-content:flex-start;padding-top:calc(84px + 1.2rem)}
+.drawer-menu{gap:0}
+.drawer-menu a{font-size:1.3rem;font-weight:800;letter-spacing:-.02em;padding:9px 2px;gap:0}
+.drawer-menu a .n{display:none}
+.drawer-foot{margin-top:1.6rem;padding-top:1.3rem;gap:.9rem}
+.drawer-iconos{display:grid;grid-template-columns:repeat(4,1fr);gap:.5rem}
+.d-ico{
+  display:flex;flex-direction:column;align-items:center;gap:.4rem;
+  padding:.85rem .3rem;border:1px solid var(--line);border-radius:16px;background:#fff;
+  text-decoration:none;font-size:.68rem;font-weight:700;color:var(--ink-2);
+  text-align:center;line-height:1.2;
+  transition:border-color .25s var(--out),transform .3s var(--spring);
+}
+.d-ico:active{transform:scale(.96);border-color:var(--ink)}
+.d-ico-c{width:34px;height:34px;border-radius:50%;display:grid;place-items:center;background:var(--paper-2)}
+.d-ico svg{width:17px;height:17px;fill:none;stroke:var(--ink);stroke-width:1.9;stroke-linecap:round;stroke-linejoin:round}
+
+/* El pie lleva el logotipo completo —ya trae las letras dentro—, no la marca
+   redonda de la barra. */
+.brand--pie{display:block;width:132px}
+.brand--pie picture,.brand--pie img{display:block;width:100%;height:auto}

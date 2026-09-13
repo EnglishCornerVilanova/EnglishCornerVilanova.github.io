@@ -16,7 +16,7 @@
     "credentials": "Accreditation and track record"
   },
   "shared": {
-    "addressLine1": "C/ Manresa, 23",
+    "addressLine1": "C. Manresa, 23 Baixos",
     "addressLine2": "08788 Vilanova del Camí"
   },
   "nav": {
@@ -275,7 +275,7 @@
     "mapsLink": "See us on Google Maps"
   },
   "map": {
-    "title": "English Corner, C/ Manresa 23, Vilanova del Camí",
+    "title": "English Corner, C. Manresa 23 Baixos, Vilanova del Camí",
     "consentTitle": "See us on the map",
     "consentText": "The map is served by Google Maps. Loading it will connect you to Google's servers and may set their cookies.",
     "consentButton": "Load the map"
@@ -338,6 +338,10 @@
         "text": "<p>C/ Manresa, 23<br>08788 Vilanova del Camí<br>Barcelona</p>",
         "links": [
           {
+            "href": "tel:938070770",
+            "label": "93 807 07 70"
+          },
+          {
             "href": "tel:606916483",
             "label": "606 916 483"
           },
@@ -355,5 +359,11 @@
     "title": "This page doesn't exist.",
     "lede": "The link may be old, or the address may have a typo. Head back to the homepage for courses, levels and how to reach us.",
     "cta": "Back to the homepage"
+  },
+  "quick": {
+    "call": "Call",
+    "whatsapp": "WhatsApp",
+    "mail": "Email",
+    "map": "Find us"
   }
 }
