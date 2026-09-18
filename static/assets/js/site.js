@@ -30,7 +30,10 @@
       if (!lang.contains(e.target)) close();
     });
     document.addEventListener('keydown', function (e) {
-      if (e.key === 'Escape') close();
+      if (e.key !== 'Escape' || !lang.classList.contains('open')) return;
+      var dentro = lang.contains(document.activeElement);
+      close();
+      if (dentro) langBtn.focus();
     });
   }
 
@@ -60,7 +63,7 @@
     });
     // Keep the drawer from lingering if the viewport grows past the breakpoint.
     var mq = window.matchMedia('(min-width:941px)');
-    var onMq = function (e) { if (e.matches) setMenu(false); };
+    var onMq = function (e) { if (e.matches && document.body.classList.contains('menu-open')) setMenu(false); };
     mq.addEventListener ? mq.addEventListener('change', onMq) : mq.addListener(onMq);
   }
 
@@ -82,13 +85,12 @@
   var shell = document.getElementById('navShell');
   if (shell) {
     var ticking = false;
+    var condensar = function () { shell.classList.toggle('scrolled', scrollY > 24); };
+    condensar();  // la página puede abrirse ya desplazada (recarga, enlace a #contact)
     addEventListener('scroll', function () {
       if (ticking) return;
       ticking = true;
-      requestAnimationFrame(function () {
-        shell.classList.toggle('scrolled', scrollY > 24);
-        ticking = false;
-      });
+      requestAnimationFrame(function () { condensar(); ticking = false; });
     }, { passive: true });
   }
 

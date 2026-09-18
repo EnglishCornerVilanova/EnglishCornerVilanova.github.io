@@ -82,13 +82,13 @@
       </a>
 
       <div class="lang" id="langSwitch">
-        <button class="lang-btn" type="button" aria-expanded="false" aria-haspopup="true" aria-label="{{ a11y.langLabel }}">
+        <button class="lang-btn" type="button" aria-expanded="false" aria-controls="langMenu" aria-label="{{ a11y.langLabel }}">
           <svg class="globe" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.6 3.8 5.6 3.8 9S14.5 18.4 12 21c-2.5-2.6-3.8-5.6-3.8-9S9.5 5.6 12 3z"/></svg>
           {{ @langUpper }}
           <svg class="caret" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
         </button>
-        <ul class="lang-menu" role="menu">
-          {{# @langLinks }}<li role="none"><a role="menuitem" href="{{ .href }}" hreflang="{{ .code }}" data-lang="{{ .code }}"{{ .currentAttr }}>
+        <ul class="lang-menu" id="langMenu">
+          {{# @langLinks }}<li><a href="{{ .href }}" hreflang="{{ .code }}" data-lang="{{ .code }}"{{ .currentAttr }}>
             <span class="code">{{ .codeUpper }}</span>{{ .name }}
             <svg class="tick" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 13l4 4L19 7"/></svg>
           </a></li>

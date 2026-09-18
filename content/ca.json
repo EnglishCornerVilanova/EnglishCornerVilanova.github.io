@@ -74,7 +74,6 @@
     "Professorat titulat i estable"
   ],
   "courses": {
-    "kicker": "Els nostres cursos",
     "h2": "Amb nosaltres, tothom té el seu lloc.",
     "lede": "Ensenyem anglès per a totes les edats a partir dels 6 anys.",
     "items": [
@@ -129,7 +128,6 @@
     ]
   },
   "exams": {
-    "kicker": "Exàmens oficials",
     "h2": "Els títols oficials.",
     "lede": "Els nostres alumnes no només estudien anglès: el certifiquen. Preparem cada nivell sencer i inscrivim els candidats a l'examen oficial com a centre autoritzat de Cambridge English.",
     "rungs": [
@@ -158,7 +156,6 @@
         "age": "Adults i joves de nivell avançat"
       }
     ],
-    "yleStrong": "Els més petits comencen aquí:",
     "yleTags": [
       "Pre A1 Starters",
       "A1 Movers",
@@ -169,7 +166,6 @@
   "method": {
     "altEntrada": "L'entrada d'English Corner al carrer Manresa, amb el rètol i la bandera britànica",
     "altAparador": "Una alumna amb les mans pintades de vermell i blau, a l'aparador de l'acadèmia",
-    "kicker": "El nostre mètode",
     "h2": "Un mètode contrastat<br>durant més de<br>vint anys.",
     "lede": "Seguim una progressió estructurada, la mateixa que fan servir els blocs d'ensenyament de Cambridge. No ens saltem res i no improvisem res.",
     "pillars": [
@@ -204,30 +200,6 @@
       "accent": "r"
     }
   ],
-  "reviews": {
-    "kicker": "Què diuen les famílies",
-    "h2": "No cal que ens creguis.",
-    "items": [
-      {
-        "initial": "M",
-        "name": "Marta S.",
-        "role": "Família · Vilanova del Camí",
-        "quote": "La meva filla hi va des de fa quatre anys. Ha passat pel Movers i el Flyers i ha aprovat el B1 Preliminary a la primera. La progressió és clara i es veu trimestre a trimestre."
-      },
-      {
-        "initial": "J",
-        "name": "Jordi R.",
-        "role": "Alumne adult",
-        "quote": "El que em va convèncer va ser l'estructura. Hi ha temari, hi ha deures i hi ha correcció. Al cap de dos anys vaig aprovar el B2 First, i entenia perfectament per què l'havia aprovat."
-      },
-      {
-        "initial": "A",
-        "name": "Anna P.",
-        "role": "Família · Òdena",
-        "quote": "El que més valoro és que coneixen el meu fill. Van veure que li costava la lectura abans que nosaltres i s'hi van adaptar. Això en una acadèmia gran no ho tens."
-      }
-    ]
-  },
   "insta": {
     "h2": "El dia a dia de l'acadèmia.",
     "lede": "Comunicats, novetats i coses que volem compartir.",

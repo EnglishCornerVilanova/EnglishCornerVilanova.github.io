@@ -61,6 +61,7 @@ HOURS_I18N = {
 }
 
 LEGAL_DIR = CONTENT / "legal"
+NBSP = "\u00a0"
 
 ICONS = {
     "primaria": '<svg viewBox="0 0 24 24"><path d="M8.5 7V5.5A2.5 2.5 0 0 1 11 3h2a2.5 2.5 0 0 1 2.5 2.5V7"/><rect x="5" y="7" width="14" height="14" rx="4"/><path d="M9 21v-4a1.5 1.5 0 0 1 1.5-1.5h3A1.5 1.5 0 0 1 15 17v4"/><path d="M9 11h6"/></svg>',
@@ -196,11 +197,16 @@ def load_json(path: Path) -> dict:
         return json.load(fh)
 
 
-def strip_tags(value: str) -> str:
-    """Meta/schema values must be plain text — the copy may carry <b>, <br>."""
+def plain_text(value: str) -> str:
+    """The copy may carry <b>, <br>: reduce it to one line of plain text."""
     text = re.sub(r"<br\s*/?>", " ", str(value))
-    text = re.sub(r"<[^>]+>", "", text)
-    return html.escape(re.sub(r"\s+", " ", text).strip(), quote=True)
+    text = html.unescape(re.sub(r"<[^>]+>", "", text))
+    return re.sub(r"\s+", " ", text).strip()
+
+
+def strip_tags(value: str) -> str:
+    """Plain text escaped for an HTML attribute (meta tags, alt)."""
+    return html.escape(plain_text(value), quote=True)
 
 
 def page_url(site: dict, lang: str) -> str:
@@ -230,7 +236,7 @@ def build_schema(site: dict, data: dict, lang: str) -> str:
         "name": site["name"],
         "url": page_url(site, lang),
         "inLanguage": lang,
-        "description": strip_tags(data["meta"]["description"]),
+        "description": plain_text(data["meta"]["description"]),
         "image": site["origin"] + "/assets/img/og-image.jpg",
         "logo": site["origin"] + "/assets/img/icon-512.png",
         "telephone": site["phoneE164"],
@@ -575,9 +581,9 @@ def _fmt_intervals(intervals: list, lang: str) -> str:
         if lang == "ca":   # «de 15 a 21.15 h», «d'11 a 13 h»
             a, b = (t[:2].lstrip("0") + ("" if t[3:] == "00" else "." + t[3:]) for t in (opens, closes))
             # espacios de no separación: «a 21.15 h» nunca se parte entre líneas
-            parts.append(("d'" if a == "1" or a.startswith(("1.", "11")) else "de ") + f"{a} a {b} h")
+            parts.append(("d'" if a == "1" or a.startswith(("1.", "11")) else "de ") + f"{a} a{NBSP}{b}{NBSP}h")
         elif lang == "es":
-            parts.append(f"de {opens} a {closes}")
+            parts.append(f"de {opens} a{NBSP}{closes}")
         else:
             parts.append(f"{opens}–{closes}")
     return HOURS_I18N[lang]["and"].join(parts)
@@ -668,13 +674,14 @@ def build_lang(site: dict, lang: str, template: str, legal_key: str | None = Non
 
     legal = legal_pages(lang)
     home = home_href(site, lang)
-    if legal_key:
-        page = next(p for p in legal["pages"] if p["key"] == legal_key)
-        paths = {l: legal_href(site, l, legal_key) for l in site["langs"]}
-        # Las anclas del menú y del pie llevan de vuelta a la portada.
+    if legal_key or not_found:
+        # Fuera de la portada, las anclas del menú y del pie llevan de vuelta a ella.
         for link in data["nav"]["items"] + [k for col in data["footer"]["cols"] for k in col.get("links", [])]:
             if link["href"].startswith("#"):
                 link["href"] = home + link["href"]
+    if legal_key:
+        page = next(p for p in legal["pages"] if p["key"] == legal_key)
+        paths = {l: legal_href(site, l, legal_key) for l in site["langs"]}
         data["meta"].update(title=f'{page["title"]} | English Corner', description=page["description"],
                             ogTitle=page["title"], ogDescription=page["description"])
         main = legal_main(site, lang, data, page)

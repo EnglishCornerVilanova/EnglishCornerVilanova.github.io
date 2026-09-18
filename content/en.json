@@ -74,7 +74,6 @@
     "Qualified teachers who stay"
   ],
   "courses": {
-    "kicker": "Our courses",
     "h2": "With us, everyone has a place.",
     "lede": "We teach English to all ages, from 6 upwards.",
     "items": [
@@ -129,7 +128,6 @@
     ]
   },
   "exams": {
-    "kicker": "Official examinations",
     "h2": "The official certificates.",
     "lede": "Our students don't just study English, they certify it. We prepare each level in full and enter candidates for the official examination as an authorised Cambridge English centre.",
     "rungs": [
@@ -158,7 +156,6 @@
         "age": "Adults &amp; advanced teens"
       }
     ],
-    "yleStrong": "Younger learners start here:",
     "yleTags": [
       "Pre A1 Starters",
       "A1 Movers",
@@ -169,7 +166,6 @@
   "method": {
     "altEntrada": "The English Corner entrance on Carrer Manresa, with the sign and the British flag",
     "altAparador": "A pupil with her hands painted red and blue, in the academy's window",
-    "kicker": "Our method",
     "h2": "A method that has<br>been proven for<br>over twenty years.",
     "lede": "We follow a structured progression, the same one the Cambridge teaching blocks use. Nothing is skipped, nothing is improvised.",
     "pillars": [
@@ -204,30 +200,6 @@
       "accent": "r"
     }
   ],
-  "reviews": {
-    "kicker": "What families say",
-    "h2": "Don't take our word for it.",
-    "items": [
-      {
-        "initial": "M",
-        "name": "Marta S.",
-        "role": "Parent · Vilanova del Camí",
-        "quote": "My daughter has been going for four years. She went through Movers and Flyers and passed B1 Preliminary first time. The progression is clear and you can see it term by term."
-      },
-      {
-        "initial": "J",
-        "name": "Jordi R.",
-        "role": "Adult student",
-        "quote": "What convinced me was the structure. There's a syllabus, there's homework, there's correction. After two years I passed B2 First, and I actually understood why I passed."
-      },
-      {
-        "initial": "A",
-        "name": "Anna P.",
-        "role": "Parent · Òdena",
-        "quote": "What I value most is that they know my son. They noticed he was struggling with reading before we did, and they adapted. You don't get that in a big academy."
-      }
-    ]
-  },
   "insta": {
     "h2": "Life at the academy.",
     "lede": "News, announcements and things we want to share.",

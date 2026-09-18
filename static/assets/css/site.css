@@ -131,7 +131,6 @@ a{color:inherit}
   text-wrap:balance;
 }
 
-
 /* ═══════════ NAV ═══════════ */
 .nav-shell{
   position:fixed;inset:0 0 auto 0;z-index:800;
@@ -156,13 +155,10 @@ a{color:inherit}
   background:rgba(255,255,255,.9);
   box-shadow:0 1px 2px rgba(18,21,28,.05),0 14px 40px -14px rgba(18,21,28,.2);
 }
-.brand{display:flex;align-items:center;gap:10px;text-decoration:none;flex-shrink:0}
-.brand-mark{
-  width:40px;height:40px;border-radius:12px;overflow:hidden;flex-shrink:0;
-  outline:1px solid rgba(18,21,28,.08);outline-offset:-1px;
-  background:#fff;
+.brand{display:flex;text-decoration:none;flex-shrink:0}
+.brand-mark{outline-offset:-1px;
 }
-.brand-mark img{width:100%;height:100%;object-fit:cover;transform:scale(1.05)}
+
 .brand-name{
   font-family:'Special Elite',serif;font-size:.9rem;line-height:1.1;
   letter-spacing:-.02em;white-space:nowrap;
@@ -178,8 +174,6 @@ a{color:inherit}
 .nav-menu a:hover{background:rgba(18,21,28,.05);color:var(--ink)}
 
 .nav-right{display:flex;align-items:center;gap:.5rem}
-
-
 
 /* Pill button system */
 .btn{
@@ -208,15 +202,12 @@ a{color:inherit}
 .btn--red{--bg:var(--red);box-shadow:0 2px 4px rgba(232,25,44,.16),0 10px 28px -10px rgba(232,25,44,.6)}
 .btn--navy{--bg:var(--navy);box-shadow:0 2px 4px rgba(1,33,105,.16),0 10px 28px -10px rgba(1,33,105,.55)}
 
-.btn--sm .chip{width:24px;height:24px}
 .btn--ghost{
   --bg:transparent;--fg:var(--ink);
   padding:12px 22px;border:1.5px solid var(--line);
   box-shadow:none;
 }
 .btn--ghost:hover{border-color:var(--ink);filter:none}
-
-.btn--white .chip{background:rgba(18,21,28,.07)}
 
 /* ═══════════ HERO ═══════════ */
 .hero{
@@ -257,34 +248,21 @@ a{color:inherit}
 .hero-brand img{width:100%;height:auto}
 
 .hero-claim{
-  font-size:clamp(2.9rem,6vw,4.7rem);
   margin-bottom:1.4rem;
 }
 
 .hero-lede{
-  font-size:clamp(1rem,1.15vw,1.09rem);
-  color:var(--ink-3);line-height:1.72;
-  max-width:34ch;text-wrap:pretty;
+  color:var(--ink-3);line-height:1.72;text-wrap:pretty;
   margin-bottom:2.1rem;
 }
-.hero-lede b{color:var(--ink-2);font-weight:700}
 
 .hero-cta{display:flex;gap:.7rem;flex-wrap:wrap;margin-bottom:2.6rem}
 
-/* Trust row with avatars */
-
-
 /* — Hero visual — */
-.hero-visual{position:relative;aspect-ratio:1/1.03}
 
 .frame{
-  position:absolute;border-radius:28px;overflow:hidden;
-  background:var(--paper-3);
-  box-shadow:0 1px 2px rgba(18,21,28,.05),0 24px 60px -22px rgba(18,21,28,.3);
-  outline:1px solid rgba(18,21,28,.07);outline-offset:-1px;
+  position:absolute;outline-offset:-1px;
 }
-
-
 
 /* Photo placeholder styling */
 .ph{
@@ -304,17 +282,12 @@ a{color:inherit}
 .ph-inner svg{width:34px;height:34px;margin:0 auto .5rem;stroke:currentColor;stroke-width:1.5;fill:none}
 .ph-inner span{font-size:.75rem;font-weight:700;letter-spacing:.04em;text-transform:uppercase}
 
-/* Logo badge overlapping frames */
-@keyframes bob{0%,100%{transform:translateY(0) rotate(-2deg)}50%{transform:translateY(-13px) rotate(-2deg)}}
-
-/* ═══════════ CREDENTIAL CHIP ═══════════ */
-
 /* ═══════════ EXAM LADDER ═══════════ */
-.exams{background:var(--paper-2);border-top:1px solid var(--line)}
+.exams{background:var(--paper-2);}
 .ladder{display:grid;grid-template-columns:repeat(4,1fr);gap:1rem;margin-bottom:1.6rem}
 .rung{
   background:#fff;border:1px solid var(--line);border-radius:20px;
-  padding:1.5rem 1.4rem;position:relative;overflow:hidden;
+  padding:1.5rem 1.4rem;position:relative;
   transition:transform .4s var(--spring),box-shadow .4s var(--out),border-color .4s var(--out);
 }
 .rung:hover{transform:translateY(-5px);border-color:transparent;box-shadow:0 24px 55px -26px rgba(18,21,28,.3)}
@@ -337,23 +310,13 @@ a{color:inherit}
 .rung-desc{font-size:.875rem;color:var(--ink-3);line-height:1.6;text-wrap:pretty}
 .rung-age{
   display:inline-block;margin-top:.9rem;
-  font-size:.8rem;font-weight:700;color:var(--ink-2);
-  padding:5px 12px;border-radius:100px;background:var(--paper-3);
 }
-.yle-note{
-  display:flex;align-items:center;gap:12px;flex-wrap:wrap;
-  background:#fff;border:1px solid var(--line);border-radius:18px;
-  padding:1.1rem 1.4rem;
-}
-.yle-note strong{font-size:.86rem;font-weight:800;letter-spacing:-.01em;white-space:nowrap}
-.yle-note span{font-size:.84rem;color:var(--ink-3);line-height:1.6}
+
 .yle-tags{display:flex;gap:.4rem;flex-wrap:wrap}
 .yle-tag{
   font-size:.75rem;font-weight:700;padding:4px 11px;border-radius:100px;
   background:var(--sun);color:var(--tono-sun-ink);
 }
-@media (max-width:940px){.ladder{grid-template-columns:1fr 1fr}}
-@media (max-width:600px){.ladder{grid-template-columns:1fr}}
 
 /* ═══════════ MARQUEE ═══════════ */
 .marquee{
@@ -392,18 +355,16 @@ a{color:inherit}
 .sec-head p{color:var(--ink-3);font-size:1.02rem;line-height:1.72;text-wrap:pretty}
 
 /* ═══════════ COURSES — editorial rows ═══════════ */
-.courses{background:var(--paper-2)}
+
 .course-list{display:flex;flex-direction:column;border-top:1px solid var(--line)}
 .course{
   display:grid;
-  grid-template-columns:56px 1fr 1.25fr auto;
-  gap:clamp(1rem,3vw,2.5rem);align-items:center;
+  gap:clamp(1rem,3vw,2.5rem);
   padding:clamp(1.6rem,3.5vh,2.4rem) 0;
   border-bottom:1px solid var(--line);
   position:relative;
 }
 .course > *{position:relative;z-index:1}
-
 
 .course-title{display:flex;flex-direction:column;gap:.4rem}
 .course-title h3{
@@ -411,9 +372,7 @@ a{color:inherit}
   font-size:clamp(1.25rem,2.1vw,1.65rem);letter-spacing:-.025em;line-height:1.1;
 }
 .course-tag{
-  align-self:flex-start;
-  font-size:.73rem;font-weight:700;letter-spacing:.05em;text-transform:uppercase;
-  padding:4px 11px;border-radius:100px;
+  align-self:flex-start;text-transform:uppercase;border-radius:100px;
 }
 .tag-red{background:var(--blush);color:var(--red-ink)}
 .tag-navy{background:var(--sky);color:var(--navy)}
@@ -421,24 +380,18 @@ a{color:inherit}
 .tag-mint{background:var(--mint);color:var(--tono-mint-ink)}
 .course-desc{color:var(--ink-3);font-size:.92rem;line-height:1.7;text-wrap:pretty}
 
-
-
 /* ═══════════ METHOD — split ═══════════ */
 .method-grid{
   display:grid;grid-template-columns:.95fr 1.05fr;
   gap:clamp(2rem,5vw,5rem);align-items:center;
 }
-.method-visual{position:relative;aspect-ratio:1/1.02}
+.method-visual{position:relative;}
 .method-frame{
-  position:absolute;inset:0 12% 12% 0;
-  border-radius:28px;overflow:hidden;
-  box-shadow:0 1px 2px rgba(18,21,28,.05),0 26px 60px -24px rgba(18,21,28,.3);
+  position:absolute;
   outline:1px solid rgba(18,21,28,.06);outline-offset:-1px;
 }
 .method-frame-2{
-  position:absolute;right:0;bottom:0;width:52%;height:46%;
-  border-radius:24px;overflow:hidden;
-  box-shadow:0 1px 2px rgba(18,21,28,.05),0 20px 44px -18px rgba(18,21,28,.28);
+  position:absolute;
   outline:1px solid rgba(18,21,28,.06);outline-offset:-1px;
   border:5px solid #fff;
 }
@@ -456,7 +409,7 @@ a{color:inherit}
 }
 .pillar-ico svg{width:19px;height:19px;stroke-width:1.8;fill:none;stroke-linecap:round;stroke-linejoin:round}
 .i-red{background:var(--blush)} .i-red svg{stroke:var(--red)}
-.i-navy{background:var(--sky)} .i-navy svg{stroke:var(--navy)}
+
 .i-mint{background:var(--mint)} .i-mint svg{stroke:var(--tono-mint-ink)}
 .i-sun{background:var(--sun)} .i-sun svg{stroke:var(--nivel-b2-ink)}
 .pillar-txt h3{font-size:.97rem;font-weight:800;letter-spacing:-.015em;margin-bottom:.25rem}
@@ -470,7 +423,7 @@ a{color:inherit}
 }
 .band-grid{
   position:relative;z-index:2;max-width:1180px;margin:0 auto;
-  display:grid;grid-template-columns:repeat(4,1fr);gap:1px;
+  display:grid;gap:1px;
   background:rgba(255,255,255,.13);
   border-radius:22px;overflow:hidden;
 }
@@ -483,47 +436,25 @@ a{color:inherit}
 .band-n.r{color:var(--red-soft)}
 .band-l{font-size:.75rem;font-weight:600;color:rgba(255,255,255,.55);margin-top:.5rem;letter-spacing:.01em}
 
-/* ═══════════ TESTIMONIALS ═══════════ */
-
-
-
-
-
-
-
-
-
-
-
-
-
 /* ═══════════ INSTAGRAM ═══════════ */
-.insta{background:var(--paper-2)}
+
 .insta-head{
   display:flex;align-items:flex-end;justify-content:space-between;gap:2rem;
   margin-bottom:2.2rem;flex-wrap:wrap;
 }
 .insta-head .sec-head{margin-bottom:0}
 
-
-
-
-
 .ig-grid{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:.75rem}
-.ig-cell{
-  border-radius:16px;overflow:hidden;position:relative;
+.ig-cell{position:relative;
   outline:1px solid rgba(18,21,28,.06);outline-offset:-1px;
-  transition:transform .4s var(--spring);
 }
-@media (hover:hover) and (pointer:fine){.ig-cell:hover{transform:scale(1.045);z-index:2}}
+@media (hover:hover) and (pointer:fine){.ig-cell:hover{z-index:2}}
 .ig-cell::after{
   content:'';position:absolute;inset:0;
   background:linear-gradient(150deg,rgba(221,42,123,0),rgba(129,52,175,.16));
   opacity:0;transition:opacity .35s var(--out);
 }
 @media (hover:hover) and (pointer:fine){.ig-cell:hover::after{opacity:1}}
-
-
 
 /* ═══════════ CTA ═══════════ */
 .cta-sec{padding:0 var(--pad) var(--section)}
@@ -633,7 +564,7 @@ footer{
 /* Hero entrance */
 .hero-in{opacity:0;transform:translateY(20px);animation:heroUp .95s var(--out) forwards}
 .hi-1{animation-delay:.08s} .hi-2{animation-delay:.18s} .hi-3{animation-delay:.28s}
-.hi-4{animation-delay:.38s}  
+.hi-4{animation-delay:.38s}
 @keyframes heroUp{to{opacity:1;transform:none}}
 
 @media (prefers-reduced-motion:reduce){
@@ -647,22 +578,20 @@ footer{
 @media (max-width:940px){
   .nav-menu{display:none}
   .hero-grid{grid-template-columns:1fr;gap:3rem}
-  .hero-visual{max-width:480px;margin:0 auto;width:100%}
+
   .hero-lede{max-width:46ch}
   .method-grid{grid-template-columns:1fr;gap:2.5rem}
   .method-visual{max-width:440px}
-  .band-grid{grid-template-columns:1fr 1fr}
-  
+
   .cta{grid-template-columns:1fr}
-  .course{grid-template-columns:36px 1fr auto;row-gap:.6rem}
-  .course-desc{grid-column:2/4}
+  .course{row-gap:.6rem}
+
 }
 @media (max-width:600px){
-  .brand-name{display:none}
-  .hero-claim{font-size:clamp(2.4rem,10vw,3.2rem)}
-  .band-grid{grid-template-columns:1fr;border-radius:18px}
+
+  .band-grid{border-radius:18px}
   .ig-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
-  .cta{border-radius:26px}
+
     .foot-grid{flex-direction:column}
 }
 
@@ -726,7 +655,7 @@ footer{
   transform-origin:top right;
   transition:opacity .28s var(--out),transform .38s var(--spring),visibility .28s;
 }
-.lang.open .lang-menu{opacity:1;visibility:visible;transform:none}
+.lang.open .lang-menu{opacity:1;visibility:visible;transform:none;transition:opacity .28s var(--out),transform .38s var(--spring),visibility 0s}
 .lang-menu a{
   display:flex;align-items:center;gap:10px;
   padding:9px 11px;border-radius:12px;
@@ -775,7 +704,7 @@ body.menu-open .burger span::after{transform:rotate(-45deg)}
 /* ── Mobile drawer ─────────────────────────────────────── */
 .drawer{
   position:fixed;inset:0;z-index:790;
-  display:flex;flex-direction:column;justify-content:center;
+  display:flex;flex-direction:column;
   padding:calc(84px + 2rem) var(--pad) 2rem;
   background:rgba(255,255,255,.94);
   backdrop-filter:blur(28px) saturate(180%);
@@ -784,15 +713,12 @@ body.menu-open .burger span::after{transform:rotate(-45deg)}
   transition:opacity .4s var(--out),visibility .4s;
   overflow-y:auto;
 }
-body.menu-open .drawer{opacity:1;visibility:visible}
+body.menu-open .drawer{opacity:1;visibility:visible;transition:opacity .4s var(--out),visibility 0s}
 body.menu-open{overflow:hidden}
-.drawer-menu{list-style:none;display:flex;flex-direction:column;gap:.15rem}
+.drawer-menu{list-style:none;display:flex;flex-direction:column;}
 .drawer-menu a{
-  display:flex;align-items:baseline;gap:14px;
-  padding:11px 4px;text-decoration:none;
-  font-family:'Bricolage Grotesque',sans-serif;
-  font-weight:700;font-size:clamp(1.9rem,8vw,2.6rem);
-  letter-spacing:-.03em;line-height:1;color:var(--ink);
+  display:flex;align-items:baseline;text-decoration:none;
+  font-family:'Bricolage Grotesque',sans-serif;line-height:1;color:var(--ink);
   opacity:0;transform:translateY(14px);
   transition:opacity .35s var(--out),transform .4s var(--out),color .2s var(--out);
 }
@@ -810,14 +736,13 @@ body.menu-open .drawer-menu li:nth-child(4) a{transition-delay:.12s}
 body.menu-open .drawer-menu li:nth-child(5) a{transition-delay:.15s}
 body.menu-open .drawer-menu li:nth-child(6) a{transition-delay:.18s}
 
-.drawer-foot{
-  margin-top:2.5rem;padding-top:1.75rem;border-top:1px solid var(--line);
-  display:flex;flex-direction:column;gap:1.1rem;
+.drawer-foot{border-top:1px solid var(--line);
+  display:flex;flex-direction:column;
   opacity:0;transform:translateY(14px);
   transition:opacity .35s var(--out) .2s,transform .4s var(--out) .2s;
 }
 body.menu-open .drawer-foot{opacity:1;transform:none}
-.drawer-foot .btn{justify-content:center}
+
 .drawer-langs{display:flex;gap:.4rem}
 .drawer-langs a{
   flex:1;padding:11px 8px;border-radius:14px;text-align:center;
@@ -861,15 +786,7 @@ body.menu-open .drawer-foot{opacity:1;transform:none}
   .burger{display:grid}
   .lang{display:none}          /* moves into the drawer */
 }
-@media (max-width:600px){
-  /* keep the CTA in the bar — it is the conversion action — but tighten it */
-  .nav-right{gap:.35rem}
-  .nav-right .btn--sm{padding:8px 8px 8px 13px;font-size:.72rem}
-  .nav-right .btn--sm .chip{width:21px;height:21px}
-}
-@media (max-width:340px){
-  .nav-right .btn--sm{display:none}   /* the drawer still carries it */
-}
+@media (max-width:600px){ .nav-right{gap:.35rem} }
 @media (min-width:941px){
   .drawer{display:none}
 }
@@ -914,8 +831,6 @@ body.menu-open .drawer-foot{opacity:1;transform:none}
   line-height:1.4;margin-top:2px;text-wrap:pretty;
 }
 
-
-
 @media (max-width:820px){
   .cred + .cred{padding-left:0;border-left:none}
   .creds-in{gap:1.15rem}
@@ -937,7 +852,7 @@ html{caret-color:var(--red);scrollbar-width:thin;scrollbar-color:#D3D3CF transpa
 }
 ::-webkit-scrollbar-thumb:hover{background:var(--ink-3)}
 /* Underlines sit off the baseline instead of cutting the descenders. */
-a:not([class]),.cred-txt a,.drawer-tel a{
+a:not([class]){
   text-underline-offset:.19em;text-decoration-thickness:.075em;
 }
 
@@ -950,7 +865,7 @@ a:not([class]),.cred-txt a,.drawer-tel a{
   .btn:hover .chip{transform:none}
   .rung:hover{transform:none}
   .course:hover{transform:none}
-  
+
   .ig-cell:hover{transform:none}
   .fs:hover{transform:none}
   .lang-menu a:hover{background:none}
@@ -962,7 +877,6 @@ a:not([class]),.cred-txt a,.drawer-tel a{
 @media (pointer:coarse){
   .fs,.burger{min-width:44px;min-height:44px}
 }
-
 
 /* The red button's brand-coloured shadow works on paper. On the dark
    CTA panel it turns into a glow, so it gets a plain drop shadow there. */
@@ -987,7 +901,6 @@ a:not([class]),.cred-txt a,.drawer-tel a{
 /* ── Onda entre secciones ──────────────────────────────── */
 .wave{display:block;width:100%;height:clamp(38px,5vw,74px);margin-bottom:-1px}
 .wave-down{background:var(--paper-2);fill:var(--paper)}
-.wave-up{background:var(--paper);fill:var(--paper-2)}
 
 /* ── Rotulador tras la línea que remata el titular ─────── */
 .hero-claim .accent{color:var(--red-ink)}
@@ -1014,17 +927,12 @@ a:not([class]),.cred-txt a,.drawer-tel a{
   box-shadow:0 2px 5px rgba(20,20,18,.07),0 24px 46px -20px rgba(20,20,18,.42);
   transition:transform .55s var(--spring);
 }
-.frame > .ph{height:auto;flex:1;min-height:0;border-radius:2px}
-
 
 .method-frame,.method-frame-2{
   background:#fff;padding:9px 9px 26px;border-radius:5px;overflow:visible;
   box-shadow:0 2px 5px rgba(20,20,18,.07),0 22px 42px -20px rgba(20,20,18,.4);
   display:flex;flex-direction:column;
 }
-.method-frame > .ph,.method-frame-2 > .ph{height:auto;flex:1;min-height:0;border-radius:2px}
-.method-frame{transform:rotate(-2deg)}
-.method-frame-2{transform:rotate(3deg)}
 
 /* ── La rejilla de Instagram, montada igual ────────────── */
 .insta{background:var(--paper-2)}
@@ -1058,21 +966,17 @@ a.ig-cell{display:block;text-decoration:none}
    Centradas en vertical, las distintas alturas se leen como fotos clavadas. */
 .ig-grid{align-items:center}
 
-
 /* ═══════════════════════════════════════════════════════════
    CAMBIOS DEL CLIENTE — 11/09/2026
    ═══════════════════════════════════════════════════════════ */
 
-/* Hero: logo mayor y el banner cortado en tres, en fila. Las piezas se tocan
-   apenas y se inclinan un poco: se leen como el mismo banner horizontal. */
+/* Hero: logotipo grande en la franja de marca. */
 .hero-brand{width:clamp(140px,15vw,210px)}
-.hero-visual{aspect-ratio:auto;display:flex;align-items:center}
-.hero-visual .frame{position:relative;inset:auto;flex:1 1 0;min-width:0;width:auto;
-  margin:0 -1.1%;padding:7px 7px 22px}
+.hero-visual{align-items:center}
+.hero-visual .frame{inset:auto;min-width:0;width:auto;}
 .hero-visual .frame picture{display:block}
 .hero-visual .frame img{display:block;width:100%;height:auto;border-radius:2px}
 /* Más ancho para la imagen en escritorio; en móvil la cuadrícula ya es de una columna. */
-@media (min-width:941px){ .hero-grid{grid-template-columns:minmax(0,1fr) minmax(0,1.2fr)} }
 @media (max-width:600px){ .hero-brand{width:150px} }
 
 /* Què oferim: icono en vez de número, sin flechas ni efecto de enlace */
@@ -1099,9 +1003,6 @@ a.ig-cell{display:block;text-decoration:none}
   .course-desc{grid-column:2/3}
   .course-ico{width:44px;height:44px;border-radius:14px}
 }
-
-/* Nivells: la onda ya separa, sobra la línea */
-.exams{border-top:none}
 
 /* Instagram: foto de perfil + @usuario + "Segueix-nos!" */
 .ig-follow{
@@ -1168,7 +1069,7 @@ a.ig-cell{display:block;text-decoration:none}
 
 /* Horario: festivos marcados en Google y enlace a la ficha */
 .hours-note{color:var(--red);font-weight:600}
-.cta-more{display:inline-block;margin-top:.4rem;font-size:.8rem;font-weight:700;color:var(--navy);text-decoration:none;transition:color .25s var(--out)}
+.cta-more{margin-top:.4rem;font-size:.8rem;font-weight:700;color:var(--navy);text-decoration:none;transition:color .25s var(--out)}
 .cta-more:hover{color:var(--red)}
 
 /* ═══════════ PÁGINAS LEGALES ═══════════ */
@@ -1284,10 +1185,9 @@ a.ig-cell{display:block;text-decoration:none}
 }
 .nav-shell.scrolled .brand-name{opacity:1;transform:none}
 
-
 /* Zonas pulsables: los enlaces de texto sueltos quedaban en 18-21 px de alto.
    WCAG 2.5.8 pide 24×24 como mínimo; se gana con relleno, sin mover el diseño. */
-.foot-col a,.foot-legal a,.legal-nav a{padding-block:.18rem}
+.foot-col a,.foot-legal a{padding-block:.18rem}
 .cta-card dd a,.cta-more,.drawer-langs a{display:inline-block;padding-block:.2rem}
 .foot-bar a{padding-block:.15rem}
 
@@ -1299,7 +1199,6 @@ a.ig-cell{display:block;text-decoration:none}
 /* dentro de .legal, los enlaces son azul marino; el botón conserva su color */
 .legal .btn{color:var(--fg)}
 .legal .btn:hover{color:var(--fg)}
-
 
 /* ═══════════ BARRA Y DESPLEGABLE EN MÓVIL (13/09/2026) ═══════════
    La barra pasa a ser de servicio: acceso directo a WhatsApp y menú. Arriba
@@ -1367,7 +1266,6 @@ a.ig-cell{display:block;text-decoration:none}
    texto del pie y no deje un hueco de más debajo. */
 .foot-brand .brand--pie{margin-left:-6.5px;margin-bottom:.3rem}
 
-
 /* Cambio de idioma: fundido corto entre páginas en vez de recarga en seco.
    La barra se queda quieta. Firefox lo ignora y carga como siempre. */
 @view-transition{navigation:auto}
@@ -1405,8 +1303,7 @@ a.ig-cell{display:block;text-decoration:none}
   .cta-card{background:none;border:0;border-top:1px solid rgba(255,255,255,.12);border-radius:0;padding:1.6rem 0 0;backdrop-filter:none;-webkit-backdrop-filter:none}
 }
 
-/* Escalera de exámenes: de Young Learners a C1, cada escalón más alto.
-   Debajo de cada tarjeta, su contrahuella del mismo color llega al suelo. */
+/* Escalera de exámenes: de Young Learners a C1, cada escalón más alto. */
 .ladder{list-style:none;padding:0;margin:2.4rem 0 0;--paso:2.6rem;align-items:end}
 .rung-0{--t:var(--tono-sky-ink)}
 .rung-1{--t:var(--nivel-a2)}
@@ -1439,8 +1336,6 @@ a.ig-cell{display:block;text-decoration:none}
   .rung-desc{margin-bottom:1rem}
 }
 
-
-
 /* Fotos de «Sobre nosaltres», con el lenguaje de los cromos del banner:
    al hacer scroll cada una va a su velocidad (la pequeña, más cerca, sube más
    y se endereza). */
@@ -1467,8 +1362,11 @@ a.ig-cell{display:block;text-decoration:none}
   }
 }
 @keyframes fotoLejos{from{translate:0 45px;rotate:-3deg}to{translate:0 -45px;rotate:1.5deg}}
-@keyframes fotoCerca{from{translate:15px 60px;rotate:5deg}to{translate:-6px -45px;rotate:-1deg}}
+@keyframes fotoCerca{from{translate:0 60px;rotate:5deg}to{translate:-12px -45px;rotate:-1deg}}
 
 /* Edad de cada escalón: una línea de pie, no una pastilla que se parte. */
 .rung-age{background:none;border-radius:0;padding:.7rem 0 0;border-top:1px solid var(--line);
   width:100%;font-size:.82rem;font-weight:600;line-height:1.4;color:var(--ink-2)}
+
+/* Lo que se mueve o gira dentro de estas secciones no debe abrir scroll lateral en el móvil. */
+#about,.hero{overflow-x:clip}

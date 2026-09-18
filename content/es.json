@@ -74,7 +74,6 @@
     "Profesorado titulado y estable"
   ],
   "courses": {
-    "kicker": "Nuestros cursos",
     "h2": "Con nosotros, todo el mundo tiene su sitio.",
     "lede": "Enseñamos inglés a todas las edades a partir de los 6 años.",
     "items": [
@@ -129,7 +128,6 @@
     ]
   },
   "exams": {
-    "kicker": "Exámenes oficiales",
     "h2": "Los títulos oficiales.",
     "lede": "Nuestros alumnos no solo estudian inglés: lo certifican. Preparamos cada nivel entero e inscribimos a los candidatos al examen oficial como centro autorizado de Cambridge English.",
     "rungs": [
@@ -158,7 +156,6 @@
         "age": "Adultos y jóvenes de nivel avanzado"
       }
     ],
-    "yleStrong": "Los más pequeños empiezan aquí:",
     "yleTags": [
       "Pre A1 Starters",
       "A1 Movers",
@@ -169,7 +166,6 @@
   "method": {
     "altEntrada": "La entrada de English Corner en la calle Manresa, con el rótulo y la bandera británica",
     "altAparador": "Una alumna con las manos pintadas de rojo y azul, en el escaparate de la academia",
-    "kicker": "Nuestro método",
     "h2": "Un método contrastado<br>durante más de<br>veinte años.",
     "lede": "Seguimos una progresión estructurada, la misma que emplean los bloques de enseñanza de Cambridge. No nos saltamos nada y no improvisamos nada.",
     "pillars": [
@@ -204,30 +200,6 @@
       "accent": "r"
     }
   ],
-  "reviews": {
-    "kicker": "Qué dicen las familias",
-    "h2": "No hace falta que nos creas.",
-    "items": [
-      {
-        "initial": "M",
-        "name": "Marta S.",
-        "role": "Familia · Vilanova del Camí",
-        "quote": "Mi hija va desde hace cuatro años. Ha pasado por el Movers y el Flyers y ha aprobado el B1 Preliminary a la primera. La progresión es clara y se ve trimestre a trimestre."
-      },
-      {
-        "initial": "J",
-        "name": "Jordi R.",
-        "role": "Alumno adulto",
-        "quote": "Lo que me convenció fue la estructura. Hay temario, hay deberes y hay corrección. Al cabo de dos años aprobé el B2 First, y entendía perfectamente por qué lo había aprobado."
-      },
-      {
-        "initial": "A",
-        "name": "Anna P.",
-        "role": "Familia · Òdena",
-        "quote": "Lo que más valoro es que conocen a mi hijo. Vieron que le costaba la lectura antes que nosotros y se adaptaron. Eso en una academia grande no lo tienes."
-      }
-    ]
-  },
   "insta": {
     "h2": "El día a día de la academia.",
     "lede": "Comunicados, novedades y cosas que queremos compartir.",
