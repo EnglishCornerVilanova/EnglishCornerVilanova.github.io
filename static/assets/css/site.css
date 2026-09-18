@@ -334,7 +334,7 @@ a{color:inherit}
 .rung-3 .rung-lvl{color:var(--nivel-b2-ink)}
 .rung-4 .rung-lvl{color:var(--red)}
 .rung-name{font-size:.95rem;font-weight:800;letter-spacing:-.015em;margin-bottom:.35rem}
-.rung-desc{font-size:.8rem;color:var(--ink-3);line-height:1.6;text-wrap:pretty}
+.rung-desc{font-size:.875rem;color:var(--ink-3);line-height:1.6;text-wrap:pretty}
 .rung-age{
   display:inline-block;margin-top:.9rem;
   font-size:.8rem;font-weight:700;color:var(--ink-2);
@@ -1041,7 +1041,7 @@ a:not([class]),.cred-txt a,.drawer-tel a{
 .course-tag{padding:6px 13px;font-size:.78rem;font-weight:700;letter-spacing:-.005em}
 
 @media (hover:hover) and (pointer:fine){
-  .frame:hover,.ig-cell:hover{transform:rotate(0) scale(1.03)}
+  .ig-cell:hover{transform:rotate(0) scale(1.03)}
 }
 
 /* Publicaciones reales de Instagram, montadas como las fotos del resto */
@@ -1071,9 +1071,6 @@ a.ig-cell{display:block;text-decoration:none}
   margin:0 -1.1%;padding:7px 7px 22px}
 .hero-visual .frame picture{display:block}
 .hero-visual .frame img{display:block;width:100%;height:auto;border-radius:2px}
-.hero-visual .frame-1{transform:rotate(-2deg) translateY(6px);z-index:1}
-.hero-visual .frame-2{transform:rotate(1.2deg) translateY(-8px);z-index:2}
-.hero-visual .frame-3{transform:rotate(-1.4deg) translateY(10px);z-index:3}
 /* Más ancho para la imagen en escritorio; en móvil la cuadrícula ya es de una columna. */
 @media (min-width:941px){ .hero-grid{grid-template-columns:minmax(0,1fr) minmax(0,1.2fr)} }
 @media (max-width:600px){ .hero-brand{width:150px} }
@@ -1156,10 +1153,6 @@ a.ig-cell{display:block;text-decoration:none}
    2 (bandera) encima del 1. Anchos y posiciones: bloque generado más abajo. */
 .hero-visual{display:block;position:relative}
 .hero-visual .frame{position:absolute;top:3%;flex:none;margin:0;padding:6px 6px 20px}
-.hero-visual .frame-1{transform:rotate(-1.6deg) translateY(4px);z-index:1}
-.hero-visual .frame-2{transform:rotate(1.3deg) translateY(-5px);z-index:2}
-.hero-visual .frame-4{transform:rotate(1.7deg) translateY(6px);z-index:3}
-.hero-visual .frame-3{transform:rotate(-.8deg) translateY(1px);z-index:4}
 @media (min-width:1280px){
   .hero-grid{grid-template-columns:minmax(0,1fr) minmax(0,1.35fr)}
   .hero-claim{font-size:clamp(2.9rem,5.4vw,4.3rem)}
@@ -1399,7 +1392,7 @@ a.ig-cell{display:block;text-decoration:none}
 @keyframes cromoAbre{to{--straight:.2;--px:14px}}
 
 /* Legales: líneas de lectura cómoda (<80 caracteres). */
-.legal p,.legal li{max-width:66ch}
+.legal p,.legal li{max-width:35rem}
 
 /* Menos aire muerto entre cursos, exámenes y contacto. */
 .courses,.exams{padding-bottom:clamp(3.5rem,8vh,6rem)}
@@ -1474,4 +1467,8 @@ a.ig-cell{display:block;text-decoration:none}
   }
 }
 @keyframes fotoLejos{from{translate:0 45px;rotate:-3deg}to{translate:0 -45px;rotate:1.5deg}}
-@keyframes fotoCerca{from{translate:35px 150px;rotate:10deg}to{translate:-15px -110px;rotate:-3deg}}
+@keyframes fotoCerca{from{translate:15px 60px;rotate:5deg}to{translate:-6px -45px;rotate:-1deg}}
+
+/* Edad de cada escalón: una línea de pie, no una pastilla que se parte. */
+.rung-age{background:none;border-radius:0;padding:.7rem 0 0;border-top:1px solid var(--line);
+  width:100%;font-size:.82rem;font-weight:600;line-height:1.4;color:var(--ink-2)}
