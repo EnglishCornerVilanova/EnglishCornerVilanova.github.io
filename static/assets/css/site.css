@@ -337,8 +337,8 @@ a{color:inherit}
 .rung-desc{font-size:.8rem;color:var(--ink-3);line-height:1.6;text-wrap:pretty}
 .rung-age{
   display:inline-block;margin-top:.9rem;
-  font-size:.73rem;font-weight:700;color:var(--ink-3);
-  padding:3px 10px;border-radius:100px;background:var(--paper-3);
+  font-size:.8rem;font-weight:700;color:var(--ink-2);
+  padding:5px 12px;border-radius:100px;background:var(--paper-3);
 }
 .yle-note{
   display:flex;align-items:center;gap:12px;flex-wrap:wrap;
@@ -401,16 +401,7 @@ a{color:inherit}
   padding:clamp(1.6rem,3.5vh,2.4rem) 0;
   border-bottom:1px solid var(--line);
   position:relative;
-  transition:transform .45s var(--out);
 }
-.course::before{
-  content:'';position:absolute;inset:0 -1.5rem;border-radius:20px;
-  background:#fff;opacity:0;z-index:0;
-  box-shadow:0 20px 50px -24px rgba(18,21,28,.28);
-  transition:opacity .4s var(--out);
-}
-.course:hover{transform:translateX(1.4rem)}
-.course:hover::before{opacity:1}
 .course > *{position:relative;z-index:1}
 
 
@@ -431,8 +422,6 @@ a{color:inherit}
 .course-desc{color:var(--ink-3);font-size:.92rem;line-height:1.7;text-wrap:pretty}
 
 
-.course:hover .course-go{background:var(--red);border-color:var(--red);transform:translate(3px,-3px)}
-.course:hover .course-go svg{stroke:#fff}
 
 /* ═══════════ METHOD — split ═══════════ */
 .method-grid{
@@ -526,13 +515,13 @@ a{color:inherit}
   outline:1px solid rgba(18,21,28,.06);outline-offset:-1px;
   transition:transform .4s var(--spring);
 }
-.ig-cell:hover{transform:scale(1.045);z-index:2}
+@media (hover:hover) and (pointer:fine){.ig-cell:hover{transform:scale(1.045);z-index:2}}
 .ig-cell::after{
   content:'';position:absolute;inset:0;
   background:linear-gradient(150deg,rgba(221,42,123,0),rgba(129,52,175,.16));
   opacity:0;transition:opacity .35s var(--out);
 }
-.ig-cell:hover::after{opacity:1}
+@media (hover:hover) and (pointer:fine){.ig-cell:hover::after{opacity:1}}
 
 
 
@@ -805,7 +794,7 @@ body.menu-open{overflow:hidden}
   font-weight:700;font-size:clamp(1.9rem,8vw,2.6rem);
   letter-spacing:-.03em;line-height:1;color:var(--ink);
   opacity:0;transform:translateY(14px);
-  transition:opacity .5s var(--out),transform .55s var(--out),color .2s var(--out);
+  transition:opacity .35s var(--out),transform .4s var(--out),color .2s var(--out);
 }
 .drawer-menu a:active{color:var(--red)}
 .drawer-menu a .n{
@@ -814,18 +803,18 @@ body.menu-open{overflow:hidden}
   font-variant-numeric:tabular-nums;
 }
 body.menu-open .drawer-menu a{opacity:1;transform:none}
-body.menu-open .drawer-menu li:nth-child(1) a{transition-delay:.06s}
-body.menu-open .drawer-menu li:nth-child(2) a{transition-delay:.11s}
-body.menu-open .drawer-menu li:nth-child(3) a{transition-delay:.16s}
-body.menu-open .drawer-menu li:nth-child(4) a{transition-delay:.21s}
-body.menu-open .drawer-menu li:nth-child(5) a{transition-delay:.26s}
-body.menu-open .drawer-menu li:nth-child(6) a{transition-delay:.31s}
+body.menu-open .drawer-menu li:nth-child(1) a{transition-delay:.03s}
+body.menu-open .drawer-menu li:nth-child(2) a{transition-delay:.06s}
+body.menu-open .drawer-menu li:nth-child(3) a{transition-delay:.09s}
+body.menu-open .drawer-menu li:nth-child(4) a{transition-delay:.12s}
+body.menu-open .drawer-menu li:nth-child(5) a{transition-delay:.15s}
+body.menu-open .drawer-menu li:nth-child(6) a{transition-delay:.18s}
 
 .drawer-foot{
   margin-top:2.5rem;padding-top:1.75rem;border-top:1px solid var(--line);
   display:flex;flex-direction:column;gap:1.1rem;
   opacity:0;transform:translateY(14px);
-  transition:opacity .5s var(--out) .34s,transform .55s var(--out) .34s;
+  transition:opacity .35s var(--out) .2s,transform .4s var(--out) .2s;
 }
 body.menu-open .drawer-foot{opacity:1;transform:none}
 .drawer-foot .btn{justify-content:center}
@@ -861,7 +850,11 @@ body.menu-open .drawer-foot{opacity:1;transform:none}
 .map-consent .addr{
   font-size:.8rem;font-weight:600;color:var(--ink-2);
 }
-.map-shell.loaded .map-consent{display:none}
+.map-shell iframe{opacity:0;transition:opacity .3s var(--out)}
+.map-shell.loaded iframe{opacity:1}
+.map-consent{transition:opacity .3s var(--out),visibility 0s linear .3s}
+.map-shell.loaded .map-consent{opacity:0;visibility:hidden}
+.map-consent .btn:disabled{cursor:progress;filter:none;transform:none}
 
 /* ── Responsive: nav ───────────────────────────────────── */
 @media (max-width:940px){
@@ -957,7 +950,6 @@ a:not([class]),.cred-txt a,.drawer-tel a{
   .btn:hover .chip{transform:none}
   .rung:hover{transform:none}
   .course:hover{transform:none}
-  .course:hover .course-go{transform:none}
   
   .ig-cell:hover{transform:none}
   .fs:hover{transform:none}
@@ -1046,7 +1038,7 @@ a:not([class]),.cred-txt a,.drawer-tel a{
 .ig-cell:nth-child(even){transform:rotate(1.5deg)}
 
 /* ── Etiquetas de curso: pastillas con más cuerpo ──────── */
-.course-tag{padding:6px 13px;font-size:.74rem;font-weight:700;letter-spacing:-.005em}
+.course-tag{padding:6px 13px;font-size:.78rem;font-weight:700;letter-spacing:-.005em}
 
 @media (hover:hover) and (pointer:fine){
   .frame:hover,.ig-cell:hover{transform:rotate(0) scale(1.03)}
@@ -1381,3 +1373,41 @@ a.ig-cell{display:block;text-decoration:none}
    9,8 % arriba y abajo). Se compensa para que el dibujo quede alineado con el
    texto del pie y no deje un hueco de más debajo. */
 .foot-brand .brand--pie{margin-left:-6.5px;margin-bottom:.3rem}
+
+
+/* Cambio de idioma: fundido corto entre páginas en vez de recarga en seco.
+   La barra se queda quieta. Firefox lo ignora y carga como siempre. */
+@view-transition{navigation:auto}
+.nav-shell{view-transition-name:barra}
+::view-transition-old(root),::view-transition-new(root){animation-duration:.2s;animation-timing-function:var(--out)}
+@media (prefers-reduced-motion:reduce){@view-transition{navigation:none}}
+
+/* Móvil: sin ratón no hay hover ni relieve, así que el collage se abre con
+   el scroll. Los cromos se enderezan y se separan mientras se sube la página. */
+@property --straight{syntax:'<number>';inherits:false;initial-value:1}
+@property --px{syntax:'<length>';inherits:true;initial-value:0px}
+@supports (animation-timeline:view()){
+  @media (max-width:940px) and (prefers-reduced-motion:no-preference){
+    .hero-visual{view-timeline-name:--collage}
+    .hero-visual .frame{animation:cromoAbre linear both;animation-timeline:--collage;animation-range:cover 20% cover 75%}
+    .hero-visual .frame-1{--depth:-1.2}
+    .hero-visual .frame-2{--depth:-.45}
+    .hero-visual .frame-3{--depth:.45}
+    .hero-visual .frame-4{--depth:1.2}
+  }
+}
+@keyframes cromoAbre{to{--straight:.2;--px:14px}}
+
+/* Legales: líneas de lectura cómoda (<80 caracteres). */
+.legal p,.legal li{max-width:66ch}
+
+/* Menos aire muerto entre cursos, exámenes y contacto. */
+.courses,.exams{padding-bottom:clamp(3.5rem,8vh,6rem)}
+
+/* Contacto en el móvil: sin tarjeta dentro de tarjeta y botones a todo el ancho. */
+@media (max-width:600px){
+  .cta{padding:2.2rem 1.4rem;border-radius:26px}
+  .cta-btns{flex-direction:column;align-items:stretch}
+  .cta-btns .btn{justify-content:center}
+  .cta-card{background:none;border:0;border-top:1px solid rgba(255,255,255,.12);border-radius:0;padding:1.6rem 0 0;backdrop-filter:none;-webkit-backdrop-filter:none}
+}

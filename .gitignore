@@ -22,3 +22,9 @@ __pycache__/
 
 # Notas privadas del proyecto: solo en local, nunca en el repositorio público
 /docs/
+
+# Exportaciones de las plantillas de Instagram (se regeneran con render.py)
+/design/instagram/export/
+
+# notas de crítica de diseño (locales)
+.impeccable/critique/

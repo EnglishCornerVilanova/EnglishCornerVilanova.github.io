@@ -278,7 +278,8 @@
     "title": "English Corner, Carrer Manresa, 23 Baixos, Vilanova del Camí",
     "consentTitle": "Dónde estamos",
     "consentText": "El mapa lo sirve Google Maps. Al cargarlo se conectará con los servidores de Google, que pueden instalar sus cookies en tu navegador.",
-    "consentButton": "Cargar el mapa"
+    "consentButton": "Cargar el mapa",
+    "loading": "Cargando el mapa…"
   },
   "footer": {
     "about": "Academia de inglés en Vilanova del Camí desde 2005. Todas las áreas del idioma, desde los 6 años hasta adultos, y preparación para los exámenes oficiales.",

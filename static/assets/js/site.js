@@ -108,9 +108,19 @@
         frame.title = mapShell.getAttribute('data-map-title') || 'Map';
         frame.referrerPolicy = 'no-referrer-when-downgrade';
         frame.setAttribute('allowfullscreen', '');
+        var label = btn.querySelector('[data-map-label]');
+        if (label) label.textContent = mapShell.getAttribute('data-map-loading') || label.textContent;
+        btn.disabled = true;
+        mapShell.setAttribute('aria-busy', 'true');
+        // el aviso se queda hasta que Google ha pintado; así no hay recuadro vacío
+        var mostrar = function () {
+          mapShell.classList.add('loaded');
+          mapShell.removeAttribute('aria-busy');
+        };
+        frame.addEventListener('load', mostrar, { once: true });
+        setTimeout(mostrar, 8000);
         mapShell.appendChild(frame);
-        mapShell.classList.add('loaded');
-      });
+      }, { once: true });
     }
   }
 

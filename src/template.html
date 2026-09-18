@@ -321,9 +321,6 @@
   </div>
 </section>
 
-<svg class="wave wave-down" viewBox="0 0 1440 80" preserveAspectRatio="none" aria-hidden="true">
-  <path d="M0 80V34c168-40 300 22 520 30 220 8 372-38 566-30 118 5 250 26 354 14v32z"/>
-</svg>
 
 <!-- ══════════ COURSES ══════════ -->
 <section class="section courses" id="courses" aria-labelledby="courses-h">
@@ -347,9 +344,6 @@
   </div>
 </section>
 
-<svg class="wave wave-up" viewBox="0 0 1440 80" preserveAspectRatio="none" aria-hidden="true">
-  <path d="M0 80V46c150 26 286-22 508-14 222 8 366 40 560 28 116-7 254-30 372-16v36z"/>
-</svg>
 
 <!-- ══════════ CAMBRIDGE EXAMS ══════════ -->
 <section class="section exams" id="exams" aria-labelledby="exams-h">
@@ -425,7 +419,8 @@
 <section class="map-sec" aria-label="{{ map.title }}">
   <div class="map-shell rv" id="mapShell"
        data-map-src="https://www.google.com/maps?q=English+Corner,+Carrer+de+Manresa+23,+08788+Vilanova+del+Cam%C3%AD,+Barcelona&amp;output=embed"
-       data-map-title="{{ map.title }}">
+       data-map-title="{{ map.title }}"
+       data-map-loading="{{ map.loading }}">
     <div class="map-consent">
       <div class="map-consent-in">
         <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7-4.8-7-10a7 7 0 0114 0c0 5.2-7 10-7 10z"/><circle cx="12" cy="11" r="2.6"/></svg>
@@ -433,7 +428,7 @@
         <p>{{ map.consentText }}</p>
         <span class="addr">{{ shared.addressLine1 }} · {{ shared.addressLine2 }}</span>
         <button class="btn btn--navy" type="button" data-map-load>
-          {{ map.consentButton }}
+          <span data-map-label>{{ map.consentButton }}</span>
           <span class="chip"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
         </button>
       </div>
