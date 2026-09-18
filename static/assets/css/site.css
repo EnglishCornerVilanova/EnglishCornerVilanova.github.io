@@ -1411,3 +1411,66 @@ a.ig-cell{display:block;text-decoration:none}
   .cta-btns .btn{justify-content:center}
   .cta-card{background:none;border:0;border-top:1px solid rgba(255,255,255,.12);border-radius:0;padding:1.6rem 0 0;backdrop-filter:none;-webkit-backdrop-filter:none}
 }
+
+/* Escalera de exámenes: de Young Learners a C1, cada escalón más alto.
+   Debajo de cada tarjeta, su contrahuella del mismo color llega al suelo. */
+.ladder{list-style:none;padding:0;margin:2.4rem 0 0;--paso:2.6rem;align-items:end}
+.rung-0{--t:var(--tono-sky-ink)}
+.rung-1{--t:var(--nivel-a2)}
+.rung-2{--t:var(--nivel-b1)}
+.rung-3{--t:var(--nivel-b2)}
+.rung-4{--t:var(--nivel-c1)}
+.rung{overflow:visible;border-top:3px solid var(--t)}
+.rung::before{display:none}
+.rung-0 .rung-lvl{color:var(--tono-sky-ink);font-size:1.45rem}
+.rung-0 .yle-tags{margin-top:.9rem}
+.rung-0 .yle-tag{background:var(--tono-sky);color:var(--tono-sky-ink)}
+@media (min-width:941px){
+  /* misma altura para todas y la misma subida entre escalones; `translate`
+     no choca con el `transform` de la aparición al hacer scroll */
+  .ladder{grid-template-columns:repeat(5,minmax(0,1fr));gap:.8rem;align-items:stretch;
+    --paso:1.9rem;padding-top:calc(4 * var(--paso))}
+  .rung{translate:0 calc(var(--i) * var(--paso) * -1)}
+  .rung:hover{transform:none}
+}
+@media (max-width:940px){
+  .ladder{grid-template-columns:1fr;gap:.7rem}
+  .rung{margin-left:calc(var(--i) * .9rem)}
+}
+@media (max-width:600px){ .rung{margin-left:calc(var(--i) * .55rem)} }
+@media (min-width:941px){ .rung-age{font-size:.74rem;line-height:1.35;border-radius:10px;padding:5px 10px} }
+@media (min-width:941px){
+  .rung{display:flex;flex-direction:column}
+  .rung-age,.rung-0 .yle-tags{margin-top:auto}
+  .rung-age{align-self:flex-start}
+  .rung-desc{margin-bottom:1rem}
+}
+
+
+
+/* Fotos de «Sobre nosaltres», con el lenguaje de los cromos del banner:
+   al hacer scroll cada una va a su velocidad (la pequeña, más cerca, sube más
+   y se endereza); con ratón ganan relieve y la señalada se levanta. */
+.method-frame,.method-frame-2{
+  transform:
+    rotate(calc(var(--rot) * var(--straight,1)))
+    translateY(var(--lift,0px))
+    translate3d(calc(var(--px,0px) * var(--depth)),calc(var(--py,0px) * var(--depth)),0)
+    scale(var(--sc,1));
+  transition:transform .4s var(--out),filter .4s var(--out);
+}
+.method-frame{--rot:-2deg;--depth:.55}
+.method-frame-2{--rot:3deg;--depth:1.5}
+@media (hover:hover) and (pointer:fine){
+  .method-frame:hover,.method-frame-2:hover{
+    --lift:-14px;--straight:.2;--sc:1.03;z-index:5;filter:drop-shadow(0 24px 30px rgba(20,20,18,.2))}
+}
+@supports (animation-timeline:view()){
+  @media (prefers-reduced-motion:no-preference){
+    .method-visual{view-timeline-name:--fotos}
+    .method-frame{animation:fotoLejos linear both;animation-timeline:--fotos;animation-range:cover 0% cover 100%}
+    .method-frame-2{animation:fotoCerca linear both;animation-timeline:--fotos;animation-range:cover 0% cover 100%}
+  }
+}
+@keyframes fotoLejos{from{translate:0 45px;rotate:-3deg}to{translate:0 -45px;rotate:1.5deg}}
+@keyframes fotoCerca{from{translate:35px 150px;rotate:10deg}to{translate:-15px -110px;rotate:-3deg}}

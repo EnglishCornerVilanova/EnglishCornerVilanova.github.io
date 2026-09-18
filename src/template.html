@@ -353,24 +353,24 @@
       <p>{{ exams.lede }}</p>
     </div>
 
-    <div class="ladder">
-      {{# exams.rungs }}<article class="rung rung-{{ @index1 }} rv rv-{{ @index1 }}">
+    <ol class="ladder">
+      <li class="rung rung-0 rv" style="--i:0">
+        <div class="rung-lvl">Pre A1–A2</div>
+        <div class="rung-name">Young Learners</div>
+        <p class="rung-desc">{{ exams.yleNote }}</p>
+        <div class="yle-tags">
+          {{# exams.yleTags }}<span class="yle-tag">{{ . }}</span>
+          {{/ exams.yleTags }}
+        </div>
+      </li>
+      {{# exams.rungs }}<li class="rung rung-{{ @index1 }} rv rv-{{ @index1 }}" style="--i:{{ @index1 }}">
         <div class="rung-lvl">{{ .lvl }}</div>
         <div class="rung-name">{{ .name }}</div>
         <p class="rung-desc">{{ .desc }}</p>
         <span class="rung-age">{{ .age }}</span>
-      </article>
+      </li>
       {{/ exams.rungs }}
-    </div>
-
-    <div class="yle-note rv rv-5">
-      <strong>{{ exams.yleStrong }}</strong>
-      <div class="yle-tags">
-        {{# exams.yleTags }}<span class="yle-tag">{{ . }}</span>
-        {{/ exams.yleTags }}
-      </div>
-      <span>{{ exams.yleNote }}</span>
-    </div>
+    </ol>
   </div>
 </section>
 
