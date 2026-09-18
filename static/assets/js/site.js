@@ -152,18 +152,4 @@
     });
   }
 
-  /* ── Fotos de «Sobre nosaltres»: el mismo relieve que los cromos ── */
-  var mv = document.querySelector('.method-visual');
-  if (mv && matchMedia('(hover:hover) and (pointer:fine)').matches &&
-      !matchMedia('(prefers-reduced-motion:reduce)').matches) {
-    var pendF = 0, ex = 0, ey = 0;
-    var pintaF = function () { pendF = 0; mv.style.setProperty('--px', ex.toFixed(1) + 'px'); mv.style.setProperty('--py', ey.toFixed(1) + 'px'); };
-    mv.addEventListener('pointermove', function (e) {
-      var r = mv.getBoundingClientRect();
-      ex = ((e.clientX - r.left) / r.width - .5) * 22;
-      ey = ((e.clientY - r.top) / r.height - .5) * 16;
-      if (!pendF) pendF = requestAnimationFrame(pintaF);
-    }, { passive: true });
-    mv.addEventListener('pointerleave', function () { ex = ey = 0; if (!pendF) pendF = requestAnimationFrame(pintaF); });
-  }
 })();

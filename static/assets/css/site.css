@@ -1450,20 +1450,21 @@ a.ig-cell{display:block;text-decoration:none}
 
 /* Fotos de «Sobre nosaltres», con el lenguaje de los cromos del banner:
    al hacer scroll cada una va a su velocidad (la pequeña, más cerca, sube más
-   y se endereza); con ratón ganan relieve y la señalada se levanta. */
+   y se endereza). */
 .method-frame,.method-frame-2{
   transform:
-    rotate(calc(var(--rot) * var(--straight,1)))
-    translateY(var(--lift,0px))
-    translate3d(calc(var(--px,0px) * var(--depth)),calc(var(--py,0px) * var(--depth)),0)
+    rotate(var(--rot))
+    translate(var(--fx,0px),var(--fy,0px))
     scale(var(--sc,1));
-  transition:transform .4s var(--out),filter .4s var(--out);
+  transition:transform .6s var(--spring),filter .4s var(--out);
 }
-.method-frame{--rot:-2deg;--depth:.55}
-.method-frame-2{--rot:3deg;--depth:1.5}
+.method-frame{--rot:-2deg}
+.method-frame-2{--rot:3deg;transform-origin:85% 90%}
+/* Con ratón, la foto señalada pasa al frente; la pequeña crece para verse bien. */
 @media (hover:hover) and (pointer:fine){
-  .method-frame:hover,.method-frame-2:hover{
-    --lift:-14px;--straight:.2;--sc:1.03;z-index:5;filter:drop-shadow(0 24px 30px rgba(20,20,18,.2))}
+  .method-frame:hover{--rot:0deg;--sc:1.03;z-index:5;filter:drop-shadow(0 24px 30px rgba(20,20,18,.2))}
+  .method-frame:hover ~ .method-frame-2{--fx:22px;--fy:22px;--rot:6deg}
+  .method-frame-2:hover{--rot:0deg;--sc:1.4;z-index:5;filter:drop-shadow(0 28px 34px rgba(20,20,18,.24))}
 }
 @supports (animation-timeline:view()){
   @media (prefers-reduced-motion:no-preference){
