@@ -708,11 +708,12 @@ def build_lang(site: dict, lang: str, template: str, legal_key: str | None = Non
         data["meta"].update(title=f'{nf["title"]} | English Corner', description=nf["lede"],
                             ogTitle=nf["title"], ogDescription=nf["lede"])
         main = (
+            # entra escalonada, con la misma animación que la portada
             '<main id="main" class="legal-main">\n<article class="legal legal-404">\n'
-            f'  <p class="legal-kicker"><a href="{home}">English Corner</a></p>\n'
-            f'  <h1 class="display">{html.escape(nf["title"])}</h1>\n'
-            f'  <p class="hero-lede">{html.escape(nf["lede"])}</p>\n'
-            f'  <p><a class="btn btn--red" href="{home}">{html.escape(nf["cta"])}</a></p>\n'
+            f'  <p class="legal-kicker hero-in hi-1"><a href="{home}">English Corner</a></p>\n'
+            f'  <h1 class="display hero-in hi-2">{html.escape(nf["title"])}</h1>\n'
+            f'  <p class="hero-lede hero-in hi-3">{html.escape(nf["lede"])}</p>\n'
+            f'  <p class="hero-in hi-4"><a class="btn btn--red" href="{home}">{html.escape(nf["cta"])}</a></p>\n'
             '</article>\n</main>'
         )
         template = re.sub(r'<main id="main">.*?</main>', lambda _: main, template, count=1, flags=re.S)
@@ -753,6 +754,11 @@ def build_lang(site: dict, lang: str, template: str, legal_key: str | None = Non
         "alternates": build_alternates(site, paths),
         "langRedirect": lang_redirect(site, paths),
         "hoursHtml": hours_html(lang),
+        # el navegador calcula «obert ara / tancat» con la hora de Vilanova
+        "hoursJson": html.escape(json.dumps({
+            "week": HOURS["week"], "special": HOURS.get("special", []),
+            "days": HOURS_I18N[lang]["days"], "t": data["contact"]["status"],
+        }, ensure_ascii=False), quote=True),
         "mapsUrl": site["googleMaps"],
         "cambridgeMark": mark_html,
         "igGrid": ig_grid(data),

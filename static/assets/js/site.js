@@ -154,4 +154,62 @@
     });
   }
 
+
+  /* ── Horario: «obert ara / tancat» con la hora de Vilanova ─── */
+  var obert = document.querySelector('.obert[data-horari]');
+  if (obert) {
+    var H;
+    try { H = JSON.parse(obert.getAttribute('data-horari')); } catch (e) { H = null; }
+    var aMin = function (t) { var p = t.split(':'); return +p[0] * 60 + +p[1]; };
+    var hora = function (t) {
+      if (H.t.hourFmt !== 'ca') return t;
+      var p = t.split(':'), h = String(+p[0]);
+      return (p[1] === '00' ? h : h + '.' + p[1]) + '\u00a0h';
+    };
+    // fecha y minutos actuales en Europe/Madrid, sea cual sea la zona del visitante
+    var ahora = function () {
+      var f = {};
+      new Intl.DateTimeFormat('en-GB', { timeZone: 'Europe/Madrid', year: 'numeric', month: '2-digit',
+        day: '2-digit', hour: '2-digit', minute: '2-digit', hourCycle: 'h23' })
+        .formatToParts(new Date()).forEach(function (x) { f[x.type] = x.value; });
+      return { fecha: f.year + '-' + f.month + '-' + f.day, min: +f.hour * 60 + +f.minute };
+    };
+    var tramos = function (fecha) {
+      for (var i = 0; i < H.special.length; i++) if (H.special[i].date === fecha) return H.special[i].intervals;
+      var dia = (new Date(fecha + 'T12:00:00Z').getUTCDay() + 6) % 7;   // lunes = 0
+      return H.week[dia] || [];
+    };
+    var sumaDias = function (fecha, n) {
+      var d = new Date(fecha + 'T12:00:00Z'); d.setUTCDate(d.getUTCDate() + n);
+      return d.toISOString().slice(0, 10);
+    };
+    var pintar = function () {
+      var n = ahora(), hoy = tramos(n.fecha), texto = null, abierto = false;
+      for (var i = 0; i < hoy.length; i++) {
+        if (n.min >= aMin(hoy[i][0]) && n.min < aMin(hoy[i][1])) {
+          abierto = true; texto = H.t.closes.replace('{h}', hora(hoy[i][1])); break;
+        }
+      }
+      if (!abierto) {
+        for (var k = 0; k < 8 && !texto; k++) {
+          var fecha = sumaDias(n.fecha, k), tr = tramos(fecha);
+          for (var j = 0; j < tr.length; j++) {
+            if (k > 0 || aMin(tr[j][0]) > n.min) {
+              var dia = (new Date(fecha + 'T12:00:00Z').getUTCDay() + 6) % 7;
+              var cuando = k === 0 ? H.t.today : k === 1 ? H.t.tomorrow : H.t.on + H.days[dia];
+              texto = H.t.opens.replace('{d}', cuando).replace('{h}', hora(tr[j][0]));
+              break;
+            }
+          }
+        }
+      }
+      var html = '<span class="obert-punt" aria-hidden="true"></span><b>' + (abierto ? H.t.open : H.t.closed) +
+                 '</b>' + (texto ? '<span>· ' + texto + '</span>' : '');
+      if (obert.innerHTML !== html) obert.innerHTML = html;
+      obert.classList.toggle('is-obert', abierto);
+      obert.hidden = false;
+    };
+    if (H && H.week && H.t) { pintar(); setInterval(pintar, 60000); }
+  }
+
 })();

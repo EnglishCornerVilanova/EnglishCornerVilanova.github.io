@@ -1,0 +1,326 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-09-19T18:52:21+02:00",
+  "title": "Design System: English Corner",
+  "extensions": {
+    "colorMeta": {
+      "union-red": {
+        "role": "primary",
+        "displayName": "Union Red",
+        "canonical": "#E8192C",
+        "tonalRamp": [
+          "#46080D",
+          "#740C16",
+          "#A2121F",
+          "#CC1627",
+          "#ED4756",
+          "#F2808B",
+          "#F8BAC0",
+          "#FDE8EA"
+        ]
+      },
+      "union-navy": {
+        "role": "secondary",
+        "displayName": "Union Navy",
+        "canonical": "#012169",
+        "tonalRamp": [
+          "#000A20",
+          "#001034",
+          "#01174A",
+          "#011D5C",
+          "#344D87",
+          "#7385AC",
+          "#B3BCD2",
+          "#E6E9F0"
+        ]
+      },
+      "ink": {
+        "role": "neutral",
+        "displayName": "Ink",
+        "canonical": "#12151C",
+        "tonalRamp": [
+          "#050608",
+          "#090A0E",
+          "#0D0F14",
+          "#101219",
+          "#414449",
+          "#7D7E82",
+          "#B8B9BB",
+          "#E7E8E8"
+        ]
+      },
+      "pearl": {
+        "role": "neutral",
+        "displayName": "Pearl",
+        "canonical": "#F2F2F0",
+        "tonalRamp": [
+          "#494948",
+          "#797978",
+          "#A9A9A8",
+          "#D5D5D3",
+          "#F5F5F3",
+          "#F8F8F7",
+          "#FBFBFA",
+          "#FEFEFE"
+        ]
+      },
+      "marker-pink": {
+        "role": "tertiary",
+        "displayName": "Marker Pink",
+        "canonical": "#FFCBD1",
+        "tonalRamp": [
+          "#4D3D3F",
+          "#806668",
+          "#B28E92",
+          "#E0B3B8",
+          "#FFD5DA",
+          "#FFE2E6",
+          "#FFEFF1",
+          "#FFFAFA"
+        ]
+      },
+      "tone-mint": {
+        "role": "tertiary",
+        "displayName": "Mint Tone",
+        "canonical": "#E6F6EC",
+        "tonalRamp": [
+          "#454A47",
+          "#737B76",
+          "#A1ACA5",
+          "#CAD8D0",
+          "#EBF8F0",
+          "#F1FAF5",
+          "#F8FCF9",
+          "#FCFEFD"
+        ]
+      },
+      "tone-sun": {
+        "role": "tertiary",
+        "displayName": "Sun Tone",
+        "canonical": "#FFF3D9",
+        "tonalRamp": [
+          "#4D4941",
+          "#807A6C",
+          "#B2AA98",
+          "#E0D6BF",
+          "#FFF5E1",
+          "#FFF8EA",
+          "#FFFBF4",
+          "#FFFEFB"
+        ]
+      },
+      "tone-sky": {
+        "role": "tertiary",
+        "displayName": "Sky Tone",
+        "canonical": "#E3F4FB",
+        "tonalRamp": [
+          "#44494B",
+          "#727A7E",
+          "#9FABB0",
+          "#C8D7DD",
+          "#E9F6FC",
+          "#F0F9FD",
+          "#F7FCFE",
+          "#FCFEFF"
+        ]
+      },
+      "tone-rose": {
+        "role": "tertiary",
+        "displayName": "Rose Tone",
+        "canonical": "#FCE8F1",
+        "tonalRamp": [
+          "#4C4648",
+          "#7E7478",
+          "#B0A2A9",
+          "#DECCD4",
+          "#FDEDF4",
+          "#FDF2F7",
+          "#FEF8FB",
+          "#FFFDFE"
+        ]
+      }
+    },
+    "typographyMeta": {
+      "display": {
+        "displayName": "Display",
+        "purpose": "Hero claim only."
+      },
+      "headline": {
+        "displayName": "Headline",
+        "purpose": "Section headings, balanced."
+      },
+      "title": {
+        "displayName": "Title",
+        "purpose": "Course and exam names."
+      },
+      "body": {
+        "displayName": "Body",
+        "purpose": "All running text."
+      },
+      "label": {
+        "displayName": "Label",
+        "purpose": "Age chips and tags."
+      },
+      "logotype": {
+        "displayName": "Logotype",
+        "purpose": "'English Corner' next to the round brand mark only."
+      }
+    },
+    "shadows": [
+      {
+        "name": "polaroid",
+        "value": "0 2px 5px rgba(20,20,18,.07), 0 22px 42px -20px rgba(20,20,18,.4)",
+        "purpose": "Mounted photos and cromos."
+      },
+      {
+        "name": "floating-bar",
+        "value": "0 1px 2px rgba(18,21,28,.04), 0 8px 28px -12px rgba(18,21,28,.14)",
+        "purpose": "Navigation capsule and Instagram follow pill."
+      },
+      {
+        "name": "red-glow",
+        "value": "0 2px 4px rgba(232,25,44,.16), 0 10px 28px -10px rgba(232,25,44,.6)",
+        "purpose": "Red buttons on light paper."
+      }
+    ],
+    "motion": [
+      {
+        "name": "spring",
+        "value": "cubic-bezier(.34,1.4,.64,1)",
+        "purpose": "Bounce on buttons, cards and hover lifts (client's choice)."
+      },
+      {
+        "name": "out",
+        "value": "cubic-bezier(.16,1,.3,1)",
+        "purpose": "Entrances, fades and scroll reveals."
+      },
+      {
+        "name": "smooth",
+        "value": "cubic-bezier(.32,.72,0,1)",
+        "purpose": "Navigation bar condensing on scroll."
+      }
+    ],
+    "breakpoints": [
+      {
+        "name": "phone",
+        "value": "600px"
+      },
+      {
+        "name": "desktop",
+        "value": "941px"
+      },
+      {
+        "name": "wide",
+        "value": "1280px"
+      },
+      {
+        "name": "extra-wide",
+        "value": "1400px"
+      }
+    ]
+  },
+  "components": [
+    {
+      "name": "Primary Button",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "The one call to action per view, leading to contact.",
+      "html": "<a class=\"ds-btn ds-btn-red\" href=\"#\">Demana la prova de nivell <span class=\"ds-chip\">&rarr;</span></a>",
+      "css": ".ds-btn{display:inline-flex;align-items:center;gap:9px;padding:11px 11px 11px 20px;border-radius:100px;font-family:'Instrument Sans',sans-serif;font-size:.84rem;font-weight:700;letter-spacing:-.01em;text-decoration:none;color:#fff;transition:transform .3s cubic-bezier(.34,1.4,.64,1),filter .25s}.ds-btn-red{background:#E8192C;box-shadow:0 2px 4px rgba(232,25,44,.16),0 10px 28px -10px rgba(232,25,44,.6)}.ds-btn:hover{transform:translateY(-2px);filter:brightness(1.08)}.ds-btn:active{transform:scale(.96)}.ds-btn:focus-visible{outline:2.5px solid #012169;outline-offset:3px}.ds-chip{width:26px;height:26px;border-radius:100px;display:grid;place-items:center;background:rgba(255,255,255,.2)}"
+    },
+    {
+      "name": "Navy Button",
+      "kind": "button",
+      "refersTo": "button-navy",
+      "description": "Secondary action on light panels, e.g. loading the map.",
+      "html": "<button class=\"ds-btn2\">Carregar el mapa</button>",
+      "css": ".ds-btn2{padding:11px 20px;border:none;border-radius:100px;background:#012169;color:#fff;font:700 .84rem 'Instrument Sans',sans-serif;box-shadow:0 2px 4px rgba(1,33,105,.16),0 10px 28px -10px rgba(1,33,105,.55);transition:transform .3s cubic-bezier(.34,1.4,.64,1)}.ds-btn2:hover{transform:translateY(-2px)}.ds-btn2:active{transform:scale(.96)}.ds-btn2:focus-visible{outline:2.5px solid #012169;outline-offset:3px}"
+    },
+    {
+      "name": "Ghost Button",
+      "kind": "button",
+      "refersTo": "button-ghost",
+      "description": "Alternative contact actions next to the primary button.",
+      "html": "<a class=\"ds-ghost\" href=\"#\">WhatsApp</a>",
+      "css": ".ds-ghost{display:inline-flex;padding:12px 22px;border:1.5px solid #E8E4DE;border-radius:100px;color:#12151C;font:700 .84rem 'Instrument Sans',sans-serif;text-decoration:none;transition:border-color .25s,transform .3s cubic-bezier(.34,1.4,.64,1)}.ds-ghost:hover{border-color:#12151C;transform:translateY(-2px)}.ds-ghost:focus-visible{outline:2.5px solid #012169;outline-offset:3px}"
+    },
+    {
+      "name": "Age Chip",
+      "kind": "chip",
+      "refersTo": "chip-level",
+      "description": "Light tone with its own dark ink.",
+      "html": "<span class=\"ds-tag\">DE 6 A 12 ANYS</span>",
+      "css": ".ds-tag{display:inline-block;padding:6px 13px;border-radius:100px;background:#FFEAEC;color:#B8121F;font:700 .78rem 'Instrument Sans',sans-serif;text-transform:uppercase}"
+    },
+    {
+      "name": "Exam Step",
+      "kind": "card",
+      "refersTo": "card-step",
+      "description": "One step of the exam staircase, level colour on top.",
+      "html": "<article class=\"ds-step\"><div class=\"ds-lvl\">B1</div><h3>Preliminary (PET)</h3><p>Nivell d'usuari independent.</p><span class=\"ds-age\">Habitualment de 13 a 16 anys</span></article>",
+      "css": ".ds-step{width:220px;background:#fff;border:1px solid #E8E4DE;border-top:3px solid #5B8DEF;border-radius:20px;padding:1.5rem 1.4rem;font-family:'Instrument Sans',sans-serif}.ds-lvl{font:800 1.9rem/1 'Bricolage Grotesque',sans-serif;letter-spacing:-.04em;color:#012169;margin-bottom:.5rem}.ds-step h3{margin:0 0 .35rem;font-size:.95rem;font-weight:800}.ds-step p{font-size:.875rem;color:#646B78;line-height:1.6;margin:0 0 1rem}.ds-age{display:block;border-top:1px solid #E8E4DE;padding-top:.7rem;font-size:.82rem;font-weight:600;color:#3D4351}"
+    },
+    {
+      "name": "Polaroid Cromo",
+      "kind": "custom",
+      "refersTo": "photo-polaroid",
+      "description": "A real photo mounted on white card, slightly tilted, never cropped.",
+      "html": "<figure class=\"ds-polaroid\"><div class=\"ds-photo\"></div></figure>",
+      "css": ".ds-polaroid{display:inline-block;margin:0;background:#fff;padding:9px 9px 26px;border-radius:5px;transform:rotate(-2deg);box-shadow:0 2px 5px rgba(20,20,18,.07),0 22px 42px -20px rgba(20,20,18,.4);transition:transform .6s cubic-bezier(.34,1.4,.64,1)}.ds-polaroid:hover{transform:rotate(0) scale(1.03)}.ds-photo{width:180px;height:220px;border-radius:2px;background:linear-gradient(150deg,#E3F4FB,#C3DAFF)}"
+    },
+    {
+      "name": "Navigation Capsule",
+      "kind": "nav",
+      "description": "Floating white capsule with brand mark, links and contact icons.",
+      "html": "<nav class=\"ds-nav\"><span class=\"ds-mark\"></span><a href=\"#\">Inici</a><a href=\"#\">Què oferim</a><a href=\"#\">Contacte</a><span class=\"ds-ico\">&#9742;</span></nav>",
+      "css": ".ds-nav{display:flex;align-items:center;gap:1.4rem;padding:9px 9px 9px 14px;background:rgba(255,255,255,.72);backdrop-filter:blur(24px) saturate(180%);border:1px solid rgba(18,21,28,.07);border-radius:100px;box-shadow:0 1px 2px rgba(18,21,28,.04),0 8px 28px -12px rgba(18,21,28,.14);font:600 .88rem 'Instrument Sans',sans-serif}.ds-nav a{color:#3D4351;text-decoration:none}.ds-nav a:hover{color:#12151C}.ds-mark{width:44px;height:44px;border-radius:50%;background:#EAF2FF}.ds-ico{width:40px;height:40px;border-radius:50%;border:1px solid #E8E4DE;display:grid;place-items:center;margin-left:auto}"
+    }
+  ],
+  "narrative": {
+    "northStar": "La libreta ordenada (The Tidy Notebook)",
+    "overview": "The site reads like a well-kept school notebook: everything has its place, levels follow one another in order, and nothing is improvised. Warmth comes from what is stuck into the notebook: real photos mounted as polaroid cromos, a pink marker stroke and the red and navy of the Union Jack on pale paper. Density is calm; colour is saved for meaning; motion is playful but controlled.",
+    "keyCharacteristics": [
+      "Order first: clear rows, sections and a rising staircase for the exams.",
+      "Real photos, always whole, mounted on white card like polaroids and slightly tilted.",
+      "Union Jack red and navy on pale paper; colour carries meaning, not decoration.",
+      "One bold display face with a friendly, readable text face.",
+      "A springy, tactile touch on everything you can press."
+    ],
+    "rules": [
+      {
+        "name": "The One Red Button Rule",
+        "body": "Each view has one red button, and it is the action that leads to contact.",
+        "section": "colors"
+      },
+      {
+        "name": "The Tone-and-Ink Rule",
+        "body": "A light tone always carries text in its own dark ink, never grey or black.",
+        "section": "colors"
+      },
+      {
+        "name": "The Balanced Heading Rule",
+        "body": "Headings break into balanced lines; manual line breaks are only used where the copy was written for them.",
+        "section": "typography"
+      },
+      {
+        "name": "The Resting Paper Rule",
+        "body": "Only things that feel like paper (photos, cromos, cards) float; text blocks and rows stay flat.",
+        "section": "elevation"
+      }
+    ],
+    "dos": [
+      "Do show photos whole, at their own proportions, mounted as polaroids.",
+      "Do keep one red button per view and point it towards contact.",
+      "Do pair every light tone with its own dark ink.",
+      "Do keep the springy bounce on pressable elements; with reduced motion, replace movement with short fades.",
+      "Do keep every language (Catalan, Spanish, British English) at the same visual quality; long words must be able to wrap."
+    ],
+    "donts": [
+      "Don't crop, zoom or fill-crop photos.",
+      "Don't use grey or black text on a coloured tone.",
+      "Don't introduce new accent colours outside the flag pair, the paired tones and the level colours.",
+      "Don't add fake testimonials, stock \"happy students\" imagery or invented figures.",
+      "Don't call the school a shop or show it as one."
+    ]
+  }
+}

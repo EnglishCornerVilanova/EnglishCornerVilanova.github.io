@@ -244,7 +244,17 @@
       "hours": "Horario"
     },
     "btnWhatsapp": "WhatsApp",
-    "mapsLink": "Ver la ficha en Google Maps"
+    "mapsLink": "Ver la ficha en Google Maps",
+    "status": {
+      "open": "Abierto ahora",
+      "closed": "Cerrado ahora",
+      "closes": "cierra a las {h}",
+      "opens": "abre {d} a las {h}",
+      "today": "hoy",
+      "tomorrow": "mañana",
+      "on": "el ",
+      "hourFmt": "24"
+    }
   },
   "map": {
     "title": "English Corner, Carrer Manresa, 23 Baixos, Vilanova del Camí",

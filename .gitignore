@@ -28,3 +28,6 @@ __pycache__/
 
 # notas de crítica de diseño (locales)
 .impeccable/critique/
+
+# plantillas de publicaciones de Instagram: solo en local
+/design/instagram/

@@ -59,6 +59,7 @@
 *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
 
 :root{
+  --abierto:#4ADE80;   /* punto de «Obert ara» sobre el panel oscuro */
   /* Brand */
   --red:#E8192C;
   --red-ink:#B8121F;
@@ -1399,3 +1400,11 @@ h2.display{line-height:1.06}
 @media (max-width:600px){ .rung{margin-left:calc(var(--i) * 9px)} }
 body{overflow-wrap:break-word}
 .cred,.cred > *,.course > *,.course-title{min-width:0}
+
+/* Horario: «Obert ara · tanca a les 21.15 h» encima de las franjas */
+.cta-row .obert{display:flex;align-items:center;flex-wrap:wrap;gap:.2rem .45rem;margin:.1rem 0 .45rem;
+  font-size:.85rem;line-height:1.4;color:rgba(255,255,255,.72)}
+.cta-row .obert[hidden]{display:none}
+.cta-row .obert b{color:#fff;font-weight:700}
+.obert-punt{width:8px;height:8px;border-radius:50%;flex:none;background:rgba(255,255,255,.38)}
+.is-obert .obert-punt{background:var(--abierto);box-shadow:0 0 0 3px color-mix(in srgb,var(--abierto) 22%,transparent)}
