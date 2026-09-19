@@ -444,13 +444,28 @@ def instagram_posts(site: dict) -> list[dict] | None:
                 return None
     out = DIST / "assets" / "ig"
     out.mkdir(parents=True, exist_ok=True)
+    # Se ven a ~180 px: basta con 480 px (pantallas de alta densidad) y en WebP.
+    # Sin ImageMagick, o si la conversión falla, se publica el original.
+    convert = _im("convert")
+    posts = []
     for p in cached["posts"]:
-        shutil.copy2(IG_CACHE / p["file"], out / p["file"])
+        src, name = IG_CACHE / p["file"], None
+        if convert:
+            try:
+                name = Path(p["file"]).stem + ".webp"
+                subprocess.run([*convert, str(src), "-resize", "480x>", "-strip", "-quality", "80",
+                                str(out / name)], check=True, capture_output=True, timeout=60)
+            except Exception:
+                name = None
+        if not name:
+            name = p["file"]
+            shutil.copy2(src, out / name)
+        posts.append({**p, "file": name})
     global IG_AVATAR
     if cached.get("profile") and (IG_CACHE / cached["profile"]).exists():
         shutil.copy2(IG_CACHE / cached["profile"], out / cached["profile"])
         IG_AVATAR = f"/assets/ig/{cached['profile']}"
-    return cached["posts"] or None
+    return posts or None
 
 
 def ig_grid(data: dict) -> str:

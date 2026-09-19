@@ -356,7 +356,7 @@
     <ol class="ladder">
       <li class="rung rung-0 rv" style="--i:0">
         <div class="rung-lvl">Pre A1–A2</div>
-        <div class="rung-name">Young Learners</div>
+        <h3 class="rung-name">Young Learners</h3>
         <p class="rung-desc">{{ exams.yleNote }}</p>
         <div class="yle-tags">
           {{# exams.yleTags }}<span class="yle-tag">{{ . }}</span>
@@ -365,7 +365,7 @@
       </li>
       {{# exams.rungs }}<li class="rung rung-{{ @index1 }} rv rv-{{ @index1 }}" style="--i:{{ @index1 }}">
         <div class="rung-lvl">{{ .lvl }}</div>
-        <div class="rung-name">{{ .name }}</div>
+        <h3 class="rung-name">{{ .name }}</h3>
         <p class="rung-desc">{{ .desc }}</p>
         <span class="rung-age">{{ .age }}</span>
       </li>

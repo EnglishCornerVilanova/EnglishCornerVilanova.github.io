@@ -186,7 +186,6 @@ a{color:inherit}
   font-size:.84rem;font-weight:700;letter-spacing:-.01em;
   text-decoration:none;cursor:pointer;white-space:nowrap;
   transition:transform .3s var(--spring),filter .25s var(--out),box-shadow .3s var(--out);
-  will-change:transform;
 }
 .btn:hover{transform:translateY(-2px);filter:brightness(1.08)}
 .btn:active{transform:scale(.96)}
@@ -306,7 +305,7 @@ a{color:inherit}
 .rung-2 .rung-lvl{color:var(--navy)}
 .rung-3 .rung-lvl{color:var(--nivel-b2-ink)}
 .rung-4 .rung-lvl{color:var(--red)}
-.rung-name{font-size:.95rem;font-weight:800;letter-spacing:-.015em;margin-bottom:.35rem}
+.rung-name{font-size:.95rem;font-weight:800;letter-spacing:-.015em;margin:0 0 .35rem}
 .rung-desc{font-size:.875rem;color:var(--ink-3);line-height:1.6;text-wrap:pretty}
 .rung-age{
   display:inline-block;margin-top:.9rem;
@@ -567,8 +566,16 @@ footer{
 .hi-4{animation-delay:.38s}
 @keyframes heroUp{to{opacity:1;transform:none}}
 
+/* Movimiento reducido: nada se desplaza, gira ni rebota, pero los cambios de
+   estado siguen llegando con un fundido corto. La visibilidad no se anima para
+   que el foco pueda entrar en un menú en cuanto se abre. */
 @media (prefers-reduced-motion:reduce){
-  *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}
+  html{scroll-behavior:auto}
+  *,*::before,*::after{
+    animation-duration:.01ms!important;animation-iteration-count:1!important;animation-delay:0s!important;
+    transition-property:opacity,color,background-color,border-color!important;
+    transition-duration:.2s!important;transition-delay:0s!important;
+  }
 }
 
 /* ═══════════ RESPONSIVE ═══════════ */
@@ -1370,3 +1377,25 @@ a.ig-cell{display:block;text-decoration:none}
 
 /* Lo que se mueve o gira dentro de estas secciones no debe abrir scroll lateral en el móvil. */
 #about,.hero{overflow-x:clip}
+
+/* Texto muy ampliado en el móvil: el nombre de Instagram puede partirse y la
+   barra deja que la marca ceda sitio antes que el botón del menú. */
+.ig-follow{max-width:100%;flex-shrink:1;min-width:0}
+.ig-follow-txt{min-width:0}
+.ig-follow-txt b{overflow-wrap:anywhere}
+@media (max-width:600px){
+  .nav{gap:12px}
+  .brand{min-width:0;flex-shrink:1;overflow:hidden}
+  .nav-right{flex-shrink:0}
+}
+
+/* Títulos de sección en dos o tres líneas: algo más de aire que el lema. */
+h2.display{line-height:1.06}
+/* Con la letra muy grande, una palabra larga de un título puede partirse antes
+   que desbordar; la sangría de la escalera no crece con la letra. */
+.display{overflow-wrap:break-word}
+.insta-head > *,.rung{min-width:0}
+@media (max-width:940px){ .ladder{grid-template-columns:minmax(0,1fr)} .rung{margin-left:calc(var(--i) * 14px)} }
+@media (max-width:600px){ .rung{margin-left:calc(var(--i) * 9px)} }
+body{overflow-wrap:break-word}
+.cred,.cred > *,.course > *,.course-title{min-width:0}
