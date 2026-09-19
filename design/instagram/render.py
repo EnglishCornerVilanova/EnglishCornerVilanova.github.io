@@ -3,6 +3,7 @@
 
     python3 render.py            totes les peces
     python3 render.py A S2       només les indicades
+    python3 render.py posts/2026-09-grups-adults   un post concret (post.png)
 
 Surt a export/png/ (per publicar o com a fons) i export/pdf/ (per importar a
 Canva: el text arriba editable). Sense dependències: només Python i Chrome.
@@ -75,7 +76,24 @@ def run(args: list[str], output: Path, wait: float = 60) -> None:
                 proc.wait()
 
 
+def render_post(folder: Path) -> None:
+    """Un post de posts/<data-tema>/: post.html → post.png a la mateixa carpeta."""
+    page = folder / "post.html"
+    if not page.exists():
+        sys.exit(f"No hi ha post.html a {folder}")
+    h = 1920 if 'class="canvas story' in page.read_text(encoding="utf-8") else 1350
+    png = folder / "post.png"
+    run([f"--window-size=1080,{h}", f"--screenshot={png}", page.as_uri()], png)
+    print(f"{png.relative_to(HERE)}")
+
+
 def main() -> None:
+    posts = [Path(a).resolve() for a in sys.argv[1:] if Path(a).is_dir()]
+    if posts:
+        for folder in posts:
+            render_post(folder)
+        return
+
     wanted = sys.argv[1:] or list(PIECES)
     (OUT / "png").mkdir(parents=True, exist_ok=True)
     (OUT / "pdf").mkdir(parents=True, exist_ok=True)

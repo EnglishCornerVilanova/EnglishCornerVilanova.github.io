@@ -48,6 +48,18 @@ Niveles: A2 #5CC98F · B1 #5B8DEF · B2 #F5A623 / #B07B12 · C1 #E8192C
 
 ## Reglas
 
+- Si Sonia no aporta foto, se busca en bancos con licencia libre para uso
+  comercial sin atribución (Unsplash, Pexels, Pixabay, Openverse con CC0).
+  Nunca una imagen sin licencia declarada. Cada post guarda `foto.txt` con la
+  URL, el autor y la licencia.
+
+- Las fotos que elige Sonia se respetan: van en un marco blanco redondeado, como
+  las de la web. Recortes limpios en `assets/sonia/`.
+
+- Nada que parezca un botón: la imagen de un post no se puede pulsar. Se pone el
+  WhatsApp como dato y el enlace real va en la bio, en el caption o, en las
+  stories, en el adhesivo de enlace.
+
 - Base clara siempre. El azul marino solo como franja (cifras en D, cabecera en S3),
   igual que en la web.
 - La firma (bandera + «English Corner» en Special Elite) arriba a la izquierda en
