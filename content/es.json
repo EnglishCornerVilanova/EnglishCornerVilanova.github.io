@@ -3,7 +3,7 @@
     "title": "English Corner | Academia de inglés en Vilanova del Camí",
     "description": "Academia de inglés en Vilanova del Camí desde 2005. Todas las áreas del idioma, de los 6 años a los adultos, y exámenes oficiales de Cambridge.",
     "ogTitle": "Academia de inglés en Vilanova del Camí",
-    "ogDescription": "Un método estructurado trabajando todas las áreas del inglés. Desde los 6 años hasta grupos de adultos. Centro preparador oficial de exámenes Cambridge."
+    "ogDescription": "Un método estructurado que trabaja todas las áreas del inglés. Desde los 6 años hasta grupos de adultos. Centro preparador oficial de Cambridge English."
   },
   "a11y": {
     "skip": "Ir al contenido",
@@ -38,7 +38,7 @@
         "href": "#courses"
       },
       {
-        "label": "Niveles",
+        "label": "Exámenes",
         "href": "#exams"
       },
       {
@@ -48,28 +48,28 @@
     ]
   },
   "hero": {
-    "tagline": "Tu academia de inglés <i>en\u00a0Vilanova del Camí</i>",
+    "tagline": "Tu academia de inglés <i>en Vilanova del Camí</i>",
     "line1": "Todas las áreas.",
     "line2": "Todos los niveles.",
     "accentPre": "",
     "accent": "Nada a medias.",
-    "lede": "Un método estructurado trabajando todas las áreas del inglés. Desde los 6 años hasta grupos de adultos. Centro preparador oficial de exámenes Cambridge.",
+    "lede": "Un método estructurado que trabaja todas las áreas del inglés. Desde los 6 años hasta grupos de adultos. Centro preparador oficial de Cambridge English.",
     "ctaPrimary": "Pide la prueba de nivel",
     "bannerAlt": "Banner de English Corner con estudiantes y monumentos de Londres"
   },
   "creds": {
-    "markAlt": "Cambridge English, centro preparador autorizado",
-    "cambridgeTitle": "Centro preparador oficial Cambridge English",
-    "cambridgeNote": "Preparamos al alumno y lo presentamos al examen oficial aquí mismo.",
+    "markAlt": "Cambridge English, centro preparador oficial",
+    "cambridgeTitle": "Centro preparador oficial de Cambridge English",
+    "cambridgeNote": "Preparamos al alumno y lo inscribimos en el examen oficial.",
     "localTitle": "En Vilanova del Camí desde 2005",
-    "localNote": "Más de 500 alumnos preparados, con una valoración media de 4,9."
+    "localNote": "Centro dedicado exclusivamente a la enseñanza del inglés, con una valoración de 4,9/5 en Google."
   },
   "marquee": [
     "Reading, writing, listening, speaking",
     "Desde los 6 años hasta adultos",
-    "Niveles del A1 al C1",
+    "Niveles del Pre A1 al C1",
     "Prueba de nivel gratuita",
-    "Centro preparador oficial Cambridge",
+    "Centro preparador oficial de Cambridge English",
     "Más de 20 años en Vilanova del Camí",
     "Profesorado titulado y estable"
   ],
@@ -91,7 +91,7 @@
         "tagClass": "tag-navy",
         "icon": "adolescents",
         "tone": "navy",
-        "desc": "Gramática, vocabulario y Use of English trabajados de forma sistemática, impulsando el progreso en las cuatro destrezas de la lengua (reading, writing, listening, speaking)."
+        "desc": "Gramática, vocabulario y Use of English trabajados de forma sistemática, para que progresen en las cinco destrezas del inglés (Reading, Writing, Listening, Speaking y Use of English)."
       },
       {
         "title": "Adultos",
@@ -107,7 +107,7 @@
         "tagClass": "tag-sun",
         "icon": "examens",
         "tone": "sun",
-        "desc": "<p><b>CENTRO PREPARADOR OFICIAL DE EXÁMENES CAMBRIDGE DESDE 2005.</b></p><p>Todos nuestros alumnos se ubican en un grupo determinado en función de su nivel de habilidad global según el Marco Común Europeo de Referencia.</p><p>Quienes lo desean pueden optar a certificar su nivel de inglés, con una preparación completa y materiales auténticos.</p><p>Preparamos los niveles Young Learners (Starters, Movers, Flyers), A2 (Key English Test), B1 (Preliminary English Test), B2 (First Certificate) y C1 (Advanced).</p>"
+        "desc": "<p><b>CENTRO PREPARADOR OFICIAL DE CAMBRIDGE ENGLISH DESDE 2005.</b></p><p>Todos nuestros alumnos se ubican en un grupo determinado en función de su nivel de habilidad global según el Marco Común Europeo de Referencia.</p><p>Quienes lo desean pueden optar a certificar su nivel de inglés, con una preparación completa y materiales auténticos.</p><p>Preparamos los niveles Young Learners (Starters, Movers, Flyers), A2 (Key English Test), B1 (Preliminary English Test), B2 (First Certificate) y C1 (Advanced).</p>"
       },
       {
         "title": "Cursos de verano",
@@ -123,37 +123,33 @@
         "tagClass": "",
         "icon": "particulars",
         "tone": "rose",
-        "desc": ""
+        "desc": "Durante el curso escolar: alumnos a partir de 16 años con necesidades específicas (contenidos a medida, horarios adaptados...)."
       }
     ]
   },
   "exams": {
     "h2": "Los títulos oficiales.",
-    "lede": "Nuestros alumnos no solo estudian inglés: lo certifican. Preparamos cada nivel entero e inscribimos a los candidatos al examen oficial como centro autorizado de Cambridge English.",
+    "lede": "Nuestros alumnos no solo estudian inglés, sino que la mayoría también lo certifica. Preparamos cada nivel con rigor e inscribimos a los candidatos al examen oficial como centro preparador oficial de Cambridge English.",
     "rungs": [
       {
         "lvl": "A2",
         "name": "Key (KET)",
-        "desc": "El primer certificado oficial. Acredita un dominio sólido del inglés cotidiano, escrito y hablado.",
-        "age": "Habitualmente de 11 a 14 años"
+        "desc": "El primer certificado oficial. Acredita un dominio sólido del inglés cotidiano, escrito y hablado."
       },
       {
         "lvl": "B1",
         "name": "Preliminary (PET)",
-        "desc": "Nivel de usuario independiente. Lo piden muchos institutos y, cada vez más, las universidades.",
-        "age": "Habitualmente de 13 a 16 años"
+        "desc": "Nivel de usuario independiente. Muy útil para ciclos formativos de grado medio, para acceder a másteres y para el acceso o la promoción en puestos de trabajo públicos (ejército, cuerpos de policía, función pública...)."
       },
       {
         "lvl": "B2",
         "name": "First (FCE)",
-        "desc": "El certificado más solicitado en España. Requisito habitual para los grados universitarios y para buena parte de las ofertas de empleo.",
-        "age": "Habitualmente a partir de los 15 años"
+        "desc": "El certificado más solicitado en España. Requisito habitual para los grados universitarios y para buena parte de las ofertas de empleo."
       },
       {
         "lvl": "C1",
         "name": "Advanced (CAE)",
-        "desc": "Usuario competente. Abre la puerta a másteres, universidades internacionales y puestos de trabajo en el extranjero.",
-        "age": "Adultos y jóvenes de nivel avanzado"
+        "desc": "Usuario competente. Abre la puerta a másteres, universidades internacionales y puestos de trabajo en el extranjero."
       }
     ],
     "yleTags": [
@@ -161,27 +157,24 @@
       "A1 Movers",
       "A2 Flyers"
     ],
-    "yleNote": "La serie Young Learners, pensada para que los niños construyan las mismas bases desde los 7 años, sin presión."
+    "yleNote": "La serie Young Learners: los primeros exámenes oficiales, a partir de los 7 años y sin presión."
   },
   "method": {
     "altEntrada": "La entrada de English Corner en la calle Manresa, con el rótulo y la bandera británica",
     "altAparador": "Una alumna con las manos pintadas de rojo y azul, en el escaparate de la academia",
-    "h2": "Un método contrastado<br>durante más de<br>veinte años.",
-    "lede": "Seguimos una progresión estructurada, la misma que emplean los bloques de enseñanza de Cambridge. No nos saltamos nada y no improvisamos nada.",
+    "h2": "Una pequeña academia<br>con una gran trayectoria.",
+    "lede": "<p>Nuestro centro abrió sus puertas en septiembre de 2005 y fue la primera academia de inglés de la población. Desde entonces, nuestro objetivo siempre ha sido el mismo: acercar el inglés a nuestros vecinos y ayudarles a aprender en un entorno familiar y acogedor.</p><p>Seguimos una <b>progresión estructurada</b>, con <b>evaluación continua</b> y <b>profesorado vocacional y cualificado</b>. Desde siempre, hemos procurado ofrecer un <b>servicio estable y de calidad</b>.</p>",
     "pillars": [
       {
-        "title": "Las cinco áreas, en cada unidad",
-        "text": "Reading, writing, listening, speaking y use of English. La gramática y el vocabulario se trabajan como toca, no se dejan al azar."
+        "title": "Las cinco destrezas, en cada unidad",
+        "text": "Reading, Writing, Listening, Speaking y Use of English. Todas las destrezas tienen la misma importancia."
       },
       {
-        "title": "Se pasa de nivel cuando toca",
-        "text": "Nadie avanza por el simple hecho de haber terminado el curso. Se pasa cuando las cinco áreas están, y eso lo decide el profesor con el trabajo delante."
-      },
-      {
-        "title": "Profesores que se quedan",
-        "text": "Titulados, con experiencia y aquí año tras año. Tu hijo no tendrá un profesor distinto cada trimestre."
+        "title": "Práctica constante, supervisada y con feedback",
+        "text": "Controles periódicos e informes de evaluación (primaria y secundaria). Práctica con modelos reales de exámenes Cambridge."
       }
-    ]
+    ],
+    "sub": "Más de veinte años en Vilanova del Camí."
   },
   "band": [
     {
@@ -190,19 +183,19 @@
       "accent": "r"
     },
     {
-      "n": "500+",
-      "label": "Alumnos formados",
+      "n": "100%",
+      "label": "Centro dedicado exclusivamente al inglés",
       "accent": ""
     },
     {
-      "n": "4,9",
-      "label": "Valoración media",
+      "n": "4,9/5",
+      "label": "Valoración media en Google",
       "accent": "r"
     }
   ],
   "insta": {
     "h2": "El día a día de la academia.",
-    "lede": "Comunicados, novedades y cosas que queremos compartir.",
+    "lede": "Avisos, novedades y lo que hacemos en clase.",
     "posts": [
       {
         "tone": "a",
@@ -233,9 +226,9 @@
     "follow": "¡Síguenos!"
   },
   "contact": {
-    "h2": "Ven a hacer una clase<br>de prueba gratuita.",
-    "lede": "Trae a tu hijo o ven tú mismo. Una clase, sin compromiso y sin presión, solo para que veas cómo trabajamos antes de decidir nada.",
-    "btnCall": "Llama al 606 916 483",
+    "h2": "Contáctanos y te informaremos<br>encantados.",
+    "lede": "Ven a hacer una prueba de nivel sin compromiso.",
+    "btnCall": "Envíanos un mensaje al 606 916 483",
     "btnEmail": "Escríbenos un correo",
     "labels": {
       "address": "Dirección",
@@ -308,7 +301,7 @@
           },
           {
             "href": "#exams",
-            "label": "Niveles"
+            "label": "Exámenes"
           },
           {
             "href": "#contact",
@@ -322,11 +315,11 @@
         "links": [
           {
             "href": "tel:938070770",
-            "label": "Telf. 93 807 07 70"
+            "label": "Tel. 93 807 07 70"
           },
           {
             "href": "tel:606916483",
-            "label": "Telf. y WhatsApp 606 916 483"
+            "label": "Tel. y WhatsApp 606 916 483"
           }
         ]
       }

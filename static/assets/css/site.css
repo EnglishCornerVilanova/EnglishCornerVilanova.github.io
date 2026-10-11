@@ -308,9 +308,6 @@ a{color:inherit}
 .rung-4 .rung-lvl{color:var(--red)}
 .rung-name{font-size:.95rem;font-weight:800;letter-spacing:-.015em;margin:0 0 .35rem}
 .rung-desc{font-size:.875rem;color:var(--ink-3);line-height:1.6;text-wrap:pretty}
-.rung-age{
-  display:inline-block;margin-top:.9rem;
-}
 
 .yle-tags{display:flex;gap:.4rem;flex-wrap:wrap}
 .yle-tag{
@@ -353,6 +350,9 @@ a{color:inherit}
    themselves. */
 .sec-head h2{font-size:clamp(2rem,4vw,3.1rem);margin-bottom:.9rem}
 .sec-head p{color:var(--ink-3);font-size:1.02rem;line-height:1.72;text-wrap:pretty}
+.sec-head .method-sub{color:var(--ink-2);font-weight:700;font-size:1.1rem;margin:-.4rem 0 1rem}
+.method-lede p+p{margin-top:.8rem}
+.method-lede b{color:var(--ink-2);font-weight:700}
 
 /* ═══════════ COURSES — editorial rows ═══════════ */
 
@@ -1336,11 +1336,9 @@ a.ig-cell{display:block;text-decoration:none}
   .rung{margin-left:calc(var(--i) * .9rem)}
 }
 @media (max-width:600px){ .rung{margin-left:calc(var(--i) * .55rem)} }
-@media (min-width:941px){ .rung-age{font-size:.74rem;line-height:1.35;border-radius:10px;padding:5px 10px} }
 @media (min-width:941px){
   .rung{display:flex;flex-direction:column}
-  .rung-age,.rung-0 .yle-tags{margin-top:auto}
-  .rung-age{align-self:flex-start}
+  .rung-0 .yle-tags{margin-top:auto}
   .rung-desc{margin-bottom:1rem}
 }
 
@@ -1372,9 +1370,6 @@ a.ig-cell{display:block;text-decoration:none}
 @keyframes fotoLejos{from{translate:0 45px;rotate:-3deg}to{translate:0 -45px;rotate:1.5deg}}
 @keyframes fotoCerca{from{translate:0 60px;rotate:5deg}to{translate:-12px -45px;rotate:-1deg}}
 
-/* Edad de cada escalón: una línea de pie, no una pastilla que se parte. */
-.rung-age{background:none;border-radius:0;padding:.7rem 0 0;border-top:1px solid var(--line);
-  width:100%;font-size:.82rem;font-weight:600;line-height:1.4;color:var(--ink-2)}
 
 /* Lo que se mueve o gira dentro de estas secciones no debe abrir scroll lateral en el móvil. */
 #about,.hero{overflow-x:clip}

@@ -162,7 +162,7 @@ A British-flag pair on quiet paper, with soft paired tones that label courses an
 
 ## Layout
 
-Content sits in a centred column of up to 1180px with fluid side gutters (gutter) and generous vertical rhythm between sections (section). Sections alternate between white and pearl paper; two soft waves mark the transitions after the hero and before the contact panel. The hero stacks a brand band (logo and tagline) above a two-column grid of claim and cromo collage. Courses are full-width rows; the exam staircase is five equal columns that rise step by step on desktop and becomes an indented vertical list on phones.
+Content sits in a centred column of up to 1180px with fluid side gutters (gutter) and generous vertical rhythm between sections (section). Sections alternate between white and pearl paper; two soft waves mark the transitions after the hero and before the contact panel. The hero stacks a brand band (logo and tagline) above a two-column grid of claim and cromo collage. Courses are full-width rows; the exam staircase is five equal columns that rise step by step on desktop and becomes an indented vertical list on phones. Steps carry level, name and a short description only, with no age footer. "Sobre nosaltres" has a large title, a smaller bold line under it, two lede paragraphs with key phrases in bold, and two method points. In the contact panel the red main button opens WhatsApp; the only secondary button is email.
 
 Breakpoints: 600px (phone), 940/941px (tablet to desktop: burger menu below, full menu above), 1280px and 1400px for wider refinements. Nothing may scroll horizontally from 320px upwards, even with text enlarged to 200 %.
 

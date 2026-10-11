@@ -31,3 +31,4 @@ __pycache__/
 
 # plantillas de publicaciones de Instagram: solo en local
 /design/instagram/
+.claude/

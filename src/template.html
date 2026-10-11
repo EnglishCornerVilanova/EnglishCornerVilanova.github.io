@@ -252,7 +252,8 @@
       <div class="method-copy">
         <div class="sec-head rv rv-1" style="margin-bottom:0">
           <h2 class="display" id="method-h">{{ method.h2 }}</h2>
-          <p>{{ method.lede }}</p>
+          <p class="method-sub">{{ method.sub }}</p>
+          <div class="method-lede">{{ method.lede }}</div>
         </div>
 
         <div class="pillars">
@@ -277,15 +278,6 @@
             </div>
           </div>
 
-          <div class="pillar rv rv-5">
-            <div class="pillar-ico i-sun" aria-hidden="true">
-              <svg viewBox="0 0 24 24"><path d="M12 21s-7-4.8-7-10a7 7 0 0114 0c0 5.2-7 10-7 10z"/><circle cx="12" cy="11" r="2.6"/></svg>
-            </div>
-            <div class="pillar-txt">
-              <h3>{{ method.pillars.2.title }}</h3>
-              <p>{{ method.pillars.2.text }}</p>
-            </div>
-          </div>
         </div>
       </div>
 
@@ -367,7 +359,6 @@
         <div class="rung-lvl">{{ .lvl }}</div>
         <h3 class="rung-name">{{ .name }}</h3>
         <p class="rung-desc">{{ .desc }}</p>
-        <span class="rung-age">{{ .age }}</span>
       </li>
       {{/ exams.rungs }}
     </ol>
@@ -385,11 +376,10 @@
       <h2 class="display" id="contact-h">{{ contact.h2 }}</h2>
       <p>{{ contact.lede }}</p>
       <div class="cta-btns">
-        <a href="tel:{{ shared.phoneHref }}" class="btn btn--red">
+        <a href="{{ shared.whatsapp }}" class="btn btn--red" target="_blank" rel="noopener">
           {{ contact.btnCall }}
           <span class="chip"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
         </a>
-        <a href="{{ shared.whatsapp }}" class="btn btn--ghost" target="_blank" rel="noopener">{{ contact.btnWhatsapp }}</a>
         <a href="mailto:{{ shared.email }}" class="btn btn--ghost">{{ contact.btnEmail }}</a>
       </div>
     </div>

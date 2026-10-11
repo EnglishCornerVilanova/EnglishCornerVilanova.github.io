@@ -27,6 +27,8 @@ The website of English Corner, an English school in Vilanova del Camí (Anoia, B
 ## Operating Context
 
 - Trilingual site: Catalan is the main language (served at `/`), then Spanish (`/es/`) and British English (`/en/`).
+- English Corner is a Cambridge English **Preparation Centre** only: it prepares and enters candidates, but is not an exam centre. Never write "centre autoritzat" or suggest the exam is taken at the school; the single wording is "Centre preparador oficial de Cambridge English".
+- Classes start at age 6; the first Cambridge exams (Young Learners) at age 7.
 - Contact happens by phone (606 916 483 mobile and WhatsApp; 93 807 07 70 landline) and email; there are no forms.
 - Opening hours are read from the school's Google Business listing at build time.
 - The latest Instagram posts are read at build time from a Behold feed (free plan, 6 posts).
@@ -53,7 +55,7 @@ The website of English Corner, an English school in Vilanova del Camí (Anoia, B
 - Official Cambridge English Preparation Centre mark: `static/assets/img/cambridge-preparation-centre.png`.
 - Original banner, cut into four "cromos" for the hero: `static/assets/photos/hero-*`.
 - Real Instagram posts via the Behold feed.
-- **Not yet available — never fabricate:** verified testimonials or reviews; team photos. The figures "500+ students" and "4.9 average rating" are pending confirmation of their source.
+- **Not yet available — never fabricate:** verified testimonials or reviews; team photos. Never give a student count (the "500+" figure was removed in October 2026). The 4.9/5 rating is the Google rating and is always labelled as such.
 
 ## Product Principles
 
