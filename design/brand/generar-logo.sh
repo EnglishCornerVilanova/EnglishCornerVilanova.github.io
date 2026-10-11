@@ -21,6 +21,6 @@ magick "$M" -background white -alpha remove -alpha off \
 F="/System/Library/Fonts/Supplemental/Arial Bold.ttf"; F2="/System/Library/Fonts/Supplemental/Arial.ttf"
 magick -size 1200x630 xc:'#FFFFFF' \( "$M" -resize 300x300 \) -gravity center -geometry +0-66 -composite \
   -font "$F"  -pointsize 46 -fill '#12151C' -gravity center -annotate +0+152 "Acadèmia d'anglès a Vilanova del Camí" \
-  -font "$F2" -pointsize 28 -fill '#646B78' -gravity center -annotate +0+208 "Centre preparador oficial d'exàmens Cambridge" \
+  -font "$F2" -pointsize 28 -fill '#646B78' -gravity center -annotate +0+208 "Centre preparador oficial de Cambridge English" \
   -fill '#E8192C' -draw 'rectangle 0,612 1200,630' -quality 88 -strip "$IMG/og-image.jpg"
 echo "logo generado desde: $IN"
