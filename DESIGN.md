@@ -205,7 +205,10 @@ Two families of corners. Everything you press is a full pill (100px). Everything
 Real photos mounted on white card (9px sides, 26px bottom), slightly rotated. In the hero, four cromos from the original banner overlap diagonally, move with the pointer on desktop and straighten while scrolling on phones. In "Sobre nosaltres" the two school photos move at different depths when scrolling, and on desktop the one under the pointer comes to the front.
 
 ### Exam staircase (signature component)
-Young Learners, A2, B1, B2 and C1 as five equal steps rising from left to right, each with its level colour on top.
+Young Learners, A2, B1, B2 and C1 as five equal steps rising from left to right, each with its level colour on top. The whole step is a link to that exam's page, and a text link under the staircase leads to the Cambridge overview page.
+
+### Exam pages
+Overview + one page per exam (`content/cambridge/<lang>.json`), built on the legal-page reading column: breadcrumb kicker, red level label, lede, a facts box (same style as the legal `dl`), FAQ as native `<details>`, a white CTA panel with the red button to the placement test, and pill links to the other exams. Indexable, in the sitemap, with BreadcrumbList / Course / FAQPage data.
 
 ## Do's and Don'ts
 

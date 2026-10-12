@@ -1,0 +1,296 @@
+{
+  "slug": "cambridge-exams",
+  "crumb": "Cambridge English exams",
+  "factsLabel": "At a glance",
+  "faqTitle": "Frequently asked questions",
+  "otherTitle": "Other exams we prepare",
+  "moreLink": "Find out more",
+  "hubLink": "Everything about the Cambridge English exams",
+  "cta": {
+    "h": "Not sure which exam is right for you?",
+    "text": "Take our free placement test: we'll tell you which group suits you and which certificate you can work towards.",
+    "button": "Book a placement test",
+    "href": "#contact"
+  },
+  "pages": [
+    {
+      "key": "hub",
+      "title": "Official Cambridge English exams",
+      "metaTitle": "Cambridge English exam preparation in Vilanova del Camí",
+      "description": "Cambridge English Preparation Centre since 2005 in Vilanova del Camí (Anoia, Barcelona). We prepare Young Learners, A2 Key, B1 Preliminary, B2 First and C1 Advanced.",
+      "lede": "English Corner has been a Cambridge English Preparation Centre since 2005. We prepare students for the exam and enter them for it. These are the levels we teach, from age seven to adults.",
+      "sections": [
+        {
+          "h": "How we prepare for the exams",
+          "html": "<p>Every student is placed in a group according to their overall level of English, in line with the Common European Framework of Reference (CEFR). Students who want to certify their level receive full preparation with authentic exam materials.</p><p>We work on the four skills Cambridge assesses (<i>Reading</i>, <i>Writing</i>, <i>Listening</i> and <i>Speaking</i>) and, from B2 upwards, <i>Use of English</i> too. When a student is ready, we enter them for the official exam.</p><p>In summer we also run intensive courses to prepare for official exams.</p>"
+        },
+        {
+          "h": "Which exam is right for you?",
+          "html": "<p>It depends on your current level and on what you need the certificate for. That's why we always start with a free placement test: it lets us recommend the exam within your reach and the group where you'll prepare best.</p>"
+        }
+      ],
+      "faq": [
+        {
+          "q": "What does being an official Preparation Centre mean?",
+          "a": "Cambridge English recognises us as a centre that prepares students for its exams. We prepare the student and enter them for the official exam; the exam itself is set and marked by Cambridge."
+        },
+        {
+          "q": "Do Cambridge certificates expire?",
+          "a": "No. Cambridge certificates have no expiry date. Some universities or employers may still ask for a recent result, so check with whoever is asking for it."
+        },
+        {
+          "q": "From what age can you take an exam?",
+          "a": "The Young Learners exams are for children aged seven and over. From A2 Key upwards there is no minimum or maximum age: there are versions for school students (for Schools) and for adults."
+        }
+      ]
+    },
+    {
+      "key": "yle",
+      "slug": "young-learners",
+      "short": "Young Learners",
+      "level": "Pre A1 – A2",
+      "title": "Young Learners: Starters, Movers and Flyers",
+      "metaTitle": "Cambridge Young Learners in Vilanova del Camí",
+      "description": "Preparation for the Cambridge Young Learners exams (Pre A1 Starters, A1 Movers and A2 Flyers) in Vilanova del Camí. The first official certificates, from age seven.",
+      "lede": "The Young Learners series are Cambridge's first official exams, designed for children. They show how a child is progressing and build confidence in English, without pressure.",
+      "facts": [
+        [
+          "Levels",
+          "Pre A1 Starters, A1 Movers and A2 Flyers"
+        ],
+        [
+          "Who it's for",
+          "Children aged seven and over"
+        ],
+        [
+          "Papers",
+          "Listening, Reading and Writing, and Speaking"
+        ],
+        [
+          "Result",
+          "No pass or fail: every child receives a certificate"
+        ]
+      ],
+      "sections": [
+        {
+          "h": "What the exams are like",
+          "html": "<p>There are three levels, from easiest to hardest: <b>Starters</b> (Pre A1), <b>Movers</b> (A1) and <b>Flyers</b> (A2). Each has three papers: <i>Listening</i>, <i>Reading and Writing</i>, and <i>Speaking</i>, which is a short conversation with an examiner.</p><p>The tasks are visual and close to children's world: pictures, games and short stories.</p>"
+        },
+        {
+          "h": "How results are given",
+          "html": "<p>There is no pass or fail in these exams. Every child receives a certificate showing how many shields they earned on each paper, up to five per paper. It's an encouraging way to see what they can already do and what they can still improve.</p>"
+        },
+        {
+          "h": "How we prepare them",
+          "html": "<p>We support the youngest learners from the very beginning, introducing reading and writing gradually so that they see English as a real tool. Families who wish can enter their children for the official exam: we prepare them with authentic materials and enter them for it.</p>"
+        }
+      ],
+      "faq": [
+        {
+          "q": "Is taking the exam compulsory?",
+          "a": "No. Certifying the level is optional; the child continues with their course either way."
+        },
+        {
+          "q": "Which level should we start with?",
+          "a": "It depends on the child's age and level. Our free placement test will tell you which of the three is right."
+        }
+      ]
+    },
+    {
+      "key": "key",
+      "slug": "a2-key",
+      "short": "A2 Key (KET)",
+      "level": "A2",
+      "title": "A2 Key (KET)",
+      "metaTitle": "A2 Key (KET) preparation in Vilanova del Camí",
+      "description": "Preparation for the Cambridge A2 Key (KET) exam in Vilanova del Camí. The first official certificate, confirming everyday written and spoken English.",
+      "lede": "A2 Key is the first official Cambridge certificate for teenagers and adults. It confirms a solid command of everyday written and spoken English.",
+      "facts": [
+        [
+          "CEFR level",
+          "A2 (basic user)"
+        ],
+        [
+          "Versions",
+          "A2 Key for Schools and A2 Key"
+        ],
+        [
+          "Papers",
+          "Reading and Writing (1 h), Listening (30 min) and Speaking (8–10 min in pairs)"
+        ],
+        [
+          "Certificate",
+          "Does not expire"
+        ]
+      ],
+      "sections": [
+        {
+          "h": "What it certifies",
+          "html": "<p>That the student understands and uses common expressions, can communicate in simple everyday situations, and can read and write short texts. It's a good first goal for primary and secondary students, and for adults returning to English.</p>"
+        },
+        {
+          "h": "What the exam is like",
+          "html": "<ul><li><b>Reading and Writing</b> (1 hour): seven parts.</li><li><b>Listening</b> (about 30 minutes): five parts with recordings.</li><li><b>Speaking</b> (8–10 minutes): taken in pairs, with an interview and a discussion.</li></ul><p>Reading and Writing is worth half the marks; Listening and Speaking a quarter each.</p>"
+        },
+        {
+          "h": "How we prepare it",
+          "html": "<p>Students work in a group at their level and practise every part of the exam with authentic Cambridge materials. When they are ready, we enter them for the official exam as a Preparation Centre.</p>"
+        }
+      ],
+      "faq": [
+        {
+          "q": "What's the difference between A2 Key and A2 Key for Schools?",
+          "a": "They have the same format and level, and the certificate is equivalent. The for Schools version uses topics closer to teenagers' interests."
+        }
+      ]
+    },
+    {
+      "key": "pet",
+      "slug": "b1-preliminary",
+      "short": "B1 Preliminary (PET)",
+      "level": "B1",
+      "title": "B1 Preliminary (PET)",
+      "metaTitle": "B1 Preliminary (PET) preparation in Vilanova del Camí",
+      "description": "Preparation for the Cambridge B1 Preliminary (PET) exam in Vilanova del Camí. Independent user level, useful for vocational courses, master's degrees and public-sector jobs.",
+      "lede": "B1 Preliminary certifies independent user level: the student can already handle English in most everyday, work and study situations.",
+      "facts": [
+        [
+          "CEFR level",
+          "B1 (independent user)"
+        ],
+        [
+          "Versions",
+          "B1 Preliminary for Schools and B1 Preliminary"
+        ],
+        [
+          "Papers",
+          "Reading (45 min), Writing (45 min), Listening (30 min) and Speaking (10–12 min in pairs)"
+        ],
+        [
+          "Certificate",
+          "Does not expire"
+        ]
+      ],
+      "sections": [
+        {
+          "h": "What it's useful for",
+          "html": "<p>It's very useful for intermediate vocational courses, for access to master's degrees and for entry to or promotion in public-sector jobs (armed forces, police, civil service...). Always check the exact level you are asked for.</p>"
+        },
+        {
+          "h": "What the exam is like",
+          "html": "<ul><li><b>Reading</b> (45 minutes): six parts.</li><li><b>Writing</b> (45 minutes): two texts.</li><li><b>Listening</b> (about 30 minutes): four parts.</li><li><b>Speaking</b> (10–12 minutes): in pairs, in four parts.</li></ul>"
+        },
+        {
+          "h": "How we prepare it",
+          "html": "<p>We work systematically on grammar and vocabulary and practise every part of the exam with authentic Cambridge materials. When the student is ready, we enter them for the official exam.</p>"
+        }
+      ],
+      "faq": [
+        {
+          "q": "Can I move on from B1 to B2?",
+          "a": "Yes: B2 First is the next step. How long it takes depends on each student's pace; our placement test will guide you."
+        }
+      ]
+    },
+    {
+      "key": "fce",
+      "slug": "b2-first",
+      "short": "B2 First (FCE)",
+      "level": "B2",
+      "title": "B2 First (FCE)",
+      "metaTitle": "B2 First (FCE) preparation in Vilanova del Camí",
+      "description": "Preparation for the Cambridge B2 First (First Certificate, FCE) exam in Vilanova del Camí. The most widely requested English certificate in Spain for university and work.",
+      "lede": "B2 First, known as the First Certificate, is the most widely requested English certificate in Spain, and a common requirement for university degrees and for many job vacancies.",
+      "facts": [
+        [
+          "CEFR level",
+          "B2 (upper independent user)"
+        ],
+        [
+          "Versions",
+          "B2 First for Schools and B2 First"
+        ],
+        [
+          "Papers",
+          "Reading and Use of English (1 h 15 min), Writing (1 h 20 min), Listening (40 min) and Speaking (14 min in pairs)"
+        ],
+        [
+          "Certificate",
+          "Does not expire"
+        ]
+      ],
+      "sections": [
+        {
+          "h": "What it's useful for",
+          "html": "<p>It shows that the student uses English fluently in academic and professional settings. Many universities require it to award a degree, and it is one of the most valued certificates in job vacancies.</p>"
+        },
+        {
+          "h": "What the exam is like",
+          "html": "<ul><li><b>Reading and Use of English</b> (1 hour 15 minutes): seven parts covering reading, grammar and vocabulary.</li><li><b>Writing</b> (1 hour 20 minutes): two texts.</li><li><b>Listening</b> (about 40 minutes): four parts.</li><li><b>Speaking</b> (14 minutes): in pairs, in four parts.</li></ul>"
+        },
+        {
+          "h": "How we prepare it",
+          "html": "<p>From this level on, <i>Use of English</i> carries a lot of weight in the exam: we work on it systematically, alongside the other skills, with authentic Cambridge materials. When the student is ready, we enter them for the official exam. In summer we also run intensive preparation courses.</p>"
+        }
+      ],
+      "faq": [
+        {
+          "q": "How long does it take to prepare for First?",
+          "a": "It depends on your starting level. Our free placement test will show where you are and how far you are from B2."
+        },
+        {
+          "q": "What's the difference between B2 First and B2 First for Schools?",
+          "a": "They have the same format and level, and the certificate is equivalent. The for Schools version uses topics closer to teenagers' interests."
+        }
+      ]
+    },
+    {
+      "key": "cae",
+      "slug": "c1-advanced",
+      "short": "C1 Advanced (CAE)",
+      "level": "C1",
+      "title": "C1 Advanced (CAE)",
+      "metaTitle": "C1 Advanced (CAE) preparation in Vilanova del Camí",
+      "description": "Preparation for the Cambridge C1 Advanced (CAE) exam in Vilanova del Camí. Proficient user level: master's degrees, universities abroad and jobs overseas.",
+      "lede": "C1 Advanced certifies proficient user level. It opens doors to master's degrees, universities abroad and jobs overseas.",
+      "facts": [
+        [
+          "CEFR level",
+          "C1 (proficient user)"
+        ],
+        [
+          "Who it's for",
+          "Students with a well-established B2"
+        ],
+        [
+          "Papers",
+          "Reading and Use of English (1 h 30 min), Writing (1 h 30 min), Listening (40 min) and Speaking (15 min in pairs)"
+        ],
+        [
+          "Certificate",
+          "Does not expire"
+        ]
+      ],
+      "sections": [
+        {
+          "h": "What it's useful for",
+          "html": "<p>It shows that the student can study or work in English with confidence: following university lectures, writing reports and taking part in meetings. Many universities abroad and international employers accept it.</p>"
+        },
+        {
+          "h": "What the exam is like",
+          "html": "<ul><li><b>Reading and Use of English</b> (1 hour 30 minutes): eight parts.</li><li><b>Writing</b> (1 hour 30 minutes): two texts.</li><li><b>Listening</b> (about 40 minutes): four parts.</li><li><b>Speaking</b> (15 minutes): in pairs, in four parts.</li></ul>"
+        },
+        {
+          "h": "How we prepare it",
+          "html": "<p>Students work in a group at their level, with authentic Cambridge materials and practice on every part of the exam. When they are ready, we enter them for the official exam.</p>"
+        }
+      ],
+      "faq": [
+        {
+          "q": "Can I take C1 straight after passing B2?",
+          "a": "Usually some time is needed to consolidate between the two levels. Our placement test will tell you when it's a good moment to sit it."
+        }
+      ]
+    }
+  ]
+}

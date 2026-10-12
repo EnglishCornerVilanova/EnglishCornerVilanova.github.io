@@ -61,6 +61,9 @@ HOURS_I18N = {
 }
 
 LEGAL_DIR = CONTENT / "legal"
+CAMB_DIR = CONTENT / "cambridge"
+# Orden de los peldaños de la portada (exams.rungs) → página de cada examen.
+RUNG_KEYS = ["key", "pet", "fce", "cae"]
 NBSP = "\u00a0"
 
 ICONS = {
@@ -675,8 +678,98 @@ def legal_main(site: dict, lang: str, data: dict, page: dict) -> str:
     )
 
 
+# ── Páginas de exámenes Cambridge ───────────────────────────────────
+
+def cambridge_pages(lang: str) -> dict:
+    return load_json(CAMB_DIR / f"{lang}.json")
+
+
+def cambridge_href(site: dict, lang: str, key: str) -> str:
+    camb = cambridge_pages(lang)
+    base = home_href(site, lang) + camb["slug"] + "/"
+    if key == "hub":
+        return base
+    return base + next(p for p in camb["pages"] if p["key"] == key)["slug"] + "/"
+
+
+def cambridge_main(site: dict, lang: str, key: str) -> str:
+    """Cuerpo de la página general de Cambridge o de un examen. Usa el molde
+    de las páginas legales (mismo ancho de lectura) y añade sus propias piezas."""
+    camb = cambridge_pages(lang)
+    pages = {p["key"]: p for p in camb["pages"]}
+    page, home, e = pages[key], home_href(site, lang), html.escape
+    hub = cambridge_href(site, lang, "hub")
+    crumbs = f'<a href="{home}">English Corner</a>'
+    if key != "hub":
+        crumbs += f' <span aria-hidden="true">›</span> <a href="{hub}">{e(camb["crumb"])}</a>'
+    out = ['<main id="main" class="legal-main">\n<article class="legal exam-page">',
+           f'  <nav class="legal-kicker" aria-label="breadcrumb">{crumbs}</nav>']
+    if page.get("level"):
+        out.append(f'  <p class="exam-level">{e(page["level"])}</p>')
+    out.append(f'  <h1 class="display">{e(page["title"])}</h1>')
+    out.append(f'  <p class="exam-lede">{e(page["lede"])}</p>')
+    if page.get("facts"):
+        rows = "".join(f"<dt>{e(k)}</dt><dd>{e(v)}</dd>" for k, v in page["facts"])
+        out.append(f'  <h2 class="sr-only">{e(camb["factsLabel"])}</h2>\n  <dl class="exam-facts">{rows}</dl>')
+    if key == "hub":
+        cards = "".join(
+            f'<li><a class="exam-card" href="{cambridge_href(site, lang, p["key"])}">'
+            f'<span class="exam-card-lvl">{e(p["level"])}</span>'
+            f'<span class="exam-card-name">{e(p["short"])}</span>'
+            f'<span class="exam-card-desc">{e(p["lede"])}</span></a></li>'
+            for p in camb["pages"] if p["key"] != "hub")
+        out.append(f'  <ul class="exam-cards">{cards}</ul>')
+    for sec in page["sections"]:
+        out.append(f'  <h2>{e(sec["h"])}</h2>\n  {sec["html"]}')
+    if page.get("faq"):
+        out.append(f'  <h2>{e(camb["faqTitle"])}</h2>')
+        out.append("  " + "".join(
+            f'<details class="faq"><summary>{e(f["q"])}</summary><p>{e(f["a"])}</p></details>'
+            for f in page["faq"]))
+    c = camb["cta"]
+    out.append(f'  <aside class="exam-cta"><h2>{e(c["h"])}</h2><p>{e(c["text"])}</p>'
+               f'<a class="btn btn--red" href="{home}{c["href"]}">{e(c["button"])}</a></aside>')
+    if key != "hub":
+        others = "".join(f'<li><a href="{cambridge_href(site, lang, p["key"])}">{e(p["short"])}</a></li>'
+                         for p in camb["pages"] if p["key"] not in ("hub", key))
+        out.append(f'  <h2>{e(camb["otherTitle"])}</h2>\n  <ul class="exam-other">{others}'
+                   f'<li><a href="{hub}">{e(camb["crumb"])}</a></li></ul>')
+    out.append("</article>\n</main>")
+    return "\n".join(out)
+
+
+def cambridge_schema(site: dict, lang: str, key: str) -> str:
+    """Migas de pan, preguntas frecuentes y, en cada examen, el curso que
+    imparte la escuela (enlazado a la ficha LanguageSchool de la portada)."""
+    camb = cambridge_pages(lang)
+    page = next(p for p in camb["pages"] if p["key"] == key)
+    url = site["origin"] + cambridge_href(site, lang, key)
+    crumbs = [("English Corner", site["origin"] + home_href(site, lang)),
+              (camb["crumb"], site["origin"] + cambridge_href(site, lang, "hub"))]
+    if key != "hub":
+        crumbs.append((page["short"], url))
+    graph = [{
+        "@type": "BreadcrumbList",
+        "itemListElement": [{"@type": "ListItem", "position": i + 1, "name": n, "item": u}
+                            for i, (n, u) in enumerate(crumbs)],
+    }]
+    if key != "hub":
+        graph.append({
+            "@type": "Course", "@id": url + "#course", "name": page["title"],
+            "description": page["description"], "url": url, "inLanguage": lang,
+            "educationalLevel": page["level"],
+            "provider": {"@type": "LanguageSchool", "@id": site["origin"] + "/#school",
+                         "name": site["name"], "url": site["origin"] + "/"},
+        })
+    if page.get("faq"):
+        graph.append({"@type": "FAQPage", "mainEntity": [
+            {"@type": "Question", "name": f["q"], "acceptedAnswer": {"@type": "Answer", "text": f["a"]}}
+            for f in page["faq"]]})
+    return json.dumps({"@context": "https://schema.org", "@graph": graph}, ensure_ascii=False, indent=2)
+
+
 def build_lang(site: dict, lang: str, template: str, legal_key: str | None = None,
-               not_found: bool = False) -> str:
+               not_found: bool = False, camb_key: str | None = None) -> str:
     """The home page, or with `legal_key` one of the legal pages: same head,
     nav and footer, with <main> swapped for the legal text."""
     data = deep_merge(shared_from_site(site), load_json(CONTENT / f"{lang}.json"))
@@ -689,7 +782,20 @@ def build_lang(site: dict, lang: str, template: str, legal_key: str | None = Non
 
     legal = legal_pages(lang)
     home = home_href(site, lang)
-    if legal_key or not_found:
+    # La portada enlaza cada examen con su página.
+    camb = cambridge_pages(lang)
+    exams = data.get("exams", {})
+    for rung, key in zip(exams.get("rungs", []), RUNG_KEYS):
+        rung["href"] = cambridge_href(site, lang, key)
+    exams["yleHref"] = cambridge_href(site, lang, "yle")
+    exams["hubHref"] = cambridge_href(site, lang, "hub")
+    exams["hubLink"] = camb["hubLink"]
+    exams["moreLink"] = camb["moreLink"]
+    for col in data["footer"]["cols"]:
+        for link in col.get("links", []):
+            if link["label"] == camb["crumb"] or link["label"] == data["courses"]["items"][3]["title"]:
+                link["href"] = exams["hubHref"]
+    if legal_key or not_found or camb_key:
         # Fuera de la portada, las anclas del menú y del pie llevan de vuelta a ella.
         for link in data["nav"]["items"] + [k for col in data["footer"]["cols"] for k in col.get("links", [])]:
             if link["href"].startswith("#"):
@@ -702,6 +808,13 @@ def build_lang(site: dict, lang: str, template: str, legal_key: str | None = Non
         main = legal_main(site, lang, data, page)
         template = re.sub(r'<main id="main">.*?</main>', lambda _: main, template, count=1, flags=re.S)
         template = template.replace('<script type="application/ld+json">{{ @schema }}</script>', "")
+    elif camb_key:
+        page = next(p for p in camb["pages"] if p["key"] == camb_key)
+        paths = {l: cambridge_href(site, l, camb_key) for l in site["langs"]}
+        data["meta"].update(title=page["metaTitle"], description=page["description"],
+                            ogTitle=page["title"], ogDescription=page["description"])
+        main = cambridge_main(site, lang, camb_key)
+        template = re.sub(r'<main id="main">.*?</main>', lambda _: main, template, count=1, flags=re.S)
     elif not_found:
         paths = {l: home_href(site, l) for l in site["langs"]}
         nf = data["notFound"]
@@ -765,7 +878,9 @@ def build_lang(site: dict, lang: str, template: str, legal_key: str | None = Non
         "igAvatar": IG_AVATAR,
         "cssV": asset_version("assets/css/site.css"),
         "jsV": asset_version("assets/js/site.js"),
-        "schema": "" if (legal_key or not_found) else build_schema(site, data, lang),
+        "schema": "" if (legal_key or not_found)
+                  else cambridge_schema(site, lang, camb_key) if camb_key
+                  else build_schema(site, data, lang),
         "year": site["year"],
     }
 
@@ -784,17 +899,23 @@ def write(path: Path, text: str) -> None:
 
 
 def build_sitemap(site: dict) -> str:
+    """Las páginas indexables: portada y exámenes Cambridge, cada una con
+    sus versiones en los otros idiomas (las legales llevan noindex)."""
+    groups = [({l: home_href(site, l) for l in site["langs"]}, "1.0", "0.9")]
+    for p in cambridge_pages(site["defaultLang"])["pages"]:
+        groups.append(({l: cambridge_href(site, l, p["key"]) for l in site["langs"]}, "0.8", "0.7"))
     urls = []
-    for lang in site["langs"]:
+    for paths, top, other in groups:
         alts = "".join(
-            f'\n    <xhtml:link rel="alternate" hreflang="{l}" href="{page_url(site, l)}"/>'
+            f'\n    <xhtml:link rel="alternate" hreflang="{l}" href="{site["origin"] + paths[l]}"/>'
             for l in site["langs"]
         )
-        urls.append(
-            f"  <url>\n    <loc>{page_url(site, lang)}</loc>"
-            f"{alts}\n    <changefreq>monthly</changefreq>\n"
-            f"    <priority>{'1.0' if lang == site['defaultLang'] else '0.9'}</priority>\n  </url>"
-        )
+        for lang in site["langs"]:
+            urls.append(
+                f"  <url>\n    <loc>{site['origin'] + paths[lang]}</loc>"
+                f"{alts}\n    <changefreq>monthly</changefreq>\n"
+                f"    <priority>{top if lang == site['defaultLang'] else other}</priority>\n  </url>"
+            )
     return (
         '<?xml version="1.0" encoding="UTF-8"?>\n'
         '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"\n'
@@ -843,7 +964,12 @@ def build() -> None:
         pages = legal_pages(lang)["pages"]
         for p in pages:
             write(base / p["slug"] / "index.html", build_lang(site, lang, template, p["key"]))
-        print(f"  · {(base / 'index.html').relative_to(ROOT)} + {len(pages)} páginas legales")
+        camb = cambridge_pages(lang)["pages"]
+        for p in camb:
+            path = DIST / cambridge_href(site, lang, p["key"]).lstrip("/") / "index.html"
+            write(path, build_lang(site, lang, template, camb_key=p["key"]))
+        print(f"  · {(base / 'index.html').relative_to(ROOT)} + {len(pages)} páginas legales"
+              f" + {len(camb)} de Cambridge")
 
     write(DIST / "404.html", build_lang(site, site["defaultLang"], template, not_found=True))
     print("  · dist/404.html")

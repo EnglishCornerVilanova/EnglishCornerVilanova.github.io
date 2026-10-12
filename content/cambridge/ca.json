@@ -1,0 +1,296 @@
+{
+  "slug": "examens-cambridge",
+  "crumb": "Exàmens Cambridge",
+  "factsLabel": "En resum",
+  "faqTitle": "Preguntes freqüents",
+  "otherTitle": "Altres exàmens que preparem",
+  "moreLink": "Més informació",
+  "hubLink": "Tota la informació sobre els exàmens Cambridge",
+  "cta": {
+    "h": "No saps quin examen et toca?",
+    "text": "Fes la prova de nivell gratuïta: et direm en quin grup encaixes i quin certificat pots preparar.",
+    "button": "Demana la prova de nivell",
+    "href": "#contact"
+  },
+  "pages": [
+    {
+      "key": "hub",
+      "title": "Exàmens oficials de Cambridge English",
+      "metaTitle": "Exàmens Cambridge a Vilanova del Camí: preparació oficial",
+      "description": "Centre preparador oficial de Cambridge English des del 2005 a Vilanova del Camí (Anoia). Preparem Young Learners, A2 Key, B1 Preliminary, B2 First i C1 Advanced.",
+      "lede": "A English Corner som centre preparador oficial de Cambridge English des del 2005. Preparem l'alumne per a l'examen i l'hi inscrivim. Aquests són els nivells que treballem, dels 7 anys fins als adults.",
+      "sections": [
+        {
+          "h": "Com preparem els exàmens",
+          "html": "<p>Tots els nostres alumnes s'ubiquen en un grup segons el seu nivell global d'anglès, d'acord amb el Marc europeu comú de referència (MECR). Qui vol certificar el seu nivell rep una preparació completa amb materials autèntics dels exàmens.</p><p>Treballem les quatre destreses que avalua Cambridge (<i>Reading</i>, <i>Writing</i>, <i>Listening</i> i <i>Speaking</i>) i, a partir del B2, també l'<i>Use of English</i>. Quan l'alumne està a punt, l'inscrivim a l'examen oficial.</p><p>A l'estiu també oferim cursets intensius de preparació d'exàmens oficials.</p>"
+        },
+        {
+          "h": "Quin examen et toca?",
+          "html": "<p>Depèn del teu nivell actual i de per a què necessites el certificat. Per això comencem sempre amb una prova de nivell gratuïta: així et podem recomanar l'examen que tens a l'abast i el grup on et prepararàs millor.</p>"
+        }
+      ],
+      "faq": [
+        {
+          "q": "Què vol dir ser centre preparador oficial?",
+          "a": "Que Cambridge English ens reconeix com a centre que prepara alumnes per als seus exàmens. Preparem l'alumne i l'inscrivim a l'examen oficial; l'examen el fa i el corregeix Cambridge."
+        },
+        {
+          "q": "Els certificats de Cambridge caduquen?",
+          "a": "No. Cambridge no posa data de caducitat als seus certificats. Alguna universitat o empresa, però, pot demanar que l'hagis obtingut fa poc temps: consulta-ho a qui te'l demani."
+        },
+        {
+          "q": "A partir de quina edat es pot fer un examen?",
+          "a": "Els exàmens Young Learners són per a infants a partir dels 7 anys. A partir de l'A2 Key no hi ha edat mínima ni màxima: hi ha versions per a escolars (for Schools) i per a adults."
+        }
+      ]
+    },
+    {
+      "key": "yle",
+      "slug": "young-learners",
+      "short": "Young Learners",
+      "level": "Pre A1 – A2",
+      "title": "Young Learners: Starters, Movers i Flyers",
+      "metaTitle": "Cambridge Young Learners a Vilanova del Camí",
+      "description": "Preparació dels exàmens Cambridge Young Learners (Pre A1 Starters, A1 Movers i A2 Flyers) a Vilanova del Camí. Els primers certificats oficials, a partir dels 7 anys.",
+      "lede": "La sèrie Young Learners són els primers exàmens oficials de Cambridge, pensats per a infants. Serveixen per veure com avancen i per agafar confiança amb l'anglès, sense pressió.",
+      "facts": [
+        [
+          "Nivells",
+          "Pre A1 Starters, A1 Movers i A2 Flyers"
+        ],
+        [
+          "Per a qui",
+          "Infants a partir dels 7 anys"
+        ],
+        [
+          "Proves",
+          "Listening, Reading and Writing i Speaking"
+        ],
+        [
+          "Resultat",
+          "No s'aprova ni se suspèn: tots els infants reben un certificat"
+        ]
+      ],
+      "sections": [
+        {
+          "h": "Com són aquests exàmens",
+          "html": "<p>Hi ha tres nivells, de menys a més: <b>Starters</b> (Pre A1), <b>Movers</b> (A1) i <b>Flyers</b> (A2). Cadascun té tres proves: comprensió oral (<i>Listening</i>), lectura i escriptura (<i>Reading and Writing</i>) i expressió oral (<i>Speaking</i>), que es fa en una conversa breu amb un examinador.</p><p>Els exercicis són visuals i propers al món dels infants: dibuixos, jocs i històries curtes.</p>"
+        },
+        {
+          "h": "Com es donen els resultats",
+          "html": "<p>En aquests exàmens no s'aprova ni se suspèn. Cada infant rep un certificat que mostra, per a cada prova, quants escuts (<i>shields</i>) ha aconseguit, fins a cinc per prova. És una manera motivadora de veure el que ja saben fer i el que encara poden millorar.</p>"
+        },
+        {
+          "h": "Com els preparem",
+          "html": "<p>Acompanyem els més petits des d'una etapa inicial i incorporem la lectoescriptura de forma gradual, perquè vegin l'anglès com una eina real. Les famílies que ho volen poden presentar els infants a l'examen oficial: els preparem amb materials autèntics i els hi inscrivim.</p>"
+        }
+      ],
+      "faq": [
+        {
+          "q": "És obligatori presentar-se a l'examen?",
+          "a": "No. Certificar el nivell és opcional; l'infant continua el seu curs igualment."
+        },
+        {
+          "q": "Per quin nivell començo?",
+          "a": "Depèn de l'edat i del nivell de l'infant. Amb la prova de nivell gratuïta us orientem sobre quin dels tres li correspon."
+        }
+      ]
+    },
+    {
+      "key": "key",
+      "slug": "a2-key",
+      "short": "A2 Key (KET)",
+      "level": "A2",
+      "title": "A2 Key (KET)",
+      "metaTitle": "Preparació A2 Key (KET) a Vilanova del Camí",
+      "description": "Preparació de l'examen A2 Key (KET) de Cambridge a Vilanova del Camí. El primer certificat oficial: acredita l'anglès quotidià, escrit i parlat.",
+      "lede": "L'A2 Key és el primer certificat oficial de Cambridge per a adolescents i adults. Acredita un domini sòlid de l'anglès quotidià, escrit i parlat.",
+      "facts": [
+        [
+          "Nivell MECR",
+          "A2 (usuari bàsic)"
+        ],
+        [
+          "Versions",
+          "A2 Key for Schools (escolars) i A2 Key"
+        ],
+        [
+          "Proves",
+          "Reading and Writing (1 h), Listening (30 min) i Speaking (8–10 min en parella)"
+        ],
+        [
+          "Certificat",
+          "No caduca"
+        ]
+      ],
+      "sections": [
+        {
+          "h": "Què acredita",
+          "html": "<p>Que l'alumne entén i fa servir expressions habituals, es comunica en situacions senzilles i quotidianes, i pot llegir i escriure textos curts. És un bon primer objectiu per a alumnes de primària i de l'ESO, i també per a adults que tornen a l'anglès.</p>"
+        },
+        {
+          "h": "Com és l'examen",
+          "html": "<ul><li><b>Reading and Writing</b> (1 hora): set parts de lectura i escriptura.</li><li><b>Listening</b> (uns 30 minuts): cinc parts amb enregistraments.</li><li><b>Speaking</b> (8–10 minuts): es fa en parella, amb una entrevista i una conversa.</li></ul><p>La lectura i l'escriptura valen la meitat de la nota; el <i>Listening</i> i el <i>Speaking</i>, un quart cadascun.</p>"
+        },
+        {
+          "h": "Com el preparem",
+          "html": "<p>L'alumne treballa en un grup del seu nivell i practica cada part de l'examen amb materials autèntics de Cambridge. Quan està a punt, l'inscrivim a l'examen oficial com a centre preparador.</p>"
+        }
+      ],
+      "faq": [
+        {
+          "q": "Quina diferència hi ha entre A2 Key i A2 Key for Schools?",
+          "a": "Tenen el mateix format i el mateix nivell, i el certificat és equivalent. La versió for Schools fa servir temes més propers als adolescents."
+        }
+      ]
+    },
+    {
+      "key": "pet",
+      "slug": "b1-preliminary",
+      "short": "B1 Preliminary (PET)",
+      "level": "B1",
+      "title": "B1 Preliminary (PET)",
+      "metaTitle": "Preparació B1 Preliminary (PET) a Vilanova del Camí",
+      "description": "Preparació de l'examen B1 Preliminary (PET) de Cambridge a Vilanova del Camí. Nivell d'usuari independent, útil per a cicles formatius, màsters i oposicions.",
+      "lede": "El B1 Preliminary acredita el nivell d'usuari independent: l'alumne ja es desenvolupa en anglès en la majoria de situacions del dia a dia, a la feina i als estudis.",
+      "facts": [
+        [
+          "Nivell MECR",
+          "B1 (usuari independent)"
+        ],
+        [
+          "Versions",
+          "B1 Preliminary for Schools (escolars) i B1 Preliminary"
+        ],
+        [
+          "Proves",
+          "Reading (45 min), Writing (45 min), Listening (30 min) i Speaking (10–12 min en parella)"
+        ],
+        [
+          "Certificat",
+          "No caduca"
+        ]
+      ],
+      "sections": [
+        {
+          "h": "Per a què serveix",
+          "html": "<p>És molt útil per a cicles formatius de grau mitjà, per accedir a màsters i per a l'accés o la promoció en llocs de treball públics (exèrcit, cossos de policia, funció pública...). Comprova sempre el nivell exacte que et demanen.</p>"
+        },
+        {
+          "h": "Com és l'examen",
+          "html": "<ul><li><b>Reading</b> (45 minuts): sis parts.</li><li><b>Writing</b> (45 minuts): dos textos.</li><li><b>Listening</b> (uns 30 minuts): quatre parts.</li><li><b>Speaking</b> (10–12 minuts): en parella, en quatre parts.</li></ul>"
+        },
+        {
+          "h": "Com el preparem",
+          "html": "<p>Treballem de manera sistemàtica la gramàtica i el vocabulari, i practiquem cada part de l'examen amb materials autèntics de Cambridge. Quan l'alumne està a punt, l'inscrivim a l'examen oficial.</p>"
+        }
+      ],
+      "faq": [
+        {
+          "q": "Puc passar directament del B1 al B2?",
+          "a": "Sí: el B2 First és el pas següent. El temps que cal depèn del ritme de cada alumne; a la prova de nivell t'orientem."
+        }
+      ]
+    },
+    {
+      "key": "fce",
+      "slug": "b2-first",
+      "short": "B2 First (FCE)",
+      "level": "B2",
+      "title": "B2 First (FCE)",
+      "metaTitle": "Preparació B2 First (FCE) a Vilanova del Camí",
+      "description": "Preparació de l'examen B2 First (First Certificate, FCE) de Cambridge a Vilanova del Camí. El certificat més sol·licitat a Espanya per a la universitat i la feina.",
+      "lede": "El B2 First, conegut com a First Certificate, és el certificat d'anglès més sol·licitat a Espanya. És un requisit habitual per als graus universitaris i per a bona part de les ofertes de feina.",
+      "facts": [
+        [
+          "Nivell MECR",
+          "B2 (usuari independent avançat)"
+        ],
+        [
+          "Versions",
+          "B2 First for Schools (escolars) i B2 First"
+        ],
+        [
+          "Proves",
+          "Reading and Use of English (1 h 15 min), Writing (1 h 20 min), Listening (40 min) i Speaking (14 min en parella)"
+        ],
+        [
+          "Certificat",
+          "No caduca"
+        ]
+      ],
+      "sections": [
+        {
+          "h": "Per a què serveix",
+          "html": "<p>Acredita que l'alumne fa servir l'anglès amb fluïdesa en contextos acadèmics i professionals. És el nivell que demanen moltes universitats per obtenir el títol de grau, i un dels més valorats a les ofertes de feina.</p>"
+        },
+        {
+          "h": "Com és l'examen",
+          "html": "<ul><li><b>Reading and Use of English</b> (1 hora 15 minuts): set parts de comprensió lectora, gramàtica i vocabulari.</li><li><b>Writing</b> (1 hora 20 minuts): dos textos.</li><li><b>Listening</b> (uns 40 minuts): quatre parts.</li><li><b>Speaking</b> (14 minuts): en parella, en quatre parts.</li></ul>"
+        },
+        {
+          "h": "Com el preparem",
+          "html": "<p>A partir d'aquest nivell, l'<i>Use of English</i> pesa molt a l'examen: el treballem de manera sistemàtica, juntament amb les altres destreses, amb materials autèntics de Cambridge. Quan l'alumne està a punt, l'inscrivim a l'examen oficial. A l'estiu també oferim cursets intensius de preparació.</p>"
+        }
+      ],
+      "faq": [
+        {
+          "q": "Quant temps cal per preparar el First?",
+          "a": "Depèn del nivell de partida. Amb la prova de nivell gratuïta et podem dir on ets i quin camí et queda fins al B2."
+        },
+        {
+          "q": "Quina diferència hi ha entre B2 First i B2 First for Schools?",
+          "a": "Tenen el mateix format i el mateix nivell, i el certificat és equivalent. La versió for Schools fa servir temes més propers als adolescents."
+        }
+      ]
+    },
+    {
+      "key": "cae",
+      "slug": "c1-advanced",
+      "short": "C1 Advanced (CAE)",
+      "level": "C1",
+      "title": "C1 Advanced (CAE)",
+      "metaTitle": "Preparació C1 Advanced (CAE) a Vilanova del Camí",
+      "description": "Preparació de l'examen C1 Advanced (CAE) de Cambridge a Vilanova del Camí. Usuari competent: màsters, universitats internacionals i feina a l'estranger.",
+      "lede": "El C1 Advanced acredita el nivell d'usuari competent. Obre la porta a màsters, universitats internacionals i llocs de treball a l'estranger.",
+      "facts": [
+        [
+          "Nivell MECR",
+          "C1 (usuari competent)"
+        ],
+        [
+          "Per a qui",
+          "Alumnes que ja tenen un B2 consolidat"
+        ],
+        [
+          "Proves",
+          "Reading and Use of English (1 h 30 min), Writing (1 h 30 min), Listening (40 min) i Speaking (15 min en parella)"
+        ],
+        [
+          "Certificat",
+          "No caduca"
+        ]
+      ],
+      "sections": [
+        {
+          "h": "Per a què serveix",
+          "html": "<p>Demostra que l'alumne pot estudiar o treballar en anglès amb solvència: seguir classes universitàries, escriure informes i participar en reunions. Moltes universitats estrangeres i empreses internacionals l'accepten.</p>"
+        },
+        {
+          "h": "Com és l'examen",
+          "html": "<ul><li><b>Reading and Use of English</b> (1 hora 30 minuts): vuit parts.</li><li><b>Writing</b> (1 hora 30 minuts): dos textos.</li><li><b>Listening</b> (uns 40 minuts): quatre parts.</li><li><b>Speaking</b> (15 minuts): en parella, en quatre parts.</li></ul>"
+        },
+        {
+          "h": "Com el preparem",
+          "html": "<p>L'alumne treballa en un grup del seu nivell, amb materials autèntics de Cambridge i pràctica de cada part de l'examen. Quan està a punt, l'inscrivim a l'examen oficial.</p>"
+        }
+      ],
+      "faq": [
+        {
+          "q": "Puc fer el C1 si tot just he aprovat el B2?",
+          "a": "Normalment cal un temps de consolidació entre tots dos nivells. Amb la prova de nivell et direm quan és un bon moment per presentar-t'hi."
+        }
+      ]
+    }
+  ]
+}

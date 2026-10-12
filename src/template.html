@@ -233,7 +233,7 @@
                     sizes="(max-width:940px) 80vw, 420px">
             <img src="/assets/photos/local-entrada-640.jpg"
                  srcset="/assets/photos/local-entrada-640.jpg 640w, /assets/photos/local-entrada-960.jpg 960w"
-                 sizes="(max-width:940px) 80vw, 420px" width="2178" height="2300"
+                 sizes="(max-width:940px) 80vw, 420px" width="640" height="676"
                  alt="{{ method.altEntrada }}" loading="lazy" decoding="async">
           </picture>
         </div>
@@ -243,7 +243,7 @@
                     sizes="(max-width:940px) 42vw, 230px">
             <img src="/assets/photos/local-aparador-420.jpg"
                  srcset="/assets/photos/local-aparador-420.jpg 420w, /assets/photos/local-aparador-640.jpg 640w"
-                 sizes="(max-width:940px) 42vw, 230px" width="2848" height="3675"
+                 sizes="(max-width:940px) 42vw, 230px" width="420" height="542"
                  alt="{{ method.altAparador }}" loading="lazy" decoding="async">
           </picture>
         </div>
@@ -348,7 +348,7 @@
     <ol class="ladder">
       <li class="rung rung-0 rv" style="--i:0">
         <div class="rung-lvl">Pre A1–A2</div>
-        <h3 class="rung-name">Young Learners</h3>
+        <h3 class="rung-name"><a href="{{ exams.yleHref }}">Young Learners</a></h3>
         <p class="rung-desc">{{ exams.yleNote }}</p>
         <div class="yle-tags">
           {{# exams.yleTags }}<span class="yle-tag">{{ . }}</span>
@@ -357,11 +357,12 @@
       </li>
       {{# exams.rungs }}<li class="rung rung-{{ @index1 }} rv rv-{{ @index1 }}" style="--i:{{ @index1 }}">
         <div class="rung-lvl">{{ .lvl }}</div>
-        <h3 class="rung-name">{{ .name }}</h3>
+        <h3 class="rung-name"><a href="{{ .href }}">{{ .name }}</a></h3>
         <p class="rung-desc">{{ .desc }}</p>
       </li>
       {{/ exams.rungs }}
     </ol>
+    <p class="exams-more rv"><a href="{{ exams.hubHref }}">{{ exams.hubLink }} <span aria-hidden="true">→</span></a></p>
   </div>
 </section>
 
