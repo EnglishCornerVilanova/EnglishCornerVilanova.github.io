@@ -296,6 +296,14 @@ def build_schema(site: dict, data: dict, lang: str) -> str:
                    if u and "TODO" not in u],
         "knowsLanguage": site["langs"],
         "alternateName": site.get("alternateNames", []),
+        "hasCredential": {
+            "@type": "EducationalOccupationalCredential",
+            "name": "Cambridge English Preparation Centre",
+            "credentialCategory": "Centre preparador oficial",
+            "recognizedBy": {"@type": "Organization",
+                             "name": "Cambridge University Press & Assessment",
+                             "url": "https://www.cambridgeenglish.org/"},
+        },
     }
     # Escuela, web y página enlazadas por @id: la misma entidad para buscadores y asistentes de IA.
     website = {
