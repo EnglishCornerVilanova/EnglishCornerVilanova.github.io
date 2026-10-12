@@ -227,6 +227,30 @@ def build_alternates(site: dict, paths: dict) -> str:
     return "\n".join(rows)
 
 
+def build_area_served(site: dict) -> list:
+    """Municipios como City dentro de la comarca, la comarca y un radio de servicio.
+    Solo en los datos estructurados: nada de esto se ve en la página."""
+    wiki = "https://ca.wikipedia.org/wiki/"
+    comarca = {
+        "@type": "AdministrativeArea",
+        "name": "Anoia",
+        "alternateName": ["l'Anoia", "comarca de l'Anoia"],
+        "sameAs": wiki + "Anoia",
+    }
+    places = [
+        {"@type": "City", "name": n, "sameAs": wiki + n.replace(" ", "_"),
+         "containedInPlace": {"@type": "AdministrativeArea", "name": "Anoia"}}
+        for n in site["areaServed"] if n != "Anoia"
+    ]
+    radius = {
+        "@type": "GeoCircle",
+        "geoMidpoint": {"@type": "GeoCoordinates",
+                        "latitude": site["geo"]["lat"], "longitude": site["geo"]["lng"]},
+        "geoRadius": site.get("serviceRadiusMeters", 10000),
+    }
+    return places + [comarca, radius]
+
+
 def build_schema(site: dict, data: dict, lang: str) -> str:
     s = data["shared"]
     schema = {
@@ -256,7 +280,8 @@ def build_schema(site: dict, data: dict, lang: str) -> str:
             "latitude": site["geo"]["lat"],
             "longitude": site["geo"]["lng"],
         },
-        "areaServed": [{"@type": "Place", "name": n} for n in site["areaServed"]],
+        "hasMap": site["googleMaps"],
+        "areaServed": build_area_served(site),
         "openingHoursSpecification": [
             {
                 "@type": "OpeningHoursSpecification",
