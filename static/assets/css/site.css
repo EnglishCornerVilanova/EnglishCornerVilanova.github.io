@@ -533,7 +533,7 @@ footer{
 .foot-brand .brand{margin-bottom:1rem}
 .foot-brand p{font-size:.84rem;color:var(--ink-3);line-height:1.7}
 .foot-cols{display:flex;gap:clamp(2rem,5vw,4.5rem);flex-wrap:wrap}
-.foot-col h2{font-size:.7rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--ink-3);margin-bottom:.85rem}
+.foot-col h2{font-size:.78rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--ink-3);margin-bottom:.85rem}
 .foot-col a,.foot-col p{
   display:block;font-size:.85rem;color:var(--ink-2);
   text-decoration:none;margin-bottom:.5rem;line-height:1.55;
@@ -585,13 +585,13 @@ footer{
 }
 @media (max-width:940px){
   .nav-menu{display:none}
-  .hero-grid{grid-template-columns:1fr;gap:3rem}
+  .hero-grid{grid-template-columns:minmax(0,1fr);gap:3rem}
 
   .hero-lede{max-width:46ch}
   .method-grid{grid-template-columns:1fr;gap:2.5rem}
   .method-visual{max-width:440px}
 
-  .cta{grid-template-columns:1fr}
+  .cta{grid-template-columns:minmax(0,1fr)}
   .course{row-gap:.6rem}
 
 }
@@ -773,7 +773,7 @@ body.menu-open .drawer-foot{opacity:1;transform:none}
   background:var(--paper-2);
   text-align:center;
 }
-.map-consent-in{max-width:34rem;display:flex;flex-direction:column;align-items:center;gap:1rem}
+.map-consent-in{max-width:min(34rem,100%);min-width:0;display:flex;flex-direction:column;align-items:center;gap:1rem}
 .map-consent svg{width:26px;height:26px;stroke:var(--ink-3);stroke-width:1.7;fill:none;stroke-linecap:round;stroke-linejoin:round}
 .map-consent h2{
   font-family:'Bricolage Grotesque',sans-serif;
@@ -1143,6 +1143,8 @@ a.ig-cell{display:block;text-decoration:none}
 .hero-lede{font-size:1.05rem;max-width:40ch;position:relative;z-index:2}
 .hero-cta{position:relative;z-index:2}
 @media (max-width:600px){ .hero-claim{font-size:clamp(1.95rem,8.6vw,2.6rem)} }
+/* Con el texto ampliado, el botón parte línea en vez de salirse de la pantalla. */
+@media (max-width:600px){ .hero-cta .btn{white-space:normal;text-align:left} }
 
 /* Los cromos: rotación, escalón y profundidad propios, compuestos en una sola
    transformación para que la entrada, el puntero y el hover no se pisen. */
@@ -1307,7 +1309,7 @@ a.ig-cell{display:block;text-decoration:none}
 @media (max-width:600px){
   .cta{padding:2.2rem 1.4rem;border-radius:26px}
   .cta-btns{flex-direction:column;align-items:stretch}
-  .cta-btns .btn{justify-content:center}
+  .cta-btns .btn{justify-content:center;white-space:normal;text-align:center}
   .cta-card{background:none;border:0;border-top:1px solid rgba(255,255,255,.12);border-radius:0;padding:1.6rem 0 0;backdrop-filter:none;-webkit-backdrop-filter:none}
 }
 
@@ -1403,3 +1405,7 @@ body{overflow-wrap:break-word}
 .cta-row .obert b{color:#fff;font-weight:700}
 .obert-punt{width:8px;height:8px;border-radius:50%;flex:none;background:rgba(255,255,255,.38)}
 .is-obert .obert-punt{background:var(--abierto);box-shadow:0 0 0 3px color-mix(in srgb,var(--abierto) 22%,transparent)}
+.map-consent .btn{white-space:normal;text-align:center}
+/* Antes de cargar el mapa, el aviso marca la altura del recuadro: con el texto ampliado crece en vez de cortarse. */
+.map-shell:not(.loaded) .map-consent{position:relative;inset:auto;min-height:380px}
+.map-shell:not(.loaded) iframe{position:absolute;inset:0;height:100%}

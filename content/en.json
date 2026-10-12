@@ -115,7 +115,7 @@
         "tagClass": "",
         "icon": "estiu",
         "tone": "sky",
-        "desc": "Intensive preparation courses for official exams. Refresher courses to keep your level up. Conversation classes. Tailor-made private lessons."
+        "desc": "Intensive courses throughout July: official exam preparation, refresher courses, conversation classes, tailor-made private lessons..."
       },
       {
         "title": "Private lessons",
@@ -133,22 +133,22 @@
     "rungs": [
       {
         "lvl": "A2",
-        "name": "Key (KET)",
+        "name": "Key",
         "desc": "The first official certificate, confirming a solid command of everyday written and spoken English."
       },
       {
         "lvl": "B1",
-        "name": "Preliminary (PET)",
+        "name": "Preliminary",
         "desc": "Independent user level. Very useful for intermediate vocational courses, for access to master's degrees and for entry to or promotion in public-sector jobs (armed forces, police, civil service...)."
       },
       {
         "lvl": "B2",
-        "name": "First (FCE)",
+        "name": "First",
         "desc": "The most widely requested certificate in Spain, and a common requirement for university degrees and for many job vacancies."
       },
       {
         "lvl": "C1",
-        "name": "Advanced (CAE)",
+        "name": "Advanced",
         "desc": "Proficient user level. Opens doors to master's degrees, universities abroad and jobs overseas."
       }
     ],

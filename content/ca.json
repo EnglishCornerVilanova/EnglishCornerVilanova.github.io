@@ -115,7 +115,7 @@
         "tagClass": "",
         "icon": "estiu",
         "tone": "sky",
-        "desc": "Cursets intensius de preparació d'exàmens oficials. Cursets de manteniment. Classes de conversa. Classes particulars a mida."
+        "desc": "Cursets intensius durant el mes de juliol: preparació d'exàmens oficials, cursets de manteniment, classes de conversa, classes particulars a mida..."
       },
       {
         "title": "Classes particulars",
@@ -133,22 +133,22 @@
     "rungs": [
       {
         "lvl": "A2",
-        "name": "Key (KET)",
+        "name": "Key",
         "desc": "El primer certificat oficial. Acredita un domini sòlid de l'anglès quotidià, escrit i parlat."
       },
       {
         "lvl": "B1",
-        "name": "Preliminary (PET)",
+        "name": "Preliminary",
         "desc": "Nivell d'usuari independent. Molt útil per a cicles formatius de grau mitjà, per accedir a màsters i per a l'accés o la promoció en llocs de treball públics (exèrcit, cossos de policia, funció pública...)."
       },
       {
         "lvl": "B2",
-        "name": "First (FCE)",
+        "name": "First",
         "desc": "El certificat més sol·licitat a Espanya. Requisit habitual per als graus universitaris i per a bona part de les ofertes de feina."
       },
       {
         "lvl": "C1",
-        "name": "Advanced (CAE)",
+        "name": "Advanced",
         "desc": "Usuari competent. Obre la porta a màsters, universitats internacionals i llocs de treball a l'estranger."
       }
     ],

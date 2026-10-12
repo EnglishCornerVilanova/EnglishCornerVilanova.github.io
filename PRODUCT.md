@@ -18,11 +18,11 @@ The website of English Corner, an English school in Vilanova del Camí (Anoia, B
 
 ## Positioning
 
-- A small, local school in the same premises since 2005, not a chain.
-- Cambridge English Preparation Centre.
-- A structured method that works on all five areas in every unit (reading, writing, listening, speaking and Use of English), with nothing skipped or improvised.
-- Students only move up a level when the teacher decides all five areas are secure, not because a course has ended.
-- Stable, qualified teachers who stay year after year.
+- A small, local school in the same premises since 2005, and the first English school in Vilanova del Camí; not a chain.
+- A school dedicated exclusively to teaching English.
+- Cambridge English Preparation Centre (preparation only, not an exam centre).
+- A structured progression that gives equal weight to all five skills (Reading, Writing, Listening, Speaking and Use of English), with continuous assessment: periodic tests and progress reports (primary and secondary), and practice with real Cambridge exam papers.
+- Dedicated, qualified teachers and a stable, high-quality service, in a warm, family atmosphere.
 
 ## Operating Context
 

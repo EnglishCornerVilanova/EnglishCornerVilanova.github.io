@@ -115,7 +115,7 @@
         "tagClass": "",
         "icon": "estiu",
         "tone": "sky",
-        "desc": "Cursos intensivos de preparación de exámenes oficiales. Cursos de mantenimiento. Clases de conversación. Clases particulares a medida."
+        "desc": "Cursos intensivos durante el mes de julio: preparación de exámenes oficiales, cursos de mantenimiento, clases de conversación, clases particulares a medida..."
       },
       {
         "title": "Clases particulares",
@@ -133,22 +133,22 @@
     "rungs": [
       {
         "lvl": "A2",
-        "name": "Key (KET)",
+        "name": "Key",
         "desc": "El primer certificado oficial. Acredita un dominio sólido del inglés cotidiano, escrito y hablado."
       },
       {
         "lvl": "B1",
-        "name": "Preliminary (PET)",
+        "name": "Preliminary",
         "desc": "Nivel de usuario independiente. Muy útil para ciclos formativos de grado medio, para acceder a másteres y para el acceso o la promoción en puestos de trabajo públicos (ejército, cuerpos de policía, función pública...)."
       },
       {
         "lvl": "B2",
-        "name": "First (FCE)",
+        "name": "First",
         "desc": "El certificado más solicitado en España. Requisito habitual para los grados universitarios y para buena parte de las ofertas de empleo."
       },
       {
         "lvl": "C1",
-        "name": "Advanced (CAE)",
+        "name": "Advanced",
         "desc": "Usuario competente. Abre la puerta a másteres, universidades internacionales y puestos de trabajo en el extranjero."
       }
     ],

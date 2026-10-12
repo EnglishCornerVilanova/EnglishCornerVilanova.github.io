@@ -251,6 +251,27 @@ def build_area_served(site: dict) -> list:
     return places + [comarca, radius]
 
 
+def build_offer_catalog(site: dict, data: dict) -> dict:
+    """Los cursos de la portada como catálogo: qué ofrece la escuela, para buscadores y asistentes de IA.
+    Mismos textos que se ven en la página, sin precios ni horarios."""
+    label = next((i["label"] for i in data["nav"]["items"] if "courses" in i["href"]), site["name"])
+    school = {"@id": site["origin"] + "/#school"}
+    return {
+        "@type": "OfferCatalog",
+        "name": plain_text(label),
+        "itemListElement": [
+            {"@type": "Offer", "itemOffered": {
+                "@type": "Course",
+                "name": plain_text(c["title"]),
+                "description": " ".join(x for x in (plain_text(c["tag"]), plain_text(re.sub(r"</p>\s*<p>", " ", c["desc"]))) if x),
+                "inLanguage": "en",
+                "provider": school,
+            }}
+            for c in data["courses"]["items"]
+        ],
+    }
+
+
 def build_schema(site: dict, data: dict, lang: str) -> str:
     s = data["shared"]
     schema = {
@@ -304,6 +325,7 @@ def build_schema(site: dict, data: dict, lang: str) -> str:
                              "name": "Cambridge University Press & Assessment",
                              "url": "https://www.cambridgeenglish.org/"},
         },
+        "hasOfferCatalog": build_offer_catalog(site, data),
     }
     # Escuela, web y página enlazadas por @id: la misma entidad para buscadores y asistentes de IA.
     website = {
@@ -531,9 +553,19 @@ def ig_grid(data: dict) -> str:
             for p in data["insta"]["posts"]
         )
     fallback = strip_tags(data["insta"]["postAlt"])
+
+    def short_alt(text: str) -> str:
+        """El pie de Instagram como descripción, pero breve: la primera frase, sin teléfonos ni
+        correos, hasta unos 100 caracteres. Un lector de pantalla no tiene que leer el pie entero."""
+        t = re.sub(r"\S+@\S+|\+?\d[\d .]{7,}\d", "", text or "")
+        t = re.split(r"(?<=[.!?])\s|\n", t.strip())[0].strip(" .:-(")
+        if len(t) > 100:
+            t = t[:100].rsplit(" ", 1)[0] + "…"
+        return t
+
     return "\n      ".join(
         f'<a class="ig-cell" href="{html.escape(p["href"], quote=True)}" target="_blank" rel="noopener">'
-        f'<img src="/assets/ig/{p["file"]}" alt="{html.escape(p["alt"], quote=True) or fallback}" '
+        f'<img src="/assets/ig/{p["file"]}" alt="{html.escape(short_alt(p["alt"]), quote=True) or fallback}" '
         f'width="{_dim(p.get("w"), 560)}" height="{_dim(p.get("h"), 700)}" loading="lazy" decoding="async"></a>'
         for p in IG_POSTS
     )
