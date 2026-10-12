@@ -162,7 +162,7 @@
   "method": {
     "altEntrada": "La entrada de English Corner en la calle Manresa, con el rótulo y la bandera británica",
     "altAparador": "Una alumna con las manos pintadas de rojo y azul, en el escaparate de la academia",
-    "h2": "Una pequeña academia<br>con una gran trayectoria.",
+    "h2": "Una pequeña academia <br>con una gran trayectoria.",
     "lede": "<p>Nuestro centro abrió sus puertas en septiembre de 2005 y fue la primera academia de inglés de la población. Desde entonces, nuestro objetivo siempre ha sido el mismo: acercar el inglés a nuestros vecinos y ayudarles a aprender en un entorno familiar y acogedor.</p><p>Seguimos una <b>progresión estructurada</b>, con <b>evaluación continua</b> y <b>profesorado vocacional y cualificado</b>. Desde siempre, hemos procurado ofrecer un <b>servicio estable y de calidad</b>.</p>",
     "pillars": [
       {
@@ -226,7 +226,7 @@
     "follow": "¡Síguenos!"
   },
   "contact": {
-    "h2": "Contáctanos y te informaremos<br>encantados.",
+    "h2": "Contáctanos y te informaremos <br>encantados.",
     "lede": "Ven a hacer una prueba de nivel sin compromiso.",
     "btnCall": "Envíanos un mensaje al 606 916 483",
     "btnEmail": "Escríbenos un correo",
@@ -311,7 +311,7 @@
       },
       {
         "title": "Dónde estamos",
-        "text": "<p>Carrer Manresa, 23 Baixos<br>08788 Vilanova del Camí<br>Barcelona</p>",
+        "text": "<p>Carrer Manresa, 23 Baixos <br>08788 Vilanova del Camí <br>Barcelona</p>",
         "links": [
           {
             "href": "tel:938070770",

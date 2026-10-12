@@ -162,7 +162,7 @@
   "method": {
     "altEntrada": "The entrance to English Corner on Carrer Manresa, with its sign and the Union Jack",
     "altAparador": "A pupil with her hands painted red and blue in the school's window",
-    "h2": "A small school<br>with a long track record.",
+    "h2": "A small school <br>with a long track record.",
     "lede": "<p>We opened our doors in September 2005 as the first English school in the town. Since then, our aim has always been the same: to bring English closer to our neighbours and help them learn in a warm, family atmosphere.</p><p>We follow a <b>structured progression</b>, with <b>continuous assessment</b> and <b>dedicated, qualified teachers</b>. We have always strived to offer a <b>consistent, high-quality service</b>.</p>",
     "pillars": [
       {
@@ -226,7 +226,7 @@
     "follow": "Follow us!"
   },
   "contact": {
-    "h2": "Get in touch and we'll be<br>happy to help!",
+    "h2": "Get in touch and we'll be <br>happy to help!",
     "lede": "Come in for a free, no-obligation level test.",
     "btnCall": "Message us on 606 916 483",
     "btnEmail": "Send us an email",
@@ -311,7 +311,7 @@
       },
       {
         "title": "Visit us",
-        "text": "<p>Carrer Manresa, 23 Baixos<br>08788 Vilanova del Camí<br>Barcelona</p>",
+        "text": "<p>Carrer Manresa, 23 Baixos <br>08788 Vilanova del Camí <br>Barcelona</p>",
         "links": [
           {
             "href": "tel:938070770",
