@@ -263,7 +263,7 @@ def build_schema(site: dict, data: dict, lang: str) -> str:
         "description": plain_text(data["meta"]["description"]),
         "image": site["origin"] + "/assets/img/og-image.jpg",
         "logo": site["origin"] + "/assets/img/icon-512.png",
-        "telephone": site["phoneE164"],
+        "telephone": "+34" + site["landlineHref"],  # el mismo que la ficha de Google
         "email": s["email"],
         "priceRange": "€€",
         "foundingDate": str(site["foundedYear"]),
