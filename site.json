@@ -37,6 +37,7 @@
     "lng": 1.6428262
   },
   "googleMaps": "https://maps.app.goo.gl/LBP8b4NvWd9jJ4hg7",
+  "bingMaps": "https://www.bing.com/maps/search?ss=id.local_ypid%3A%22YN35C0B491C67CCCA%22&q=English+Corner",
   "appleMaps": "https://maps.apple.com/place?place-id=I98908AECE722E225",
   "alternateNames": ["English Corner Vilanova", "English Corner Vilanova del Camí"],
   "googlePlaceQuery": "English Corner, Carrer de Manresa 23, 08788 Vilanova del Camí",

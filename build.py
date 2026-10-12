@@ -292,7 +292,7 @@ def build_schema(site: dict, data: dict, lang: str) -> str:
             for (opens, closes), days in hours_by_interval().items()
         ],
         "sameAs": [u for u in (site["social"]["instagram"], site["social"]["facebook"],
-                               site["googleMaps"], site.get("appleMaps"))
+                               site["googleMaps"], site.get("appleMaps"), site.get("bingMaps"))
                    if u and "TODO" not in u],
         "knowsLanguage": site["langs"],
         "alternateName": site.get("alternateNames", []),
