@@ -255,7 +255,7 @@ def build_schema(site: dict, data: dict, lang: str) -> str:
     s = data["shared"]
     schema = {
         "@context": "https://schema.org",
-        "@type": "LanguageSchool",
+        "@type": ["LanguageSchool", "LocalBusiness"],
         "@id": site["origin"] + "/#school",
         "name": site["name"],
         "url": page_url(site, lang),
