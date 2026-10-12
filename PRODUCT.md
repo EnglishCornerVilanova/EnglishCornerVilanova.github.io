@@ -4,7 +4,7 @@
 
 ## Platform
 
-web — home page (ca/es/en), plus an indexable Cambridge exams section: an overview and one page per exam (Young Learners, A2 Key, B1 Preliminary, B2 First, C1 Advanced) for local search. Only facts already published by the school, plus official exam formats checked on cambridgeenglish.org (October 2026).
+web
 
 ## Users
 
