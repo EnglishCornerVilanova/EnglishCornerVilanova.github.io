@@ -291,11 +291,32 @@ def build_schema(site: dict, data: dict, lang: str) -> str:
             }
             for (opens, closes), days in hours_by_interval().items()
         ],
-        "sameAs": [u for u in (site["social"]["instagram"], site["social"]["facebook"])
+        "sameAs": [u for u in (site["social"]["instagram"], site["social"]["facebook"],
+                               site["googleMaps"], site.get("appleMaps"))
                    if u and "TODO" not in u],
         "knowsLanguage": site["langs"],
+        "alternateName": site.get("alternateNames", []),
     }
-    return json.dumps(schema, ensure_ascii=False, indent=2)
+    # Escuela, web y página enlazadas por @id: la misma entidad para buscadores y asistentes de IA.
+    website = {
+        "@type": "WebSite",
+        "@id": site["origin"] + "/#website",
+        "url": site["origin"] + "/",
+        "name": site["name"],
+        "inLanguage": site["langs"],
+        "publisher": {"@id": schema["@id"]},
+    }
+    webpage = {
+        "@type": "WebPage",
+        "@id": page_url(site, lang) + "#webpage",
+        "url": page_url(site, lang),
+        "inLanguage": lang,
+        "isPartOf": {"@id": website["@id"]},
+        "about": {"@id": schema["@id"]},
+    }
+    del schema["@context"]
+    graph = {"@context": "https://schema.org", "@graph": [schema, website, webpage]}
+    return json.dumps(graph, ensure_ascii=False, indent=2)
 
 
 def deep_merge(base: dict, over: dict) -> dict:
