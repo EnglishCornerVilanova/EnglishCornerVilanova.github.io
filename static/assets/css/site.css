@@ -213,7 +213,9 @@ a{color:inherit}
 .hero{
   position:relative;
   padding:calc(84px + clamp(2rem,6vh,5rem)) var(--pad) clamp(3rem,7vh,5.5rem);
-  overflow:hidden;
+  /* clip y no hidden: hidden la convierte en contenedor de scroll y el efecto
+     de los cromos con el scroll (móvil) se queda parado. */
+  overflow:clip;
 }
 /* soft brand wash */
 .hero::before{
