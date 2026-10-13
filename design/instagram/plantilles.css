@@ -322,3 +322,18 @@ body.post{margin:0;background:#fff;overflow:hidden}
 .contact small{display:block;font:600 26px/1.2 var(--text);color:var(--ink-3);letter-spacing:-.005em}
 .contact b{display:block;font-family:var(--display);font-weight:800;font-size:56px;line-height:1.02;letter-spacing:-.02em;font-variant-numeric:tabular-nums;color:var(--ink)}
 .ec-foot .handle,.tpl-a .foot .handle{font-size:30px}
+
+/* Mòbil amb la web a dins, per al post de la nova web */
+.movil{margin-top:28px;display:flex;justify-content:center;flex-shrink:0}
+.movil-pant{
+  width:470px;height:600px;border-radius:52px;overflow:hidden;
+  border:12px solid var(--ink);background:#fff;
+  box-shadow:0 50px 90px -46px rgba(18,21,28,.55);
+}
+.movil-pant img{width:100%;display:block}
+/* La captura de la web s'acaba amb una fosa, perquè no es talli a mitja frase */
+.movil-pant{position:relative}
+.movil-pant::after{
+  content:'';position:absolute;left:0;right:0;bottom:0;height:120px;
+  background:linear-gradient(to bottom,rgba(246,246,244,0),#F2F2F0);
+}

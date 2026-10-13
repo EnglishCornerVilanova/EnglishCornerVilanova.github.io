@@ -544,6 +544,13 @@ def instagram_posts(site: dict) -> list[dict] | None:
     return posts or None
 
 
+def ig_version(name: str) -> str:
+    """Huella del archivo: las publicaciones nuevas reutilizan post-1.webp, post-2.webp…,
+    y sin esto el navegador seguiría mostrando la foto antigua que tiene guardada."""
+    f = DIST / "assets" / "ig" / name
+    return hashlib.sha1(f.read_bytes()).hexdigest()[:10] if f.exists() else "0"
+
+
 def ig_grid(data: dict) -> str:
     """Real posts when the feed is available, the placeholders otherwise."""
     if not IG_POSTS:
@@ -565,7 +572,7 @@ def ig_grid(data: dict) -> str:
 
     return "\n      ".join(
         f'<a class="ig-cell" href="{html.escape(p["href"], quote=True)}" target="_blank" rel="noopener">'
-        f'<img src="/assets/ig/{p["file"]}" alt="{html.escape(short_alt(p["alt"]), quote=True) or fallback}" '
+        f'<img src="/assets/ig/{p["file"]}?v={ig_version(p["file"])}" alt="{html.escape(short_alt(p["alt"]), quote=True) or fallback}" '
         f'width="{_dim(p.get("w"), 560)}" height="{_dim(p.get("h"), 700)}" loading="lazy" decoding="async"></a>'
         for p in IG_POSTS
     )
