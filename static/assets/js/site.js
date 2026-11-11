@@ -155,6 +155,45 @@
   }
 
 
+  /* ── Hero en el móvil: el dedo hace de cursor ───────────── */
+  /* Mismo gesto que el ratón en el ordenador: los cromos siguen el dedo y el que
+     queda debajo se levanta. Va en --fx/--fy para no pisar el efecto del scroll. */
+  if (heroArt &&
+      matchMedia('(hover:none) and (max-width:940px)').matches &&
+      !matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    var fPend = 0, fx = 0, fy = 0, tocado = null;
+    var fPintar = function () {
+      fPend = 0;
+      heroArt.style.setProperty('--fx', fx.toFixed(1) + 'px');
+      heroArt.style.setProperty('--fy', fy.toFixed(1) + 'px');
+    };
+    var marcar = function (el) {
+      if (el === tocado) return;
+      if (tocado) tocado.classList.remove('toca');
+      tocado = el;
+      if (tocado) tocado.classList.add('toca');
+    };
+    var dedo = function (e) {
+      var r = heroArt.getBoundingClientRect();
+      fx = ((e.clientX - r.left) / r.width - 0.5) * 20;
+      fy = ((e.clientY - r.top) / r.height - 0.5) * 12;
+      var bajo = document.elementFromPoint(e.clientX, e.clientY);
+      marcar(bajo && heroArt.contains(bajo) ? bajo.closest('.frame') : null);
+      if (!fPend) fPend = requestAnimationFrame(fPintar);
+    };
+    var soltar = function () {
+      fx = fy = 0;
+      marcar(null);
+      if (!fPend) fPend = requestAnimationFrame(fPintar);
+    };
+    heroArt.addEventListener('pointerdown', dedo, { passive: true });
+    heroArt.addEventListener('pointermove', dedo, { passive: true });
+    ['pointerup', 'pointercancel', 'pointerleave'].forEach(function (t) {
+      heroArt.addEventListener(t, soltar);
+    });
+  }
+
+
   /* ── Horario: «obert ara / tancat» con la hora de Vilanova ─── */
   var obert = document.querySelector('.obert[data-horari]');
   if (obert) {

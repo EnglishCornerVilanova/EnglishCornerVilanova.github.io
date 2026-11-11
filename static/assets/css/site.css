@@ -1152,9 +1152,9 @@ a.ig-cell{display:block;text-decoration:none}
    transformación para que la entrada, el puntero y el hover no se pisen. */
 .hero-visual .frame{
   transform:
-    rotate(calc(var(--rot,0deg) * var(--straight,1)))
+    rotate(calc(var(--rot,0deg) * var(--straight,1) * var(--tq,1)))
     translateY(calc(var(--ty,0px) + var(--lift,0px)))
-    translate3d(calc(var(--px,0px) * var(--depth,1)), calc(var(--py,0px) * var(--depth,1)), 0)
+    translate3d(calc((var(--px,0px) + var(--fx,0px)) * var(--depth,1)), calc((var(--py,0px) + var(--fy,0px)) * var(--depth,1)), 0)
     scale(var(--sc,1));
   transition:transform .4s var(--out),filter .4s var(--out);
 }
@@ -1411,3 +1411,11 @@ body{overflow-wrap:break-word}
 /* Antes de cargar el mapa, el aviso marca la altura del recuadro: con el texto ampliado crece en vez de cortarse. */
 .map-shell:not(.loaded) .map-consent{position:relative;inset:auto;min-height:380px}
 .map-shell:not(.loaded) iframe{position:absolute;inset:0;height:100%}
+
+/* Móvil: el dedo hace de cursor sobre los cromos (--fx/--fy aparte de --px, que
+   lo anima el scroll). Arrastrar encima de ellos no hace scroll. */
+@media (hover:none) and (max-width:940px) and (prefers-reduced-motion:no-preference){
+  .hero-visual{touch-action:none}
+  .hero-visual .frame.toca{--lift:-12px;--tq:.25;--sc:1.035;z-index:9;
+    filter:drop-shadow(0 22px 28px rgba(20,20,18,.22))}
+}
